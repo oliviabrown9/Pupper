@@ -15,14 +15,15 @@
 		45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */; };
 		45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */; };
 		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
+		E6726A291E58D2F7002992EE /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A281E58D2F7002992EE /* LocationViewController.swift */; };
+		E6726A2B1E58DB3A002992EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A2A1E58DB3A002992EE /* HomeViewController.swift */; };
+		E6726A2D1E58E366002992EE /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A2C1E58E366002992EE /* FamilyViewController.swift */; };
+		E6726A2F1E58EF81002992EE /* TypeOfPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A2E1E58EF81002992EE /* TypeOfPersonViewController.swift */; };
+		E6726A311E58F3C8002992EE /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A301E58F3C8002992EE /* NoiseViewController.swift */; };
+		E6726A331E58F7C0002992EE /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6726A321E58F7C0002992EE /* IdealDogViewController.swift */; };
+		E6726A371E58FDFE002992EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6726A361E58FDFE002992EE /* Info.plist */; };
 		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
 		45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7D6B21E58F98100C66867 /* DogBreeds.swift */; };
-		E66D02951E59092C00D95DE7 /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D028F1E59092C00D95DE7 /* FamilyViewController.swift */; };
-		E66D02961E59092C00D95DE7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D02901E59092C00D95DE7 /* HomeViewController.swift */; };
-		E66D02971E59092C00D95DE7 /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D02911E59092C00D95DE7 /* IdealDogViewController.swift */; };
-		E66D02981E59092C00D95DE7 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D02921E59092C00D95DE7 /* LocationViewController.swift */; };
-		E66D02991E59092C00D95DE7 /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D02931E59092C00D95DE7 /* NoiseViewController.swift */; };
-		E66D029A1E59092C00D95DE7 /* TypeOfPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66D02941E59092C00D95DE7 /* TypeOfPersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,20 +33,20 @@
 		45A7D7D21E586D0E00D97A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45A7D7D41E586D0E00D97A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45A7D7D71E586D0E00D97A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		45A7D7D91E586D0E00D97A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptionTypeViewController.swift; sourceTree = "<group>"; };
 		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E6726A281E58D2F7002992EE /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		E6726A2A1E58DB3A002992EE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E6726A2C1E58E366002992EE /* FamilyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyViewController.swift; sourceTree = "<group>"; };
+		E6726A2E1E58EF81002992EE /* TypeOfPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOfPersonViewController.swift; sourceTree = "<group>"; };
+		E6726A301E58F3C8002992EE /* NoiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
+		E6726A321E58F7C0002992EE /* IdealDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
+		E6726A361E58FDFE002992EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDogsViewController.swift; sourceTree = "<group>"; };
 		45B7D6B21E58F98100C66867 /* DogBreeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogBreeds.swift; sourceTree = "<group>"; };
 		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
-		E66D028F1E59092C00D95DE7 /* FamilyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyViewController.swift; sourceTree = "<group>"; };
-		E66D02901E59092C00D95DE7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E66D02911E59092C00D95DE7 /* IdealDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
-		E66D02921E59092C00D95DE7 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		E66D02931E59092C00D95DE7 /* NoiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
-		E66D02941E59092C00D95DE7 /* TypeOfPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeOfPersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,16 +82,16 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
+				E6726A361E58FDFE002992EE /* Info.plist */,
+				E6726A271E58D2E5002992EE /* Controller */,
+				E6726A261E58D2DB002992EE /* View */,
+				E6726A251E58D2D0002992EE /* Model */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */,
 				45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */,
 				45A7D7D11E586D0E00D97A7D /* Main.storyboard */,
-				E66D029D1E59096700D95DE7 /* View */,
 				45A7D7D41E586D0E00D97A7D /* Assets.xcassets */,
 				45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */,
-				E66D029B1E59094D00D95DE7 /* Model */,
-				45A7D7D91E586D0E00D97A7D /* Info.plist */,
-				E66D028E1E59092C00D95DE7 /* Controller */,
 				45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */,
 				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
 				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
@@ -98,6 +99,31 @@
 			path = Pupper;
 			sourceTree = "<group>";
 		};
+		E6726A251E58D2D0002992EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6726A261E58D2DB002992EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6726A271E58D2E5002992EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6726A281E58D2F7002992EE /* LocationViewController.swift */,
+				E6726A2A1E58DB3A002992EE /* HomeViewController.swift */,
+				E6726A2C1E58E366002992EE /* FamilyViewController.swift */,
+				E6726A2E1E58EF81002992EE /* TypeOfPersonViewController.swift */,
+				E6726A301E58F3C8002992EE /* NoiseViewController.swift */,
+				E6726A321E58F7C0002992EE /* IdealDogViewController.swift */,
+			);
+			path = Controller;
 		9D365142442FA9CC5BFC2AB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,41 +139,6 @@
 				D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E66D028E1E59092C00D95DE7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E66D029C1E59095500D95DE7 /* View */,
-				E66D028F1E59092C00D95DE7 /* FamilyViewController.swift */,
-				E66D02901E59092C00D95DE7 /* HomeViewController.swift */,
-				E66D02911E59092C00D95DE7 /* IdealDogViewController.swift */,
-				E66D02921E59092C00D95DE7 /* LocationViewController.swift */,
-				E66D02931E59092C00D95DE7 /* NoiseViewController.swift */,
-				E66D02941E59092C00D95DE7 /* TypeOfPersonViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E66D029B1E59094D00D95DE7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		E66D029C1E59095500D95DE7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		E66D029D1E59096700D95DE7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +176,7 @@
 				TargetAttributes = {
 					45A7D7C91E586D0E00D97A7D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8GEKYYW3CQ;
+						DevelopmentTeam = 7QQX7GNST9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -213,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6726A371E58FDFE002992EE /* Info.plist in Resources */,
 				45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */,
 				45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */,
 				45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */,
@@ -274,17 +266,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6726A2F1E58EF81002992EE /* TypeOfPersonViewController.swift in Sources */,
+				E6726A2D1E58E366002992EE /* FamilyViewController.swift in Sources */,
+				E6726A291E58D2F7002992EE /* LocationViewController.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
-				E66D029A1E59092C00D95DE7 /* TypeOfPersonViewController.swift in Sources */,
 				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
+				E6726A331E58F7C0002992EE /* IdealDogViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
+				E6726A311E58F3C8002992EE /* NoiseViewController.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,
+				E6726A2B1E58DB3A002992EE /* HomeViewController.swift in Sources */,
 				45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */,
-				E66D02981E59092C00D95DE7 /* LocationViewController.swift in Sources */,
-				E66D02971E59092C00D95DE7 /* IdealDogViewController.swift in Sources */,
-				E66D02961E59092C00D95DE7 /* HomeViewController.swift in Sources */,
-				E66D02991E59092C00D95DE7 /* NoiseViewController.swift in Sources */,
-				E66D02951E59092C00D95DE7 /* FamilyViewController.swift in Sources */,
 				45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,11 +399,11 @@
 			baseConfigurationReference = D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miriam.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -422,11 +414,11 @@
 			baseConfigurationReference = D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miriam.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

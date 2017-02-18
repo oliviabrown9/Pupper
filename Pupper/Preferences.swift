@@ -8,27 +8,41 @@
 
 import Foundation
 
-struct Preferences {
+enum adoptionType {
+    case adopt
+    case foster
+}
 
-    enum adoptionType {
-        case adopt
-        case foster
-    }
+enum homeType {
+    case house
+    case apartment
+}
+
+enum size {
+    case small
+    case medium
+    case large
+}
+enum personType {
+    case couch
+    case walk
+    case adventure
+}
+
+class DogPreference {
+
     
-    enum homeType {
-        case house
-        case apartment
-    }
+    var zipCode : Int = 0
+    var hasDog: Bool = false
+    var hasChild: Bool = false
+    var noiseLevel: Int = 0
+    var sizeOfDog: size = .small
+    var homeType: homeType = .house
+    var personType: personType = .couch
+   
     
-    var zipCode : Int
-    var numberOfDogs: Int
-    var numberOfKids: Int
-    var noiseLevel: Int
-    
-    enum size {
-        case small
-        case medium
-        case large
+    init(zipCode: Int) {
+        self.zipCode = zipCode
     }
     
     
