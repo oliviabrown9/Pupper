@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2063B7C1CE82EBC4B0216E7B /* Pods_Pupper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
 		45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */; };
 		45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D11E586D0E00D97A7D /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */; };
 		45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */; };
 		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
+		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		45A7D7D91E586D0E00D97A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptionTypeViewController.swift; sourceTree = "<group>"; };
 		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDogsViewController.swift; sourceTree = "<group>"; };
+		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
+		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2063B7C1CE82EBC4B0216E7B /* Pods_Pupper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				45A7D7CC1E586D0E00D97A7D /* Pupper */,
 				45A7D7CB1E586D0E00D97A7D /* Products */,
+				D54A35F98174E37B72025969 /* Pods */,
+				9D365142442FA9CC5BFC2AB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +69,7 @@
 			children = (
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */,
+				45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */,
 				45A7D7D11E586D0E00D97A7D /* Main.storyboard */,
 				45A7D7D41E586D0E00D97A7D /* Assets.xcassets */,
 				45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */,
@@ -70,6 +80,23 @@
 			path = Pupper;
 			sourceTree = "<group>";
 		};
+		9D365142442FA9CC5BFC2AB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D54A35F98174E37B72025969 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */,
+				D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45A7D7DC1E586D0E00D97A7D /* Build configuration list for PBXNativeTarget "Pupper" */;
 			buildPhases = (
+				0D46D8BED8EE195A7F0FB00E /* [CP] Check Pods Manifest.lock */,
 				45A7D7C61E586D0E00D97A7D /* Sources */,
 				45A7D7C71E586D0E00D97A7D /* Frameworks */,
 				45A7D7C81E586D0E00D97A7D /* Resources */,
+				1E44B6B61BE47BF60A7BA93B /* [CP] Embed Pods Frameworks */,
+				83597EC7EE6C1A95612B3FB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,6 +168,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D46D8BED8EE195A7F0FB00E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1E44B6B61BE47BF60A7BA93B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pupper/Pods-Pupper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83597EC7EE6C1A95612B3FB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pupper/Pods-Pupper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		45A7D7C61E586D0E00D97A7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -147,6 +225,7 @@
 				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,
+				45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +344,7 @@
 		};
 		45A7D7DD1E586D0E00D97A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
@@ -279,6 +359,7 @@
 		};
 		45A7D7DE1E586D0E00D97A7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
