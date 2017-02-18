@@ -13,13 +13,12 @@ class FindDogsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let location = "90071" // replace with location from preferences struct
+        let breed = "labrador" // replace with breed from preferences struct
+        let age = "baby" // replace with age from preferences struct
         
-        let key = "f534d78deac933250456312a9ee37d22"
-        let location = "90071"
-        let breed = "labrador"
-        let age = "baby"
-        
-        let url = "https://api.petfinder.com/pet.find?key=\(key)&location=\(location)&animal=dog&breed=\(breed)&age=\(age)&format=json"
+        let url = "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&location=\(location)&animal=dog&breed=\(breed)&age=\(age)&format=json"
         
         Alamofire.request("\(url)").responseJSON { response in
             print(response.result)   // hopefully success
