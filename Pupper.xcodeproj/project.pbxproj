@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
-		45A7D7D01E586D0E00D97A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* ViewController.swift */; };
+		45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */; };
 		45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D11E586D0E00D97A7D /* Main.storyboard */; };
 		45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D41E586D0E00D97A7D /* Assets.xcassets */; };
 		45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */; };
+		45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */; };
+		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45A7D7CF1E586D0E00D97A7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		45A7D7D21E586D0E00D97A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45A7D7D41E586D0E00D97A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45A7D7D71E586D0E00D97A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45A7D7D91E586D0E00D97A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptionTypeViewController.swift; sourceTree = "<group>"; };
+		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
-				45A7D7CF1E586D0E00D97A7D /* ViewController.swift */,
+				45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */,
 				45A7D7D11E586D0E00D97A7D /* Main.storyboard */,
 				45A7D7D41E586D0E00D97A7D /* Assets.xcassets */,
 				45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */,
 				45A7D7D91E586D0E00D97A7D /* Info.plist */,
+				45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */,
+				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
 			);
 			path = Pupper;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A7D7D01E586D0E00D97A7D /* ViewController.swift in Sources */,
+				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
+				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
+				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
