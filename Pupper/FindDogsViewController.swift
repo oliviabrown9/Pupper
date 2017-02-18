@@ -27,5 +27,11 @@ class FindDogsViewController: UIViewController {
                 print("JSON: \(JSON)")
             }
         }
+        
+        // Characteristics to check for matches: House/Apartment, Children, Dogs, Activity, Noise, 
+        
+        //
     }
 }
+
+

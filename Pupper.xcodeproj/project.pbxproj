@@ -16,6 +16,7 @@
 		45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */; };
 		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
 		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
+		45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7D6B21E58F98100C66867 /* DogBreeds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptionTypeViewController.swift; sourceTree = "<group>"; };
 		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDogsViewController.swift; sourceTree = "<group>"; };
+		45B7D6B21E58F98100C66867 /* DogBreeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogBreeds.swift; sourceTree = "<group>"; };
 		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				45A7D7D91E586D0E00D97A7D /* Info.plist */,
 				45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */,
 				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
+				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
 			);
 			path = Pupper;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,
 				45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */,
+				45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +395,7 @@
 				45A7D7DE1E586D0E00D97A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
