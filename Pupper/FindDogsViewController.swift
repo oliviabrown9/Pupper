@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class FindDogsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,21 +18,15 @@ class FindDogsViewController: UIViewController {
         let location = "90071"
         let breed = "labrador"
         let age = "baby"
-
-        let url = "http://api.petfinder.com/pet.find?key=\(key)&location=\(location)&animal=dog&breed=\(breed)&age=\(age)&format=json"
+        
+        let url = "https://api.petfinder.com/pet.find?key=\(key)&location=\(location)&animal=dog&breed=\(breed)&age=\(age)&format=json"
         
         Alamofire.request("\(url)").responseJSON { response in
-            print(response.request!)  // original URL request for debugging
-            print(response.response!) // HTTP URL response for debugging
-            print(response.data!)     // server data for debugging
-            print(response.result)   // result of response serialization
+            print(response.result)   // hopefully success
             
             if let JSON = response.result.value {
                 print("JSON: \(JSON)")
             }
         }
-
-        
     }
-
 }
