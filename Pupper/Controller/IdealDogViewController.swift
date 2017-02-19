@@ -12,6 +12,8 @@ import SwiftyJSON
 class IdealDogViewController: UIViewController {
     var dogBreed : DogPreference?
     
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
+    
     // MARK: IBOutlets
     
     @IBOutlet weak var dogSizeImage: UIImageView!

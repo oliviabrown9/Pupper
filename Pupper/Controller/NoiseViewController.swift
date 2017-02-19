@@ -12,6 +12,8 @@ class NoiseViewController: UIViewController {
     
     var dogBreed: DogPreference?
     
+    @IBAction func unwindToThis(segue: UIStoryboardSegue) {}
+    
     @IBOutlet weak var noiseLevelImageView: UIImageView!
     var noiseLevel = 0 {
         didSet {

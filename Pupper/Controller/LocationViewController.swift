@@ -11,6 +11,8 @@ import CoreLocation
 
 
 class LocationViewController: UIViewController {
+    
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var locationLabel: UILabel!

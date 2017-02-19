@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
 
     var dogBreed: DogPreference?
     
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
+    
     var homeType: homeType?
     
     @IBOutlet weak var cityImageView: UIImageView!

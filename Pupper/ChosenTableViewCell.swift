@@ -11,6 +11,8 @@ import MessageUI
 
 class ChosenTableViewCell: UITableViewCell {
     
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
+    
     var chosenDog: Chosen?
     var tableViewController: SelectDogTableViewController? = nil
     

@@ -12,6 +12,8 @@ class TypeOfPersonViewController: UIViewController {
 
     var dogBreed: DogPreference?
     
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
+    
     @IBOutlet weak var couchButton: UIButton!
     @IBOutlet weak var adventureButton: UIButton!
     @IBOutlet weak var walkButton: UIButton!

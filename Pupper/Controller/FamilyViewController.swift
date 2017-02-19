@@ -10,6 +10,7 @@ import UIKit
 
 class FamilyViewController: UIViewController {
     
+    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
     var dogBreed: DogPreference?
     var hasDog = false
     var hasChild = false
