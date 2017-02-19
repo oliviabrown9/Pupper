@@ -1038,6 +1038,57 @@
                                     <outlet property="breedPhoto" destination="lEL-8q-SzZ" id="gJA-kj-kqf"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="descript" rowHeight="113" id="Qrs-AP-WBN" customClass="DescriptTableViewCell" customModule="Pupper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="168" width="375" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qrs-AP-WBN" id="hIA-yY-WTQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIj-Xx-EHI">
+                                            <rect key="frame" x="28" y="2" width="318" height="69"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="69" id="fEj-Tq-lYp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zst-xF-e6S">
+                                            <rect key="frame" x="110" y="75" width="134" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="134" id="XW7-RJ-1FG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                            <state key="normal" title="Select Breed"/>
+                                            <connections>
+                                                <action selector="selectBreedButtonPressed:" destination="Qrs-AP-WBN" eventType="touchUpInside" id="TLP-xF-hus"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-Wm-Slz">
+                                            <rect key="frame" x="28" y="75" width="309" height="0.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="ysa-4R-bLI"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="UIj-Xx-EHI" firstAttribute="leading" secondItem="hIA-yY-WTQ" secondAttribute="leading" constant="28" id="0rU-2L-dJd"/>
+                                        <constraint firstItem="Zst-xF-e6S" firstAttribute="top" secondItem="UIj-Xx-EHI" secondAttribute="bottom" constant="4" id="3rN-e7-hug"/>
+                                        <constraint firstItem="Gre-Wm-Slz" firstAttribute="top" secondItem="UIj-Xx-EHI" secondAttribute="bottom" constant="4" id="D6o-yv-fnc"/>
+                                        <constraint firstItem="Gre-Wm-Slz" firstAttribute="leading" secondItem="hIA-yY-WTQ" secondAttribute="leadingMargin" constant="20" id="Ew5-Uy-erG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Gre-Wm-Slz" secondAttribute="trailing" constant="30" id="Faq-f4-ZZ6"/>
+                                        <constraint firstItem="Zst-xF-e6S" firstAttribute="centerX" secondItem="UIj-Xx-EHI" secondAttribute="centerX" id="LOD-sI-fCe"/>
+                                        <constraint firstAttribute="trailing" secondItem="UIj-Xx-EHI" secondAttribute="trailing" constant="29" id="YUd-9i-gFJ"/>
+                                        <constraint firstItem="UIj-Xx-EHI" firstAttribute="top" secondItem="hIA-yY-WTQ" secondAttribute="top" constant="2" id="bsA-k0-qp6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptLabel" destination="UIj-Xx-EHI" id="orl-tf-iDA"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="eHQ-FY-Ivr" id="vtC-2s-3GO"/>
@@ -1048,7 +1099,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh3-69-h0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6471" y="36"/>
+            <point key="canvasLocation" x="6469.6000000000004" y="35.532233883058474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AB3-WY-5Ng">
@@ -1077,7 +1128,7 @@
         <image name="continue icon" width="27" height="27"/>
         <image name="couch" width="516" height="311"/>
         <image name="dog" width="170" height="170"/>
-        <image name="labrador" width="16" height="16"/>
+        <image name="labrador" width="1472" height="528"/>
         <image name="low noise" width="723" height="129"/>
         <image name="map icon" width="42" height="46"/>
         <image name="minus" width="44" height="44"/>

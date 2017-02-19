@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2063B7C1CE82EBC4B0216E7B /* Pods_Pupper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */; };
 		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
+		45889BC01E5943CD008D1F26 /* DescriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBF1E5943CD008D1F26 /* DescriptTableViewCell.swift */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
 		45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */; };
 		45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D11E586D0E00D97A7D /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
+		45889BBF1E5943CD008D1F26 /* DescriptTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
 				E68B84661E591CB300AE28C2 /* BreedViewController.swift */,
 				E68B846A1E592A1900AE28C2 /* dogs.json */,
+				45889BBF1E5943CD008D1F26 /* DescriptTableViewCell.swift */,
 			);
 			path = Pupper;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45889BC01E5943CD008D1F26 /* DescriptTableViewCell.swift in Sources */,
 				E68B84651E591B1E00AE28C2 /* TypeOfPersonViewController.swift in Sources */,
 				E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,

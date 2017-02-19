@@ -99,8 +99,8 @@ class IdealDogViewController: UIViewController {
     @IBAction func getMatchesButtonPressed(_ sender: Any) {
         
         if let dogBreed = dogBreed {
-            dogBreed.age = age!
-            dogBreed.sizeOfDog = sizeOfDog!
+//            dogBreed.age = age!
+//            dogBreed.sizeOfDog = sizeOfDog!
             
             
         }
@@ -145,8 +145,8 @@ class IdealDogViewController: UIViewController {
         
         let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
-            dogBreed.age = age!
-            dogBreed.sizeOfDog = sizeOfDog!
+//            dogBreed.age = age!
+//            dogBreed.sizeOfDog = sizeOfDog!
 //            destination.approvedDogs = matches
             destination.approvedDogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed

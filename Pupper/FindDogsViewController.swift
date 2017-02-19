@@ -9,8 +9,12 @@
 import UIKit
 import Alamofire
 
+
 class FindDogsViewController: UITableViewController{
+
     
+    var cellTapped = false
+    var descriptCellIndex: NSIndexPath?
     var approvedDogs: [String] = []
     var dogBreed: DogPreference?
     override func viewDidLoad() {
@@ -40,13 +44,36 @@ class FindDogsViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(#function)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
         // 3
-//        cell.breedPhoto.image = 
+        cell.breedPhoto.image = #imageLiteral(resourceName: "labrador")
         cell.breedLabel.text = approvedDogs[indexPath.item]
+        
+        if cellTapped {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "descript", for: descriptCellIndex as! IndexPath) as! DescriptTableViewCell
+            cell.descriptLabel.text = "yoo b"
+        }
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let descriptionIndex = indexPath.item+1
+        approvedDogs.insert(" ", at: descriptionIndex)
+        
+        cellTapped = true
+        
+        let descriptIndexPath = NSIndexPath(item: descriptionIndex, section: 0)
+        descriptCellIndex = descriptIndexPath
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "descript", for: descriptIndexPath as IndexPath) as! DescriptTableViewCell
+        
+        
+        
+        tableView.reloadData()
+        print("yooo")
+    }
+    
 }
 
