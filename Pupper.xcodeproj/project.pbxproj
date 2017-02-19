@@ -19,6 +19,34 @@
 		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
 		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
 		45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7D6B21E58F98100C66867 /* DogBreeds.swift */; };
+		45BCF0A11E595EF800931C8C /* Beagle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0851E595EF800931C8C /* Beagle.jpg */; };
+		45BCF0A21E595EF800931C8C /* Bloodhound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0861E595EF800931C8C /* Bloodhound.jpg */; };
+		45BCF0A31E595EF800931C8C /* Boxer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0871E595EF800931C8C /* Boxer.jpg */; };
+		45BCF0A41E595EF800931C8C /* Bulldog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0881E595EF800931C8C /* Bulldog.jpg */; };
+		45BCF0A51E595EF800931C8C /* Cattledog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0891E595EF800931C8C /* Cattledog.jpg */; };
+		45BCF0A61E595EF800931C8C /* Chihuahua.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08A1E595EF800931C8C /* Chihuahua.jpg */; };
+		45BCF0A71E595EF800931C8C /* Daschund.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08B1E595EF800931C8C /* Daschund.jpg */; };
+		45BCF0A81E595EF800931C8C /* Dalmation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08C1E595EF800931C8C /* Dalmation.jpg */; };
+		45BCF0A91E595EF800931C8C /* Labrador.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08D1E595EF800931C8C /* Labrador.jpg */; };
+		45BCF0AA1E595EF800931C8C /* Newfoundland.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08E1E595EF800931C8C /* Newfoundland.jpg */; };
+		45BCF0AB1E595EF800931C8C /* Poodle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF08F1E595EF800931C8C /* Poodle.jpg */; };
+		45BCF0AC1E595EF800931C8C /* Pug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0901E595EF800931C8C /* Pug.jpg */; };
+		45BCF0AD1E595EF800931C8C /* Sheepdog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0911E595EF800931C8C /* Sheepdog.jpg */; };
+		45BCF0AE1E595EF800931C8C /* Terrier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0921E595EF800931C8C /* Terrier.jpg */; };
+		45BCF0AF1E595EF800931C8C /* Bassethound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0931E595EF800931C8C /* Bassethound.jpg */; };
+		45BCF0B01E595EF800931C8C /* Bichonfrise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0941E595EF800931C8C /* Bichonfrise.jpg */; };
+		45BCF0B11E595EF800931C8C /* Collie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0951E595EF800931C8C /* Collie.jpg */; };
+		45BCF0B21E595EF800931C8C /* Corgi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0961E595EF800931C8C /* Corgi.jpg */; };
+		45BCF0B31E595EF800931C8C /* GoldenRetriever.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0971E595EF800931C8C /* GoldenRetriever.jpg */; };
+		45BCF0B41E595EF800931C8C /* Greyhound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0981E595EF800931C8C /* Greyhound.jpg */; };
+		45BCF0B51E595EF800931C8C /* Maltese.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0991E595EF800931C8C /* Maltese.jpg */; };
+		45BCF0B61E595EF800931C8C /* Pointer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09A1E595EF800931C8C /* Pointer.jpg */; };
+		45BCF0B71E595EF800931C8C /* Pomeranian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09B1E595EF800931C8C /* Pomeranian.jpg */; };
+		45BCF0B81E595EF800931C8C /* Schnauzer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09C1E595EF800931C8C /* Schnauzer.jpg */; };
+		45BCF0B91E595EF800931C8C /* Setter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09D1E595EF800931C8C /* Setter.jpg */; };
+		45BCF0BA1E595EF800931C8C /* Shiz Tsu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09E1E595EF800931C8C /* Shiz Tsu.jpg */; };
+		45BCF0BB1E595EF800931C8C /* Spaniel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09F1E595EF800931C8C /* Spaniel.jpg */; };
+		45BCF0BC1E595EF800931C8C /* Whippet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0A01E595EF800931C8C /* Whippet.jpg */; };
 		E68B84531E590A7F00AE28C2 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = E68B84521E590A7F00AE28C2 /* Controller */; };
 		E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */; };
 		E68B84611E591B1E00AE28C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */; };
@@ -44,6 +72,34 @@
 		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDogsViewController.swift; sourceTree = "<group>"; };
 		45B7D6B21E58F98100C66867 /* DogBreeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogBreeds.swift; sourceTree = "<group>"; };
+		45BCF0851E595EF800931C8C /* Beagle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beagle.jpg; sourceTree = "<group>"; };
+		45BCF0861E595EF800931C8C /* Bloodhound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bloodhound.jpg; sourceTree = "<group>"; };
+		45BCF0871E595EF800931C8C /* Boxer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Boxer.jpg; sourceTree = "<group>"; };
+		45BCF0881E595EF800931C8C /* Bulldog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bulldog.jpg; sourceTree = "<group>"; };
+		45BCF0891E595EF800931C8C /* Cattledog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cattledog.jpg; sourceTree = "<group>"; };
+		45BCF08A1E595EF800931C8C /* Chihuahua.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chihuahua.jpg; sourceTree = "<group>"; };
+		45BCF08B1E595EF800931C8C /* Daschund.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Daschund.jpg; sourceTree = "<group>"; };
+		45BCF08C1E595EF800931C8C /* Dalmation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dalmation.jpg; sourceTree = "<group>"; };
+		45BCF08D1E595EF800931C8C /* Labrador.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Labrador.jpg; sourceTree = "<group>"; };
+		45BCF08E1E595EF800931C8C /* Newfoundland.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Newfoundland.jpg; sourceTree = "<group>"; };
+		45BCF08F1E595EF800931C8C /* Poodle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Poodle.jpg; sourceTree = "<group>"; };
+		45BCF0901E595EF800931C8C /* Pug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pug.jpg; sourceTree = "<group>"; };
+		45BCF0911E595EF800931C8C /* Sheepdog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sheepdog.jpg; sourceTree = "<group>"; };
+		45BCF0921E595EF800931C8C /* Terrier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Terrier.jpg; sourceTree = "<group>"; };
+		45BCF0931E595EF800931C8C /* Bassethound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bassethound.jpg; sourceTree = "<group>"; };
+		45BCF0941E595EF800931C8C /* Bichonfrise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bichonfrise.jpg; sourceTree = "<group>"; };
+		45BCF0951E595EF800931C8C /* Collie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Collie.jpg; sourceTree = "<group>"; };
+		45BCF0961E595EF800931C8C /* Corgi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Corgi.jpg; sourceTree = "<group>"; };
+		45BCF0971E595EF800931C8C /* GoldenRetriever.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GoldenRetriever.jpg; sourceTree = "<group>"; };
+		45BCF0981E595EF800931C8C /* Greyhound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Greyhound.jpg; sourceTree = "<group>"; };
+		45BCF0991E595EF800931C8C /* Maltese.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Maltese.jpg; sourceTree = "<group>"; };
+		45BCF09A1E595EF800931C8C /* Pointer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pointer.jpg; sourceTree = "<group>"; };
+		45BCF09B1E595EF800931C8C /* Pomeranian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pomeranian.jpg; sourceTree = "<group>"; };
+		45BCF09C1E595EF800931C8C /* Schnauzer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Schnauzer.jpg; sourceTree = "<group>"; };
+		45BCF09D1E595EF800931C8C /* Setter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Setter.jpg; sourceTree = "<group>"; };
+		45BCF09E1E595EF800931C8C /* Shiz Tsu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Shiz Tsu.jpg"; sourceTree = "<group>"; };
+		45BCF09F1E595EF800931C8C /* Spaniel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaniel.jpg; sourceTree = "<group>"; };
+		45BCF0A01E595EF800931C8C /* Whippet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Whippet.jpg; sourceTree = "<group>"; };
 		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +147,7 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
+				45BCF0841E595E2E00931C8C /* dogs */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */,
 				E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */,
@@ -114,6 +171,41 @@
 				45889BBF1E5943CD008D1F26 /* DescriptTableViewCell.swift */,
 			);
 			path = Pupper;
+			sourceTree = "<group>";
+		};
+		45BCF0841E595E2E00931C8C /* dogs */ = {
+			isa = PBXGroup;
+			children = (
+				45BCF0851E595EF800931C8C /* Beagle.jpg */,
+				45BCF0861E595EF800931C8C /* Bloodhound.jpg */,
+				45BCF0871E595EF800931C8C /* Boxer.jpg */,
+				45BCF0881E595EF800931C8C /* Bulldog.jpg */,
+				45BCF0891E595EF800931C8C /* Cattledog.jpg */,
+				45BCF08A1E595EF800931C8C /* Chihuahua.jpg */,
+				45BCF08B1E595EF800931C8C /* Daschund.jpg */,
+				45BCF08C1E595EF800931C8C /* Dalmation.jpg */,
+				45BCF08D1E595EF800931C8C /* Labrador.jpg */,
+				45BCF08E1E595EF800931C8C /* Newfoundland.jpg */,
+				45BCF08F1E595EF800931C8C /* Poodle.jpg */,
+				45BCF0901E595EF800931C8C /* Pug.jpg */,
+				45BCF0911E595EF800931C8C /* Sheepdog.jpg */,
+				45BCF0921E595EF800931C8C /* Terrier.jpg */,
+				45BCF0931E595EF800931C8C /* Bassethound.jpg */,
+				45BCF0941E595EF800931C8C /* Bichonfrise.jpg */,
+				45BCF0951E595EF800931C8C /* Collie.jpg */,
+				45BCF0961E595EF800931C8C /* Corgi.jpg */,
+				45BCF0971E595EF800931C8C /* GoldenRetriever.jpg */,
+				45BCF0981E595EF800931C8C /* Greyhound.jpg */,
+				45BCF0991E595EF800931C8C /* Maltese.jpg */,
+				45BCF09A1E595EF800931C8C /* Pointer.jpg */,
+				45BCF09B1E595EF800931C8C /* Pomeranian.jpg */,
+				45BCF09C1E595EF800931C8C /* Schnauzer.jpg */,
+				45BCF09D1E595EF800931C8C /* Setter.jpg */,
+				45BCF09E1E595EF800931C8C /* Shiz Tsu.jpg */,
+				45BCF09F1E595EF800931C8C /* Spaniel.jpg */,
+				45BCF0A01E595EF800931C8C /* Whippet.jpg */,
+			);
+			name = dogs;
 			sourceTree = "<group>";
 		};
 		9D365142442FA9CC5BFC2AB6 /* Frameworks */ = {
@@ -196,10 +288,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45BCF0A41E595EF800931C8C /* Bulldog.jpg in Resources */,
+				45BCF0A31E595EF800931C8C /* Boxer.jpg in Resources */,
+				45BCF0B61E595EF800931C8C /* Pointer.jpg in Resources */,
 				45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */,
+				45BCF0B51E595EF800931C8C /* Maltese.jpg in Resources */,
+				45BCF0BC1E595EF800931C8C /* Whippet.jpg in Resources */,
+				45BCF0A61E595EF800931C8C /* Chihuahua.jpg in Resources */,
+				45BCF0BB1E595EF800931C8C /* Spaniel.jpg in Resources */,
+				45BCF0A51E595EF800931C8C /* Cattledog.jpg in Resources */,
 				45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */,
+				45BCF0A91E595EF800931C8C /* Labrador.jpg in Resources */,
 				E68B84531E590A7F00AE28C2 /* Controller in Resources */,
+				45BCF0A11E595EF800931C8C /* Beagle.jpg in Resources */,
+				45BCF0A81E595EF800931C8C /* Dalmation.jpg in Resources */,
+				45BCF0BA1E595EF800931C8C /* Shiz Tsu.jpg in Resources */,
+				45BCF0B91E595EF800931C8C /* Setter.jpg in Resources */,
+				45BCF0B81E595EF800931C8C /* Schnauzer.jpg in Resources */,
+				45BCF0AF1E595EF800931C8C /* Bassethound.jpg in Resources */,
+				45BCF0B31E595EF800931C8C /* GoldenRetriever.jpg in Resources */,
+				45BCF0AE1E595EF800931C8C /* Terrier.jpg in Resources */,
+				45BCF0B01E595EF800931C8C /* Bichonfrise.jpg in Resources */,
+				45BCF0B11E595EF800931C8C /* Collie.jpg in Resources */,
+				45BCF0A21E595EF800931C8C /* Bloodhound.jpg in Resources */,
+				45BCF0AA1E595EF800931C8C /* Newfoundland.jpg in Resources */,
+				45BCF0AB1E595EF800931C8C /* Poodle.jpg in Resources */,
+				45BCF0B21E595EF800931C8C /* Corgi.jpg in Resources */,
 				45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */,
+				45BCF0B41E595EF800931C8C /* Greyhound.jpg in Resources */,
+				45BCF0B71E595EF800931C8C /* Pomeranian.jpg in Resources */,
+				45BCF0AD1E595EF800931C8C /* Sheepdog.jpg in Resources */,
+				45BCF0A71E595EF800931C8C /* Daschund.jpg in Resources */,
+				45BCF0AC1E595EF800931C8C /* Pug.jpg in Resources */,
 				E68B846B1E592A1900AE28C2 /* dogs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

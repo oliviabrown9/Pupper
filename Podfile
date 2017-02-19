@@ -5,6 +5,7 @@ use_frameworks!
 target 'Pupper' do
 
 pod 'Alamofire', '~> 4.3'
+pod 'SwiftyJSON'
 
 post_install do |installer|
    installer.pods_project.targets.each do |target|

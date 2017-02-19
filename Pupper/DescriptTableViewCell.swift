@@ -14,6 +14,7 @@ class DescriptTableViewCell: UITableViewCell {
     
     @IBAction func selectBreedButtonPressed(_ sender: Any) {
 //        cellTapped = 1
+        print("did press")
     }
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SwiftyJSON
 
 class FindDogsViewController: UITableViewController{
 
@@ -16,10 +16,11 @@ class FindDogsViewController: UITableViewController{
     var cellTapped = false
     var descriptCellIndex: NSIndexPath?
     var approvedDogs: [String] = []
+    var dogs: [Dog] = []
     var dogBreed: DogPreference?
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("approved dogs::::", approvedDogs)
+        print("approved dogs::::", dogs)
         print("dog breed info", dogBreed?.zipCode)
         
         // MARK: API call setup
@@ -37,10 +38,12 @@ class FindDogsViewController: UITableViewController{
                 print("JSON: \(JSON)")
             }
         }
+        
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return approvedDogs.count
+        return dogs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,26 +51,30 @@ class FindDogsViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
         // 3
-        cell.breedPhoto.image = #imageLiteral(resourceName: "labrador")
-        cell.breedLabel.text = approvedDogs[indexPath.item]
+        print(dogs[0].name)
+        cell.breedPhoto.image = UIImage(named: "\(dogs[indexPath.item].name).jpg")
+        cell.breedLabel.text = dogs[indexPath.row].name
         
+        print(dogs[indexPath.item].name)
+        print(UIImage(named: "\(dogs[indexPath.item].name).jpg"))
         if cellTapped {
             let cell = tableView.dequeueReusableCell(withIdentifier: "descript", for: descriptCellIndex as! IndexPath) as! DescriptTableViewCell
-            cell.descriptLabel.text = "yoo b"
+            cell.descriptLabel.text = dogs[indexPath.row].description
+            cell.selectionStyle = .none
         }
         
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let dummyDog = Dog(name: " ", description: " ")
         let descriptionIndex = indexPath.item+1
-        approvedDogs.insert(" ", at: descriptionIndex)
+        dogs.insert(dummyDog, at: descriptionIndex)
         
         cellTapped = true
         
         let descriptIndexPath = NSIndexPath(item: descriptionIndex, section: 0)
         descriptCellIndex = descriptIndexPath
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "descript", for: descriptIndexPath as IndexPath) as! DescriptTableViewCell
+
         
         
         

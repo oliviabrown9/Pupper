@@ -1010,8 +1010,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="labrador" translatesAutoresizingMaskIntoConstraints="NO" id="lEL-8q-SzZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sheepdog.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lEL-8q-SzZ">
+                                            <rect key="frame" x="0.0" y="140" width="375" height="7"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmE-bC-Xzy">
                                             <rect key="frame" x="152" y="113" width="205" height="26"/>
@@ -1029,7 +1029,7 @@
                                         <constraint firstItem="lEL-8q-SzZ" firstAttribute="leading" secondItem="hR6-PM-3wg" secondAttribute="leading" id="KAx-3H-GfM"/>
                                         <constraint firstAttribute="bottom" secondItem="lEL-8q-SzZ" secondAttribute="bottom" id="Qcb-Zv-gvs"/>
                                         <constraint firstAttribute="trailing" secondItem="lEL-8q-SzZ" secondAttribute="trailing" id="cf9-lT-qHO"/>
-                                        <constraint firstItem="lEL-8q-SzZ" firstAttribute="top" secondItem="hR6-PM-3wg" secondAttribute="top" id="d67-jg-Wpa"/>
+                                        <constraint firstItem="lEL-8q-SzZ" firstAttribute="top" secondItem="hR6-PM-3wg" secondAttribute="top" constant="140" id="d67-jg-Wpa"/>
                                         <constraint firstItem="CmE-bC-Xzy" firstAttribute="top" secondItem="hR6-PM-3wg" secondAttribute="topMargin" constant="105" id="efJ-UB-Uqo"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1122,13 +1122,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Sheepdog.jpg" width="234" height="234"/>
         <image name="back" width="27" height="27"/>
         <image name="child" width="275" height="184"/>
         <image name="compass" width="476" height="408"/>
         <image name="continue icon" width="27" height="27"/>
         <image name="couch" width="516" height="311"/>
         <image name="dog" width="170" height="170"/>
-        <image name="labrador" width="1472" height="528"/>
         <image name="low noise" width="723" height="129"/>
         <image name="map icon" width="42" height="46"/>
         <image name="minus" width="44" height="44"/>

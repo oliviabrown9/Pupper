@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class IdealDogViewController: UIViewController {
     var dogBreed : DogPreference?
@@ -97,47 +98,64 @@ class IdealDogViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func getMatchesButtonPressed(_ sender: Any) {
-        
-        if let dogBreed = dogBreed {
-//            dogBreed.age = age!
-//            dogBreed.sizeOfDog = sizeOfDog!
-            
-            
-        }
+
     }
 
     
-    func findDogBreeds(dogBreed: DogPreference) -> [String]{
+    func findDogBreeds(dogBreed: DogPreference) -> [Dog]{
         // MARK: Dog Types
      
         
-        let smallDogs = ["Pomeranian", "Terrier", "Spaniel", "Bulldog", "Pug", "Shiz Tsu"]
-        let mediumDogs = ["Beagle", "Cattle Dog", "Collie", "Poodle", "Whippet", "Schnauzer"]
+        var dogs: [Dog] = []
         
-        // MARK: Setting
+        if let path = Bundle.main.path(forResource: "dogs", ofType: "json") {
+            
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    print("jsonData:\(jsonObj)")
+                    
+                    if dogBreed.homeType == .apartment {
+                        //            matches = apartmentDogs
+                        for dog in jsonObj["apartment"] {
+                            let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
+                            dogs.append(breed)
+                          
+                        }
+                        
+                    }
+                    else {
+                        if dogBreed.hasChild {
+                            //                matches = dogsForKids
+                            for dog in jsonObj["forKids"] {
+                                let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
+                                dogs.append(breed)
+                                
+                            }
+                        } else {
+                            for dog in jsonObj["medium"] {
+                                let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
+                                dogs.append(breed)
+                                
+                            }
+                        }
+                    }
+                    
+                } else {
+                    print("Could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
         
-        
-        let dogsForKids = ["Golden Retriever", "Setter", "Daschund", "Pointer", "Bloodhound", "Foxhound"]
-      
-        
-        let lazyDogs = ["Basset Hound", "Chihuahua", "Pug", "Bulldog", "Cockapoo", "Shar Pei",]
-        
-        
-        let apartmentDogs = smallDogs + lazyDogs
+
 
         
-        if dogBreed.homeType == .apartment {
-            matches = apartmentDogs
-        }
-        else {
-            if dogBreed.hasChild {
-                matches = dogsForKids
-            } else if dogBreed.personType == .walk {
-                matches = mediumDogs
-            }
-        }
-        
-        return matches
+        return dogs
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -148,7 +166,7 @@ class IdealDogViewController: UIViewController {
 //            dogBreed.age = age!
 //            dogBreed.sizeOfDog = sizeOfDog!
 //            destination.approvedDogs = matches
-            destination.approvedDogs = findDogBreeds(dogBreed: dogBreed)
+            destination.dogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
         }
     }

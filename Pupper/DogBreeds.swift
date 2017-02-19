@@ -12,12 +12,10 @@ import Foundation
 class Dog {
     
 var name: String
-var imageName: String
 var description: String
 
-init(name: String, imageName: String, description: String) {
+init(name: String, description: String) {
     self.name = name
-    self.imageName = imageName
     self.description = description
 }
     

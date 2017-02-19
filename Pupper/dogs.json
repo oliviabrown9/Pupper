@@ -1,89 +1,98 @@
-//
-//  dogs.json
-//  Pupper
-//
-//  Created by Miriam Hendler on 2/18/17.
-//  Copyright © 2017 Olivia. All rights reserved.
-//
-
 {
-    "apartment" :  [
-              {
-                "name": "Pomeranian",
-                    "description": "Lively, bold, and inquisitive—a prototypical personality breed"
-              },
-            {
-            "name": "Terrier",
-            "description": "Friendly, Lovable, inquisitive, fearlessly game for just about anything."
-            },
-            {
-            "name": "Spaniel",
-            "description": "Merry and friendly, in the classic spaniel manner."
-            },
-            {
-            "name": "Bulldog",
-            "description": ""
-            },
-            {
-            "name": "Pug",
-            "description": ""
-            },
-            {
-            "name": "Shiz Tsu",
-            "description": ""
-            }
-
-        ],
+    "apartment": [{
+                  "name": "Pomeranian",
+                  "description": "Lively, bold, and inquisitive—a prototypical personality breed"
+                  }, {
+                  "name": "Terrier",
+                  "description": "Friendly, Lovable, inquisitive, fearlessly game for just about anything."
+                  }, {
+                  "name": "Spaniel",
+                  "description": "Merry and friendly, in the classic spaniel manner."
+                  }, {
+                  "name": "Bulldog",
+                  "description": "Calm, courageous, and friendly; dignified but amusing."
+                  },
+                  
+                  {
+                  "name": "Bichonfrise",
+                  "description": "Playful, curious, and peppy."
+                  },
+                  
+                  {
+                  "name": "Bulldog",
+                  "description": "Calm, courageous, and friendly; dignified but amusing."
+                  }, {
+                  "name": "Chihuahua",
+                  "description": "Graceful, charming, and sassy"
+                  }, {
+                  "name": "Dalmation",
+                  "description": "A well-bred Dal is stable and outgoing; dignified but never shy"
+                  }, {
+                  "name": "Greyhound",
+                  "description": "Independent, gentle, noble, and oh so sweet, but intense when on the run."
+                  }, {
+                  "name": "Maltese",
+                  "description": "Gentle, playful, affectionate; fearless in a charming toy-dog way"
+                  }, {
+                  "name": "Pug",
+                  "description": "Even-tempered, charming, mischievous and loving"
+                  }, {
+                  "name": "Shiz Tsu",
+                  "description": "Outgoing, affectionate, playful and charming"
+                  }
+                  ],
     
-    "forKids" : [
-                 {
-                 "name": "Golden Retriever",
-                 "description": ""
-                 },
-                 {
-                 "name": "Setter",
-                 "description": ""
-                 },
-                 {
-                 "name": "Daschund",
-                 "description": ""
-                 },    {
-                 "name": "Pointer",
-                 "description": ""
-                 },    {
-                 "name": "Bloodhound",
-                 "description": ""
-                 },
-                 {
-                 "name": "Foxhound",
-                 "description": ""
-                 }
-    ],
-    "medium": [
-               {
+    "forKids": [{
+                "name": "Golden Retriever",
+                "description": ""
+                }, {
+                "name": "Labrador",
+                "description": "Friendly and outgoing, Labs play with others"
+                }, {
+                "name": "GoldenRetriever",
+                "description": "Intelligent, friendly, and devoted."
+                }, {
+                "name": "Setter",
+                "description": "Outgoing, sweet-natured, active, and trainable."
+                }, {
+                "name": "Daschund",
+                "description": "Go look up the word 'splunky'. We'll wait. Did you see a photo of a Dachsie? We thought so."
+                }, {
+                "name": "Pointer",
+                "description": "Even-tempered, alert, hardworking, and loyal; a peerless hunting partner"
+                }, {
+                "name": "Bloodhound",
+                "description": "Inquisitive, independent, friendly, affectionate with family, can be reserved with strangers."
+                }, {
+                "name": "Corgi",
+                "description": "Smart and alert, affectionate but not pushy, bold but kindly."
+                }, {
+                "name": "Bassethound",
+                "description": "Easygoing, laid-back, and even a bit lazy, Bassets are great family pets."
+                }],
+    "medium": [{
                "name": "Beagle",
-               "description": ""
-               },
-               {
-               "name": "Cattle Dog",
-               "description": ""
-               },
-               {
+               "description": "Beagles are loving and lovable, happy, easygoing, and companionable."
+               }, {
+               "name": "Sheepdog",
+               "description": "Lively, clever, confident; very loyal, but an independent worker"
+               }, {
+               "name": "Boxer",
+               "description": "Fun-loving, bright, active, and loyal"
+               }, {
+               "name": "Cattledog",
+               "description": "Alert, curious, and pleasant."
+               }, {
                "name": "Collie",
-               "description": ""
-               },
-               {
+               "description": "Graceful, devoted, and proud."
+               }, {
                "name": "Poodle",
-               "description": ""
-               },
-               {
+               "description": "Proud, active, and very smart.."
+               }, {
                "name": "Whippet",
-               "description": ""
-               },
-               {
+               "description": "Calm, affectionate, and playful"
+               }, {
                "name": "Schnauzer",
-               "description": ""
-               },
-    
-    ]
+               "description": "Smart, fearless, sometimes willful; spirited, but ever reliable"
+               } ]
 }
