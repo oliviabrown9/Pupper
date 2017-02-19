@@ -28,6 +28,12 @@ enum personType {
     case walk
     case adventure
 }
+enum age {
+    case puppy
+    case young
+    case adult
+    case senior
+}
 
 class DogPreference {
 
@@ -35,10 +41,10 @@ class DogPreference {
     var zipCode : Int = 0
     var hasDog: Bool = false
     var hasChild: Bool = false
-    var noiseLevel: Int = 0
     var sizeOfDog: size = .small
     var homeType: homeType = .house
     var personType: personType = .couch
+    var age: age = .puppy
    
     
     init(zipCode: Int) {

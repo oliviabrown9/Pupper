@@ -9,7 +9,9 @@
 import UIKit
 
 class NoiseViewController: UIViewController {
-
+    
+    var dogBreed: DogPreference?
+    
     @IBOutlet weak var noiseLevelImageView: UIImageView!
     var noiseLevel = 0 {
         didSet {
@@ -25,7 +27,7 @@ class NoiseViewController: UIViewController {
             }
         }
     }
-    var dogBreed: DogPreference?
+
     
     @IBOutlet weak var noiseLevelLabel: UILabel!
     @IBAction func minusButtonPressed(_ sender: Any) {
@@ -43,5 +45,12 @@ class NoiseViewController: UIViewController {
         super.viewDidLoad()
         print(dogBreed)
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! IdealDogViewController
+        if let dogBreed = dogBreed {
+            destination.dogBreed = dogBreed
+        }
     }
 }

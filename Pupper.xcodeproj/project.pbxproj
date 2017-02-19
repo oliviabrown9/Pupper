@@ -20,6 +20,13 @@
 		E68B84531E590A7F00AE28C2 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = E68B84521E590A7F00AE28C2 /* Controller */; };
 		E68B84571E590AB700AE28C2 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = E68B84561E590AB700AE28C2 /* Model */; };
 		E68B84591E590ABE00AE28C2 /* View in Resources */ = {isa = PBXBuildFile; fileRef = E68B84581E590ABE00AE28C2 /* View */; };
+		E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */; };
+		E68B84611E591B1E00AE28C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */; };
+		E68B84621E591B1E00AE28C2 /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */; };
+		E68B84631E591B1E00AE28C2 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845D1E591B1E00AE28C2 /* LocationViewController.swift */; };
+		E68B84641E591B1E00AE28C2 /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */; };
+		E68B84651E591B1E00AE28C2 /* TypeOfPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */; };
+		E68B84671E591CB300AE28C2 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B84661E591CB300AE28C2 /* BreedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		E68B84521E590A7F00AE28C2 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
 		E68B84561E590AB700AE28C2 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		E68B84581E590ABE00AE28C2 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FamilyViewController.swift; path = Controller/FamilyViewController.swift; sourceTree = "<group>"; };
+		E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controller/HomeViewController.swift; sourceTree = "<group>"; };
+		E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdealDogViewController.swift; path = Controller/IdealDogViewController.swift; sourceTree = "<group>"; };
+		E68B845D1E591B1E00AE28C2 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationViewController.swift; path = Controller/LocationViewController.swift; sourceTree = "<group>"; };
+		E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseViewController.swift; path = Controller/NoiseViewController.swift; sourceTree = "<group>"; };
+		E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeOfPersonViewController.swift; path = Controller/TypeOfPersonViewController.swift; sourceTree = "<group>"; };
+		E68B84661E591CB300AE28C2 /* BreedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,12 @@
 				E68B84581E590ABE00AE28C2 /* View */,
 				E68B84561E590AB700AE28C2 /* Model */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
+				E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */,
+				E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */,
+				E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */,
+				E68B845D1E591B1E00AE28C2 /* LocationViewController.swift */,
+				E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */,
+				E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */,
 				E68B84521E590A7F00AE28C2 /* Controller */,
 				45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */,
 				45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */,
@@ -88,6 +108,7 @@
 				45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */,
 				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
 				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
+				E68B84661E591CB300AE28C2 /* BreedViewController.swift */,
 			);
 			path = Pupper;
 			sourceTree = "<group>";
@@ -144,7 +165,7 @@
 				TargetAttributes = {
 					45A7D7C91E586D0E00D97A7D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8GEKYYW3CQ;
+						DevelopmentTeam = 7QQX7GNST9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -236,9 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68B84651E591B1E00AE28C2 /* TypeOfPersonViewController.swift in Sources */,
+				E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
+				E68B84641E591B1E00AE28C2 /* NoiseViewController.swift in Sources */,
 				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
+				E68B84611E591B1E00AE28C2 /* HomeViewController.swift in Sources */,
+				E68B84621E591B1E00AE28C2 /* IdealDogViewController.swift in Sources */,
+				E68B84631E591B1E00AE28C2 /* LocationViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
+				E68B84671E591CB300AE28C2 /* BreedViewController.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,
 				45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */,
 				45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */,
@@ -363,7 +391,7 @@
 			baseConfigurationReference = D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -378,7 +406,7 @@
 			baseConfigurationReference = D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = 7QQX7GNST9;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
