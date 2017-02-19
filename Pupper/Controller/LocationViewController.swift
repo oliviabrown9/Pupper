@@ -18,10 +18,20 @@ class LocationViewController: UIViewController {
     @IBAction func continueButtonPressed(_ sender: Any) {
         
     }
+    
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        let tap: UITapGestureRecognizer?
+        tap = UITapGestureRecognizer(target: self, action: #selector(LocationViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap!)
         
         // Do any additional setup after loading the view.
     }

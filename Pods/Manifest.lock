@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (4.3.0)
+  - CVCalendar (1.4.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
+  - CVCalendar
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  CVCalendar: 61912eb5dc39c3bcfe22a731147a559a696fbc15
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b9d2ac5dd1485f4b2040242f89dfefc5684ec9b6
+PODFILE CHECKSUM: 1e87ba0cab1d97e55fceffbb674d0aedb9f139e8
 
 COCOAPODS: 1.2.0

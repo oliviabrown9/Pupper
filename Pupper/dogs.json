@@ -3,9 +3,6 @@
                   "name": "Pomeranian",
                   "description": "Lively, bold, and inquisitive—a prototypical personality breed"
                   }, {
-                  "name": "Terrier",
-                  "description": "Friendly, Lovable, inquisitive, fearlessly game for just about anything."
-                  }, {
                   "name": "Spaniel",
                   "description": "Merry and friendly, in the classic spaniel manner."
                   }, {
@@ -43,9 +40,6 @@
                   ],
     
     "forKids": [{
-                "name": "Golden Retriever",
-                "description": ""
-                }, {
                 "name": "Labrador",
                 "description": "Friendly and outgoing, Labs play with others"
                 }, {

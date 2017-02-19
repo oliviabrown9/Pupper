@@ -53,7 +53,6 @@ class TypeOfPersonViewController: UIViewController {
         
         couchButton.setImage(UIImage(named: "selected"), for: UIControlState.normal)
         dogBreed?.personType = .couch
-        print(dogBreed?.hasChild)
         // Do any additional setup after loading the view.
     }
 

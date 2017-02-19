@@ -43,7 +43,6 @@ class NoiseViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(dogBreed)
         // Do any additional setup after loading the view.
     }
     

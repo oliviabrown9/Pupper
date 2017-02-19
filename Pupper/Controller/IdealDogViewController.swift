@@ -12,6 +12,10 @@ import SwiftyJSON
 class IdealDogViewController: UIViewController {
     var dogBreed : DogPreference?
     
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var dogSizeImage: UIImageView!
+    
     @IBOutlet weak var young: UIButton!
     @IBOutlet weak var adult: UIButton!
     @IBOutlet weak var senior: UIButton!
@@ -36,6 +40,7 @@ class IdealDogViewController: UIViewController {
         medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
         small.titleLabel!.textColor = .blue
         sizeOfDog = .small
+        dogSizeImage.image = #imageLiteral(resourceName: "selected_small")
     }
     
     @IBAction func mediumPressed(_ sender: Any) {
@@ -46,6 +51,7 @@ class IdealDogViewController: UIViewController {
         large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
         large.titleLabel?.textColor = .black
         sizeOfDog = .medium
+        dogSizeImage.image = #imageLiteral(resourceName: "selected_medium")
     }
     
     @IBAction func largePressed(_ sender: Any) {
@@ -56,30 +62,31 @@ class IdealDogViewController: UIViewController {
         large.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         large.titleLabel!.textColor = .blue
         sizeOfDog = .large
+        dogSizeImage.image = #imageLiteral(resourceName: "large_selected")
     }
     
     @IBAction func puppyPressed(_ sender: Any) {
         puppy.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         puppy.titleLabel!.textColor = .blue
-        age = .puppy
+        age = .Baby
     }
     
     @IBAction func youngPressed(_ sender: Any) {
         young.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         young.titleLabel!.textColor = .blue
-        age = .young
+        age = .Young
     }
     
     @IBAction func adultPressed(_ sender: Any) {
         adult.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         adult.titleLabel!.textColor = .blue
-        age = .adult
+        age = .Adult
     }
     
     @IBAction func seniorPressed(_ sender: Any) {
         senior.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         senior.titleLabel!.textColor = .blue
-        age = .senior
+        age = .Senior
     }
     
     @IBAction func hypoPressed(_ sender: Any) {
@@ -117,17 +124,13 @@ class IdealDogViewController: UIViewController {
                     print("jsonData:\(jsonObj)")
                     
                     if dogBreed.homeType == .apartment {
-                        //            matches = apartmentDogs
                         for dog in jsonObj["apartment"] {
                             let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
                             dogs.append(breed)
-                          
                         }
-                        
                     }
                     else {
                         if dogBreed.hasChild {
-                            //                matches = dogsForKids
                             for dog in jsonObj["forKids"] {
                                 let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
                                 dogs.append(breed)
@@ -163,7 +166,7 @@ class IdealDogViewController: UIViewController {
         
         let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
-//            dogBreed.age = age!
+            dogBreed.age = age!
 //            dogBreed.sizeOfDog = sizeOfDog!
 //            destination.approvedDogs = matches
             destination.dogs = findDogBreeds(dogBreed: dogBreed)

@@ -28,11 +28,11 @@ enum personType {
     case walk
     case adventure
 }
-enum age {
-    case puppy
-    case young
-    case adult
-    case senior
+enum age: String {
+    case Baby = "Baby"
+    case Young = "Young"
+    case Adult = "Adult"
+    case Senior = "Senior"
 }
 
 class DogPreference {
@@ -44,7 +44,7 @@ class DogPreference {
     var sizeOfDog: size = .small
     var homeType: homeType = .house
     var personType: personType = .couch
-    var age: age = .puppy
+    var age: age = .Baby
    
     
     init(zipCode: Int) {
