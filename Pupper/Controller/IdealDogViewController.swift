@@ -22,7 +22,7 @@ class IdealDogViewController: UIViewController {
     @IBOutlet weak var large: UIButton!
     @IBOutlet weak var medium: UIButton!
     @IBOutlet weak var small: UIButton!
-    
+       var matches: [String] = []
     var sizeOfDog: size?
     var age: age?
     @IBAction func smallPressed(_ sender: Any) {
@@ -109,7 +109,7 @@ class IdealDogViewController: UIViewController {
     
     func findDogBreeds(dogBreed: DogPreference) -> [String]{
         // MARK: Dog Types
-        var matches: [String] = []
+     
         
         let smallDogs = ["Pomeranian", "Terrier", "Spaniel", "Bulldog", "Pug", "Shiz Tsu"]
         let mediumDogs = ["Beagle", "Cattle Dog", "Collie", "Poodle", "Whippet", "Schnauzer"]
@@ -140,12 +140,16 @@ class IdealDogViewController: UIViewController {
         return matches
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! BreedViewController
+        
+        let navVC = segue.destination as? UINavigationController
+        
+        let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
             dogBreed.age = age!
             dogBreed.sizeOfDog = sizeOfDog!
+//            destination.approvedDogs = matches
+            destination.approvedDogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
-//            destination.matches = findDogBreeds(dogBreed)
         }
     }
 

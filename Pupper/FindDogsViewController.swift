@@ -9,11 +9,17 @@
 import UIKit
 import Alamofire
 
-class FindDogsViewController: UIViewController {
+class FindDogsViewController: UITableViewController{
     
+    var approvedDogs: [String] = []
+    var dogBreed: DogPreference?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("approved dogs::::", approvedDogs)
+        print("dog breed info", dogBreed?.zipCode)
+        
+        // MARK: API call setup
+        
         let location = "90071" // replace with location from preferences struct
         let breed = "labrador" // replace with breed from preferences struct
         let age = "baby" // replace with age from preferences struct
@@ -27,11 +33,20 @@ class FindDogsViewController: UIViewController {
                 print("JSON: \(JSON)")
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return approvedDogs.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
-        // Characteristics to check for matches: House/Apartment, Children, Dogs, Activity, Noise, 
+        // 3
+//        cell.breedPhoto.image = 
+        cell.breedLabel.text = approvedDogs[indexPath.item]
         
-        //
+        return cell
     }
 }
-
 

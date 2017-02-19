@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2063B7C1CE82EBC4B0216E7B /* Pods_Pupper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */; };
+		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
 		45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */; };
 		45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D11E586D0E00D97A7D /* Main.storyboard */; };
@@ -18,8 +19,6 @@
 		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
 		45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7D6B21E58F98100C66867 /* DogBreeds.swift */; };
 		E68B84531E590A7F00AE28C2 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = E68B84521E590A7F00AE28C2 /* Controller */; };
-		E68B84571E590AB700AE28C2 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = E68B84561E590AB700AE28C2 /* Model */; };
-		E68B84591E590ABE00AE28C2 /* View in Resources */ = {isa = PBXBuildFile; fileRef = E68B84581E590ABE00AE28C2 /* View */; };
 		E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */; };
 		E68B84611E591B1E00AE28C2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */; };
 		E68B84621E591B1E00AE28C2 /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */; };
@@ -27,11 +26,11 @@
 		E68B84641E591B1E00AE28C2 /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */; };
 		E68B84651E591B1E00AE28C2 /* TypeOfPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */; };
 		E68B84671E591CB300AE28C2 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B84661E591CB300AE28C2 /* BreedViewController.swift */; };
-		E68B84691E59287C00AE28C2 /* Dog Images in Resources */ = {isa = PBXBuildFile; fileRef = E68B84681E59287B00AE28C2 /* Dog Images */; };
 		E68B846B1E592A1900AE28C2 /* dogs.json in Resources */ = {isa = PBXBuildFile; fileRef = E68B846A1E592A1900AE28C2 /* dogs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -47,8 +46,6 @@
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
 		E68B84521E590A7F00AE28C2 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
-		E68B84561E590AB700AE28C2 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
-		E68B84581E590ABE00AE28C2 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
 		E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FamilyViewController.swift; path = Controller/FamilyViewController.swift; sourceTree = "<group>"; };
 		E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controller/HomeViewController.swift; sourceTree = "<group>"; };
 		E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdealDogViewController.swift; path = Controller/IdealDogViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 		E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoiseViewController.swift; path = Controller/NoiseViewController.swift; sourceTree = "<group>"; };
 		E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeOfPersonViewController.swift; path = Controller/TypeOfPersonViewController.swift; sourceTree = "<group>"; };
 		E68B84661E591CB300AE28C2 /* BreedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
-		E68B84681E59287B00AE28C2 /* Dog Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Dog Images"; sourceTree = "<group>"; };
 		E68B846A1E592A1900AE28C2 /* dogs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,13 +89,11 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
-				E68B84681E59287B00AE28C2 /* Dog Images */,
-				E68B84581E590ABE00AE28C2 /* View */,
-				E68B84561E590AB700AE28C2 /* Model */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */,
 				E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */,
 				E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */,
+				45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */,
 				E68B845D1E591B1E00AE28C2 /* LocationViewController.swift */,
 				E68B845E1E591B1E00AE28C2 /* NoiseViewController.swift */,
 				E68B845F1E591B1E00AE28C2 /* TypeOfPersonViewController.swift */,
@@ -199,14 +193,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68B84571E590AB700AE28C2 /* Model in Resources */,
 				45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */,
 				45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */,
 				E68B84531E590A7F00AE28C2 /* Controller in Resources */,
-				E68B84691E59287C00AE28C2 /* Dog Images in Resources */,
 				45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */,
 				E68B846B1E592A1900AE28C2 /* dogs.json in Resources */,
-				E68B84591E590ABE00AE28C2 /* View in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +262,7 @@
 				E68B84641E591B1E00AE28C2 /* NoiseViewController.swift in Sources */,
 				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
 				E68B84611E591B1E00AE28C2 /* HomeViewController.swift in Sources */,
+				45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */,
 				E68B84621E591B1E00AE28C2 /* IdealDogViewController.swift in Sources */,
 				E68B84631E591B1E00AE28C2 /* LocationViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
