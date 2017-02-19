@@ -844,6 +844,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GET MY MATCHES"/>
+                                <connections>
+                                    <action selector="getMatchesButtonPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="h1m-vv-ufa"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="continue icon" translatesAutoresizingMaskIntoConstraints="NO" id="cbQ-us-1iy">
                                 <rect key="frame" x="243" y="520" width="13" height="13"/>

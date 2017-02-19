@@ -28,6 +28,11 @@ class IdealDogViewController: UIViewController {
     @IBAction func smallPressed(_ sender: Any) {
         print("small button presssed")
         small.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
+        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        medium.titleLabel?.textColor = .black
+        large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        large.titleLabel?.textColor = .black
+        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
         small.titleLabel!.textColor = .blue
         sizeOfDog = .small
     }
@@ -35,10 +40,18 @@ class IdealDogViewController: UIViewController {
     @IBAction func mediumPressed(_ sender: Any) {
         medium.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         medium.titleLabel!.textColor = .blue
+        small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        small.titleLabel?.textColor = .black
+        large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        large.titleLabel?.textColor = .black
         sizeOfDog = .medium
     }
     
     @IBAction func largePressed(_ sender: Any) {
+        small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        small.titleLabel?.textColor = .black
+        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        medium.titleLabel?.textColor = .black
         large.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         large.titleLabel!.textColor = .blue
         sizeOfDog = .large
@@ -83,13 +96,58 @@ class IdealDogViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func getMatchesButtonPressed(_ sender: Any) {
+        
+        if let dogBreed = dogBreed {
+            dogBreed.age = age!
+            dogBreed.sizeOfDog = sizeOfDog!
+            
+            
+        }
+    }
 
+    
+    func findDogBreeds(dogBreed: DogPreference) -> [String]{
+        // MARK: Dog Types
+        var matches: [String] = []
+        let smallDogs = ["Pomeranian", "Terrier", "Spaniel", "Bulldog", "Pug", "Shiz Tsu"]
+        let mediumDogs = ["Beagle", "Cattle Dog", "Collie", "Poodle", "Whippet", "Schnauzer"]
+        let bigDogs = ["Mountain Dog", "Laborador", "Saint Bernard", "Greyhound", "Husky" ]
+        
+        // MARK: Setting
+        
+        let apartmentDogs = smallDogs + mediumDogs
+        let houseDogs = mediumDogs + bigDogs
+        
+        let dogsForKids = ["Golden Retriever", "Setter", "Daschund", "Pointer", "Bloodhound", "Foxhound"]
+        let dogsForDogs = ["Maltese","Corgi","Sheepdog","Bischon Friese", "Newfoundland", "Boxer"]
+        
+        let lazyDogs = ["Basset Hound", "Chihuahua", "Pug", "Bulldog", "Cockapoo", "Shar Pei",]
+        let activeDogs = ["Doberman", "Dalmation", "Great Dane", "Weimaraner", "Rottweiler", "Xoloitzcuintle" ]
+
+        
+        if dogBreed.homeType == .apartment {
+            matches = lazyDogs
+        }
+        else {
+            if dogBreed.hasChild {
+                matches = dogsForKids
+            } else if dogBreed.personType == .walk {
+                matches = mediumDogs
+            } else {
+                matches = activeDogs
+            }
+        }
+        
+        return matches
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! BreedViewController
         if let dogBreed = dogBreed {
             dogBreed.age = age!
             dogBreed.sizeOfDog = sizeOfDog!
             destination.dogBreed = dogBreed
+//            destination.matches = findDogBreeds(dogBreed)
         }
     }
 
