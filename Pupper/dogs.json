@@ -1,0 +1,89 @@
+//
+//  dogs.json
+//  Pupper
+//
+//  Created by Miriam Hendler on 2/18/17.
+//  Copyright © 2017 Olivia. All rights reserved.
+//
+
+{
+    "apartment" :  [
+              {
+                "name": "Pomeranian",
+                    "description": "Lively, bold, and inquisitive—a prototypical personality breed"
+              },
+            {
+            "name": "Terrier",
+            "description": ""
+            },
+            {
+            "name": "Spaniel",
+            "description": ""
+            },
+            {
+            "name": "Bulldog",
+            "description": ""
+            },
+            {
+            "name": "Pug",
+            "description": ""
+            },
+            {
+            "name": "Shiz Tsu",
+            "description": ""
+            }
+
+        ],
+    
+    "forKids" : [
+                 {
+                 "name": "Golden Retriever",
+                 "description": ""
+                 },
+                 {
+                 "name": "Setter",
+                 "description": ""
+                 },
+                 {
+                 "name": "Daschund",
+                 "description": ""
+                 },    {
+                 "name": "Pointer",
+                 "description": ""
+                 },    {
+                 "name": "Bloodhound",
+                 "description": ""
+                 },
+                 {
+                 "name": "Foxhound",
+                 "description": ""
+                 }
+    ],
+    "medium": [
+               {
+               "name": "Beagle",
+               "description": ""
+               },
+               {
+               "name": "Cattle Dog",
+               "description": ""
+               },
+               {
+               "name": "Collie",
+               "description": ""
+               },
+               {
+               "name": "Poodle",
+               "description": ""
+               },
+               {
+               "name": "Whippet",
+               "description": ""
+               },
+               {
+               "name": "Schnauzer",
+               "description": ""
+               },
+    
+    ]
+}
