@@ -157,9 +157,6 @@ class IdealDogViewController: UIViewController {
             print("Invalid filename/path.")
         }
         
-
-
-        
         return dogs
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -169,8 +166,6 @@ class IdealDogViewController: UIViewController {
         let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
             dogBreed.age = age!
-//            dogBreed.sizeOfDog = sizeOfDog!
-//            destination.approvedDogs = matches
             destination.dogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
         }

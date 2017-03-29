@@ -48,7 +48,7 @@
                                     <color key="titleColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UdC-tQ-1AW" kind="show" id="xlM-eF-TLM"/>
+                                    <segue destination="Jz2-Q7-ibv" kind="show" id="ED5-7p-gAp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,89 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
-        </scene>
-        <!--Adoption Type View Controller-->
-        <scene sceneID="elg-Jt-7Qj">
-            <objects>
-                <viewController id="UdC-tQ-1AW" customClass="AdoptionTypeViewController" customModule="Pupper" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xvf-P3-bqm"/>
-                        <viewControllerLayoutGuide type="bottom" id="a2B-z5-thK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xun-mO-Kne">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's find the perfect dog for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7E-KY-wdY">
-                                <rect key="frame" x="27.5" y="83" width="320" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="H4N-f2-Z0s"/>
-                                    <constraint firstAttribute="width" constant="320" id="Ja1-Ar-ymn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcA-eI-MbH">
-                                <rect key="frame" x="67" y="205" width="240" height="0.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="cOd-QK-MWv"/>
-                                    <constraint firstAttribute="height" constant="0.5" id="dSU-sI-Wbf"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-L1-eMJ">
-                                <rect key="frame" x="33" y="245.5" width="309" height="160"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="9MJ-Lb-k8q"/>
-                                    <constraint firstAttribute="width" constant="309" id="g7m-MM-XBY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="28"/>
-                                <state key="normal" title="Adopt a dog">
-                                    <color key="titleColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Jz2-Q7-ibv" kind="show" id="XKC-zo-iuB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyM-i5-jlf">
-                                <rect key="frame" x="33" y="435.5" width="309" height="160"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="QOF-pH-ciw"/>
-                                    <constraint firstAttribute="width" constant="309" id="i5K-Jy-4TC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="28"/>
-                                <state key="normal" title="Foster a dog">
-                                    <color key="titleColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Jz2-Q7-ibv" kind="show" id="JjU-0Q-3QV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="fyM-i5-jlf" firstAttribute="top" secondItem="GLf-L1-eMJ" secondAttribute="bottom" constant="30" id="5gC-Qy-t8R"/>
-                            <constraint firstItem="GcA-eI-MbH" firstAttribute="top" secondItem="n7E-KY-wdY" secondAttribute="bottom" constant="2" id="Cu7-Ff-mhU"/>
-                            <constraint firstItem="n7E-KY-wdY" firstAttribute="centerX" secondItem="xun-mO-Kne" secondAttribute="centerX" id="KQH-4S-bgJ"/>
-                            <constraint firstItem="GLf-L1-eMJ" firstAttribute="top" secondItem="GcA-eI-MbH" secondAttribute="bottom" constant="40" id="WMN-EI-vyT"/>
-                            <constraint firstItem="fyM-i5-jlf" firstAttribute="centerX" secondItem="xun-mO-Kne" secondAttribute="centerX" id="nxA-Vk-20T"/>
-                            <constraint firstItem="n7E-KY-wdY" firstAttribute="top" secondItem="xvf-P3-bqm" secondAttribute="bottom" constant="63" id="rca-K0-gsM"/>
-                            <constraint firstItem="GcA-eI-MbH" firstAttribute="centerX" secondItem="xun-mO-Kne" secondAttribute="centerX" id="yME-ls-b8P"/>
-                            <constraint firstItem="GLf-L1-eMJ" firstAttribute="centerX" secondItem="xun-mO-Kne" secondAttribute="centerX" id="z85-U8-Vqp"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="adoptButton" destination="GLf-L1-eMJ" id="0uO-wO-En5"/>
-                        <outlet property="fosterButton" destination="fyM-i5-jlf" id="CNg-wh-2EA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TGz-do-zqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="770.39999999999998" y="38.23088455772114"/>
+            <point key="canvasLocation" x="822" y="36"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="LG4-RI-Z5o">
@@ -1218,7 +1136,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-JG-GFi">
-                                                    <rect key="frame" x="263" y="68" width="13" height="13"/>
+                                                    <rect key="frame" x="263" y="68.5" width="13" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="G3W-AU-x34"/>
                                                         <constraint firstAttribute="width" constant="13" id="jS8-Tr-mwz"/>
@@ -1529,7 +1447,4 @@
         <image name="unselected city" width="148" height="281"/>
         <image name="unselected house" width="128" height="119"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="XKC-zo-iuB"/>
-    </inferredMetricsTieBreakers>
 </document>

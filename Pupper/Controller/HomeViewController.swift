@@ -49,5 +49,4 @@ class HomeViewController: UIViewController {
             destination.dogBreed = dogBreed
         }
     }
-
 }

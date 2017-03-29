@@ -13,7 +13,6 @@ class DescriptTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptLabel: UILabel!
     
     @IBAction func selectBreedButtonPressed(_ sender: Any) {
-//        cellTapped = 1
         print("did press")
     }
     override func awakeFromNib() {
