@@ -2,7 +2,7 @@
 //  FamilyViewController.swift
 //  Pupper
 //
-//  Created by Miriam Hendler on 2/18/17.
+//  Created by Olivia Brown on 2/18/17.
 //  Copyright © 2017 Olivia. All rights reserved.
 //
 
@@ -32,7 +32,7 @@ class FamilyViewController: UIViewController {
         if childCount != 0 {
             hasChild = true
             childCount -= 1
-            childrenCountLabel.textColor = .blue
+            childrenCountLabel.textColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0)
         } else {
             hasChild = false
              childrenCountLabel.textColor = .black
@@ -45,7 +45,7 @@ class FamilyViewController: UIViewController {
         
         if childCount >= 1 {
             hasChild = true
-            childrenCountLabel.textColor = .blue
+            childrenCountLabel.textColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0)
             self.childImageView.image = UIImage(named: "selected child")
         }
         
@@ -67,7 +67,7 @@ class FamilyViewController: UIViewController {
         
         if dogCount  >= 1 {
             hasDog = true
-            dogCountLabel.textColor = .blue
+            dogCountLabel.textColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0)
             self.dogImageView.image = UIImage(named: "selected dog")
         }
     }

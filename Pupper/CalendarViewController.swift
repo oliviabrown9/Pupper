@@ -36,11 +36,10 @@ class CalendarViewController: UIViewController, MFMailComposeViewControllerDeleg
         
         mailComposerVC.setToRecipients(["petsforyoushelter@gmail.com"])
         mailComposerVC.setSubject("Adoption")
-        mailComposerVC.setMessageBody("Hello, \n I am looking to adopt a dog from the \(selectedBreed!) breed. The dog that I set my eye on is named \(chosenDog!.dogName). Can I come in to visit \(chosenDog!.dogName) and learn more about the adoption process on February 25? Thank you!", isHTML: false)
+        mailComposerVC.setMessageBody("Hello, \n I am looking to adopt a dog from the \(selectedBreed!) breed. The dog that I set my eye on is named \(chosenDog!.dogName). Can I come in to visit \(chosenDog!.dogName) and learn more about the adoption process? Thank you!", isHTML: false)
         
         return mailComposerVC
     }
-    
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)

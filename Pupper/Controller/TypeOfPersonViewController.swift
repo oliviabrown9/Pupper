@@ -2,7 +2,7 @@
 //  TypeOfPersonViewController.swift
 //  Pupper
 //
-//  Created by Miriam Hendler on 2/18/17.
+//  Created by Olivia Brown on 2/18/17.
 //  Copyright © 2017 Olivia. All rights reserved.
 //
 
@@ -54,7 +54,7 @@ class TypeOfPersonViewController: UIViewController {
         super.viewDidLoad()
         
         couchButton.setImage(UIImage(named: "selected"), for: UIControlState.normal)
-        dogBreed?.personType = .couch
+        personType = .couch
         // Do any additional setup after loading the view.
     }
 

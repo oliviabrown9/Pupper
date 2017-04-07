@@ -6,33 +6,23 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>CVCalendar.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Pupper.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09549E5CBD9B7F8EFAEC36624538410A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>809744114AA7D8301C1D60CD33ACBECF</key>
+		<key>46DBE78145F9A956E7E7F6921BF3C18C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2EF0A874A01FFC4D77FBAEED4802A12</key>
+		<key>DA23FEA30B3334967B6F62A3AF72E633</key>
 		<dict>
 			<key>primary</key>
 			<true/>

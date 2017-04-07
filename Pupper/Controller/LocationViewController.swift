@@ -2,7 +2,7 @@
 //  LocationViewController.swift
 //  Pupper
 //
-//  Created by Miriam Hendler on 2/18/17.
+//  Created by Olivia Brown on 2/18/17.
 //  Copyright © 2017 Olivia. All rights reserved.
 //
 
@@ -39,8 +39,6 @@ class LocationViewController: UIViewController {
     }
 
     func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text!)
-        
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(textField.text!) {
             (placemarks, error) -> Void in
@@ -64,7 +62,5 @@ class LocationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! HomeViewController
         destination.dogBreed = self.dogBreed
-        
     }
-
 }
