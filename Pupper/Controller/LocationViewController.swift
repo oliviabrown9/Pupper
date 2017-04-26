@@ -39,7 +39,7 @@ class LocationViewController: UIViewController {
     }
 
     func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text!)
+        
         
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(textField.text!) {
