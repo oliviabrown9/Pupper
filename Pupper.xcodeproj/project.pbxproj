@@ -272,7 +272,7 @@
 				TargetAttributes = {
 					45A7D7C91E586D0E00D97A7D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8GEKYYW3CQ;
+						DevelopmentTeam = D36AC3V592;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -531,7 +531,7 @@
 			baseConfigurationReference = D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = D36AC3V592;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -546,7 +546,7 @@
 			baseConfigurationReference = D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
+				DEVELOPMENT_TEAM = D36AC3V592;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
