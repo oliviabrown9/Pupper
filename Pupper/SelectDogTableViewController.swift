@@ -22,17 +22,8 @@ class SelectDogTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dogBreed.age = .Baby
-//        dogBreed.hasChild = false
-//        dogBreed.hasDog = false
-//        dogBreed.homeType = .apartment
-//        dogBreed.sizeOfDog = .small
-    
         setChosenClass { (chosenDog) in
             self.chosenDogs = chosenDog
-            print(self.chosenDogs)
-            
-          print(self.selectedBreed)
         self.title = self.selectedBreed
         }
         
@@ -137,7 +128,7 @@ class SelectDogTableViewController: UITableViewController {
         } else {
             cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
         }
-        var time = arc4random_uniform(12) + 1
+        let time = arc4random_uniform(12) + 1
         
         cell.timeInShelterLabel.text = "\(time) months"
         

@@ -21,7 +21,7 @@ class LocationViewController: UIViewController {
         
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         
         view.endEditing(true)
     }
@@ -38,7 +38,7 @@ class LocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         
         
         let geocoder = CLGeocoder()
@@ -52,7 +52,7 @@ class LocationViewController: UIViewController {
                 let city = addressDict?["City"] as! String
                 let state = addressDict?["State"] as! String
                 
-                if (textField.text?.characters.count)! >= 5{
+                if (textField.text?.count)! >= 5{
                 self.locationLabel.text = "\(city), \(state)"
                 self.dogBreed = DogPreference(zipCode: Int(textField.text!)!)
                 }
