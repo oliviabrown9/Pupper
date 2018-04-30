@@ -21,7 +21,7 @@ class LocationViewController: UIViewController {
         
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         
         view.endEditing(true)
     }
@@ -38,7 +38,7 @@ class LocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         
         
         let geocoder = CLGeocoder()
