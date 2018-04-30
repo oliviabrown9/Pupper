@@ -2,8 +2,7 @@
 //  CalendarViewController.swift
 //  Pupper
 //
-//  Created by Olivia on 2/19/17.
-//  Copyright © 2017 Olivia. All rights reserved.
+//  Copyright © 2018 Olivia Brown. All rights reserved.
 //
 
 import UIKit

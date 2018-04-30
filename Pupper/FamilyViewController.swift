@@ -2,8 +2,7 @@
 //  FamilyViewController.swift
 //  Pupper
 //
-//  Created by Miriam Hendler on 2/18/17.
-//  Copyright © 2017 Olivia. All rights reserved.
+//  Copyright © 2018 Olivia Brown. All rights reserved.
 //
 
 import UIKit
