@@ -22,21 +22,10 @@ class SelectDogTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dogBreed.age = .Baby
-//        dogBreed.hasChild = false
-//        dogBreed.hasDog = false
-//        dogBreed.homeType = .apartment
-//        dogBreed.sizeOfDog = .small
-    
         setChosenClass { (chosenDog) in
             self.chosenDogs = chosenDog
-            print(self.chosenDogs)
-            
-          print(self.selectedBreed)
         self.title = self.selectedBreed
         }
-        
-    
     }
     
     func randomBool() -> Bool {
@@ -113,7 +102,6 @@ class SelectDogTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
         let chosenDog = chosenDogs[indexPath.row]
         cell.addressLabel.text = "\(chosenDog.citystate)"
-//        cell.dogImageView.image = UIImage(named: chosenDog.photo)
         cell.tableViewController = self
         cell.selectionStyle = .none
         
@@ -124,7 +112,6 @@ class SelectDogTableViewController: UITableViewController {
         
         cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
         cell.blurImageViewTwo.addBlurEffect()
-        print(chosenDog.photo)
         cell.dogNameLabel.text = chosenDog.dogName
         
         if chosenDog.hadShots {
@@ -137,7 +124,7 @@ class SelectDogTableViewController: UITableViewController {
         } else {
             cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
         }
-        var time = arc4random_uniform(12) + 1
+        let time = arc4random_uniform(12) + 1
         
         cell.timeInShelterLabel.text = "\(time) months"
         
