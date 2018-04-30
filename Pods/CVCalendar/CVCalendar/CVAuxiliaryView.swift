@@ -92,7 +92,7 @@ extension CVAuxiliaryView {
     func circlePath() -> UIBezierPath {
         let arcCenter = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let startAngle = CGFloat(0)
-        let endAngle = CGFloat(M_PI * 2.0)
+        let endAngle = CGFloat(Double.pi * 2.0)
         let clockwise = true
 
         let path = UIBezierPath(arcCenter: arcCenter, radius: radius,
@@ -138,8 +138,6 @@ extension CVAuxiliaryView {
 
         let appearance = dayView.calendarView.appearance
         let offset = appearance?.spaceBetweenDayViews!
-
-        print("offset = \(offset)")
 
         let path = UIBezierPath(rect: CGRect(x: 0 - offset!, y: midY - radius,
             width: bounds.width + offset! / 2, height: radius * 2))

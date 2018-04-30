@@ -34,7 +34,7 @@ open class CVCalendarContentViewController: UIViewController {
     open var presentationEnabled = true
     open var lastContentOffset: CGFloat = 0
     open var direction: CVScrollDirection = .none
-  
+
     open var toggleDateAnimationDuration: Double {
         return calendarView.delegate?.toggleDateAnimationDuration?() ?? 0.8
     }
@@ -42,7 +42,7 @@ open class CVCalendarContentViewController: UIViewController {
     public init(calendarView: CalendarView, frame: CGRect) {
         self.calendarView = calendarView
         scrollView = UIScrollView(frame: frame)
-        presentedMonthView = MonthView(calendarView: calendarView, date: Foundation.Date())
+        presentedMonthView = MonthView(calendarView: calendarView, date: calendarView.presentedDate?.convertedDate() ?? Foundation.Date())
         presentedMonthView.updateAppearance(frame)
 
         super.init(nibName: nil, bundle: nil)
@@ -63,7 +63,7 @@ open class CVCalendarContentViewController: UIViewController {
 // MARK: - UI Refresh
 
 extension CVCalendarContentViewController {
-    public func updateFrames(_ frame: CGRect) {
+    @objc public func updateFrames(_ frame: CGRect) {
         if frame != CGRect.zero {
             scrollView.frame = frame
             scrollView.removeAllSubviews()
@@ -85,6 +85,8 @@ extension CVCalendarContentViewController {
                 dayView.preliminarySetup()
                 dayView.supplementarySetup()
                 dayView.topMarkerSetup()
+                dayView.interactionSetup()
+                dayView.labelSetup()
             }
         }
     }
@@ -126,15 +128,15 @@ extension CVCalendarContentViewController: UIScrollViewDelegate { }
 
 // Convenience API.
 extension CVCalendarContentViewController {
-    public func performedDayViewSelection(_ dayView: DayView) { }
+    @objc public func performedDayViewSelection(_ dayView: DayView) { }
 
-    public func togglePresentedDate(_ date: Foundation.Date) { }
+    @objc public func togglePresentedDate(_ date: Foundation.Date) { }
 
-    public func presentNextView(_ view: UIView?) { }
+    @objc public func presentNextView(_ view: UIView?) { }
 
-    public func presentPreviousView(_ view: UIView?) { }
+    @objc public func presentPreviousView(_ view: UIView?) { }
 
-    public func updateDayViews(_ hidden: Bool) { }
+    @objc public func updateDayViews(shouldShow: Bool) { }
 }
 
 // MARK: - Contsant conversion
@@ -230,12 +232,14 @@ extension CVCalendarContentViewController {
                     if animated {
                         UIView.animate(withDuration: 0.2, delay: 0,
                                                    options: UIViewAnimationOptions.curveLinear,
-                                                   animations: {
-                            self.layoutViews(viewsToLayout, toHeight: height)
-                            }) { _ in
-                                self.presentedMonthView.frame.size =
-                                    self.presentedMonthView.potentialSize
-                                self.presentedMonthView.updateInteractiveView()
+                                                   animations: { [weak self] in
+                            self?.layoutViews(viewsToLayout, toHeight: height)
+                        }) { [weak self] _ in
+                            guard let strongSelf = self else {
+                                return
+                            }
+                            strongSelf.presentedMonthView.frame.size = strongSelf.presentedMonthView.potentialSize
+                            strongSelf.presentedMonthView.updateInteractiveView()
                         }
                     } else {
                         layoutViews(viewsToLayout, toHeight: height)
