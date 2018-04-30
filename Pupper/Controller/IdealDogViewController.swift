@@ -2,7 +2,7 @@
 //  IdealDogViewController.swift
 //  Pupper
 //
-//  Created by Miriam Hendler on 2/18/17.
+//  Created by Olivia Brown on 2/18/17.
 //  Copyright © 2017 Olivia. All rights reserved.
 //
 
@@ -13,8 +13,6 @@ class IdealDogViewController: UIViewController {
     var dogBreed : DogPreference?
     
     @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-    
-    // MARK: IBOutlets
     
     @IBOutlet weak var dogSizeImage: UIImageView!
     
@@ -35,77 +33,106 @@ class IdealDogViewController: UIViewController {
     @IBAction func smallPressed(_ sender: Any) {
         print("small button presssed")
         small.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
+        small.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
         medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        medium.titleLabel?.textColor = .black
+        medium.setTitleColor(.black, for: .normal)
         large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        large.titleLabel?.textColor = .black
+        large.setTitleColor(.black, for: .normal)
         medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel!.textColor = .blue
         sizeOfDog = .small
         dogSizeImage.image = #imageLiteral(resourceName: "selected_small")
     }
     
     @IBAction func mediumPressed(_ sender: Any) {
         medium.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        medium.titleLabel!.textColor = .blue
+        medium.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
         small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel?.textColor = .black
+        small.setTitleColor(.black, for: .normal)
         large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        large.titleLabel?.textColor = .black
+        large.setTitleColor(.black, for: .normal)
         sizeOfDog = .medium
         dogSizeImage.image = #imageLiteral(resourceName: "selected_medium")
     }
     
     @IBAction func largePressed(_ sender: Any) {
         small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel?.textColor = .black
+        small.setTitleColor(.black, for: .normal)
         medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        medium.titleLabel?.textColor = .black
+        medium.setTitleColor(.black, for: .normal)
         large.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        large.titleLabel!.textColor = .blue
+        large.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
         sizeOfDog = .large
         dogSizeImage.image = #imageLiteral(resourceName: "large_selected")
     }
     
     @IBAction func puppyPressed(_ sender: Any) {
+        young.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        young.setTitleColor(.black, for: .normal)
         puppy.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        puppy.titleLabel!.textColor = .blue
+        puppy.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
+        adult.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        adult.setTitleColor(.black, for: .normal)
+        senior.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        senior.setTitleColor(.black, for: .normal)
         age = .Baby
     }
     
     @IBAction func youngPressed(_ sender: Any) {
         young.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        young.titleLabel!.textColor = .blue
+        young.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
+        puppy.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        puppy.setTitleColor(.black, for: .normal)
+        adult.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        adult.setTitleColor(.black, for: .normal)
+        senior.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        senior.setTitleColor(.black, for: .normal)
         age = .Young
     }
     
     @IBAction func adultPressed(_ sender: Any) {
+        young.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        young.setTitleColor(.black, for: .normal)
+        puppy.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        puppy.setTitleColor(.black, for: .normal)
         adult.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        adult.titleLabel!.textColor = .blue
+        adult.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
+        senior.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        senior.setTitleColor(.black, for: .normal)
         age = .Adult
     }
     
     @IBAction func seniorPressed(_ sender: Any) {
+        young.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        young.setTitleColor(.black, for: .normal)
+        puppy.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        puppy.setTitleColor(.black, for: .normal)
+        adult.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        adult.setTitleColor(.black, for: .normal)
         senior.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        senior.titleLabel!.textColor = .blue
+        senior.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
         age = .Senior
     }
     
     @IBAction func hypoPressed(_ sender: Any) {
+        hair.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        hair.setTitleColor(.black, for: .normal)
         hypo.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        hypo.titleLabel!.textColor = .blue
+        hypo.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
     }
     
     @IBAction func hairPressed(_ sender: Any) {
+        hypo.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
+        hypo.setTitleColor(.black, for: .normal)
         hair.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        hair.titleLabel!.textColor = .blue
+        hair.setTitleColor(UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0), for: .normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
+    
     @IBAction func getMatchesButtonPressed(_ sender: Any) {
 
     }
@@ -157,9 +184,6 @@ class IdealDogViewController: UIViewController {
             print("Invalid filename/path.")
         }
         
-
-
-        
         return dogs
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -169,11 +193,8 @@ class IdealDogViewController: UIViewController {
         let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
             dogBreed.age = age!
-//            dogBreed.sizeOfDog = sizeOfDog!
-//            destination.approvedDogs = matches
             destination.dogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
         }
     }
-
 }

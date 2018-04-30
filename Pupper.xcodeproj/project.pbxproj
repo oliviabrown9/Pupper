@@ -155,10 +155,10 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
-				451028221E59D5BE005095B5 /* CalendarViewController.swift */,
 				45BCF0841E595E2E00931C8C /* dogs */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */,
+				451028221E59D5BE005095B5 /* CalendarViewController.swift */,
 				E68B845B1E591B1E00AE28C2 /* HomeViewController.swift */,
 				E68B845C1E591B1E00AE28C2 /* IdealDogViewController.swift */,
 				45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */,
@@ -271,7 +271,6 @@
 				TargetAttributes = {
 					45A7D7C91E586D0E00D97A7D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7QQX7GNST9;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -542,9 +541,9 @@
 			baseConfigurationReference = D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7QQX7GNST9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pupper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,9 +557,9 @@
 			baseConfigurationReference = D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7QQX7GNST9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pupper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

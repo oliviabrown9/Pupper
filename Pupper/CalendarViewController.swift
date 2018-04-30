@@ -34,13 +34,12 @@ class CalendarViewController: UIViewController, MFMailComposeViewControllerDeleg
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
-        mailComposerVC.setToRecipients(["someone@somewhere.com"])
+        mailComposerVC.setToRecipients(["petsforyoushelter@gmail.com"])
         mailComposerVC.setSubject("Adoption")
-        mailComposerVC.setMessageBody("Hello Shelter, I am looking to adopt a dog from the \(selectedBreed!) breed. The dog that I set my eye on is named \(chosenDog!.dogName). Can I come in to visit \(chosenDog!.dogName) and learn more about the adoption process on February 25? Thank you!", isHTML: false)
+        mailComposerVC.setMessageBody("Hello, \n I am looking to adopt a dog from the \(selectedBreed!) breed. The dog that I set my eye on is named \(chosenDog!.dogName). Can I come in to visit \(chosenDog!.dogName) and learn more about the adoption process? Thank you!", isHTML: false)
         
         return mailComposerVC
     }
-    
     // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
@@ -57,25 +56,5 @@ class CalendarViewController: UIViewController, MFMailComposeViewControllerDeleg
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        
-       
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
