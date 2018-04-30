@@ -121,7 +121,7 @@ class IdealDogViewController: UIViewController {
             
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                let jsonObj = JSON(data: data)
+                let jsonObj = try JSON(data: data)
                 if jsonObj != JSON.null {
                     print("jsonData:\(jsonObj)")
                     
