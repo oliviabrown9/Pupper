@@ -23,23 +23,13 @@ class FindDogsViewController: UITableViewController{
     var dogs: [Dog] = []
     var dogBreed: DogPreference?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // MARK: API call setup
-        
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(#function)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
-        // 3
-        print(dogs[0].name)
         cell.breedPhoto.image = UIImage(named: "\(dogs[indexPath.item].name).jpg")
         cell.breedLabel.text = dogs[indexPath.row].name
         cell.breedDescript.text = dogs[indexPath.row].description
@@ -59,23 +49,15 @@ class FindDogsViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if dogs[indexPath.row].expanded {
-            
-            return 222
-        }
-            
-        else{return 148}
+        if dogs[indexPath.row].expanded { return 222 }
+        else { return 148 }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! SelectDogTableViewController
         if segue.identifier == "breedSegue" {
-            print(index)
             destination.selectedBreed = dogs[index].name
-            print(dogBreed!.zipCode)
             destination.zipCode = dogBreed!.zipCode
-//            print(dogBreed)
-//            destination.dogBreed = dogBreed!
         }
             let backItem = UIBarButtonItem()
             backItem.title = ""

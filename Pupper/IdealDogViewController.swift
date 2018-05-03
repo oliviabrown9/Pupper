@@ -122,30 +122,10 @@ class IdealDogViewController: UIViewController {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let jsonObj = try JSON(data: data)
                 if jsonObj != JSON.null {
-                    print("jsonData:\(jsonObj)")
-                    
-                    if dogBreed.homeType == .apartment {
-                        for dog in jsonObj["apartment"] {
-                            let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
-                            dogs.append(breed)
-                        }
+                    for dog in jsonObj["breeds"] {
+                        let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
+                        dogs.append(breed)
                     }
-                    else {
-                        if dogBreed.hasChild {
-                            for dog in jsonObj["forKids"] {
-                                let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
-                                dogs.append(breed)
-                                
-                            }
-                        } else {
-                            for dog in jsonObj["medium"] {
-                                let breed = Dog(name: dog.1["name"].string! , description: dog.1["description"].string!)
-                                dogs.append(breed)
-                                
-                            }
-                        }
-                    }
-                    
                 } else {
                     print("Could not get json from file, make sure that file contains valid json.")
                 }
@@ -155,10 +135,6 @@ class IdealDogViewController: UIViewController {
         } else {
             print("Invalid filename/path.")
         }
-        
-
-
-        
         return dogs
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -168,8 +144,6 @@ class IdealDogViewController: UIViewController {
         let destination = navVC?.viewControllers.first as! FindDogsViewController
         if let dogBreed = dogBreed {
             dogBreed.age = age!
-//            dogBreed.sizeOfDog = sizeOfDog!
-//            destination.approvedDogs = matches
             destination.dogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
         }
