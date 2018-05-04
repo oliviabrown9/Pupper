@@ -6,7 +6,6 @@ target 'Pupper' do
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
-pod 'CVCalendar'
 
 post_install do |installer|
    installer.pods_project.targets.each do |target|
