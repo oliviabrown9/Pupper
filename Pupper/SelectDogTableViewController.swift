@@ -11,7 +11,7 @@ import SwiftyJSON
 import MessageUI
 
 class SelectDogTableViewController: UITableViewController {
-
+    
     var zipCode: Int?
     var selectedBreed: String?
     var chosenDogs: [Chosen] = []
@@ -23,16 +23,14 @@ class SelectDogTableViewController: UITableViewController {
         super.viewDidLoad()
         setChosenClass { (chosenDog) in
             self.chosenDogs = chosenDog
-        self.title = self.selectedBreed
+            self.title = self.selectedBreed
         }
-        
-    
     }
     
     func randomBool() -> Bool {
         return arc4random_uniform(2) == 0
     }
-
+    
     // MARK: - Table view data source
     func setChosenClass(callback: @escaping (([Chosen])->())) {
         
@@ -41,136 +39,131 @@ class SelectDogTableViewController: UITableViewController {
         let dogAge = "Young"
         
         var chosens: [Chosen] = []
-        print(location, breed, dogAge)
         
         
+        let urlString =
+        "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&location=90071&animal=dog&format=json"
         
-        let url =
-        "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&location=\(location)&animal=dog&breed=\(breed)&age=\(dogAge)&format=json"
+        var request = URLRequest(url:URL(string: urlString)!);
+        request.httpMethod = "GET"
         
-        Alamofire.request("\(url)").responseJSON { response in
-            print(response.result)   // hopefully success
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
             
-            if let value = response.result.value {
-                let json = JSON(value)
-                
-                print("JSON: \(json)")
-                var petArray = json["petfinder"]["pets"]["pet"]
-                
-                for index in 0..<petArray.count {
-                let name = petArray[index]["name"]["$t"].string!
-                
-                let photo = petArray[index]["media"]["photos"]["photo"][0]["$t"].string ?? ""
-                
-                let shelterStreet = petArray[index]["contact"]["address1"]["$t"].string ?? ""
-                
-                let shelterCity = petArray[index]["contact"]["city"]["$t"].string ?? "Suffern"
-                
-                let shelterState = petArray[index]["contact"]["state"]["$t"].string ?? "NY"
-                
-                let shelterPhone = petArray[index]["contact"]["phone"]["$t"].int ?? 8457686544
-                
-                let shelterEmail = petArray[index]["contact"]["email"]["$t"].string ?? "dogsupforadoption@aol.com"
-                    
-                
-                let shelterCityState = "\(shelterCity), \(shelterState)"
-                  
-                let chosen = Chosen(dogName: name, photo: photo, street: shelterStreet, citystate: shelterCityState, phone: shelterPhone, email: shelterEmail, trained: self.randomBool(), hadShots: self.randomBool())
-                    
-                    chosens.append(chosen)
-                    
+            // Check for error
+            if (error != nil) {
+                print("error=\(String(describing: error))")
+                return
+            }
+            // Print out response string
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            //            print(responseString)
+            
+            if let breeds = self.convertToDictionary(text: responseString! as String) as? [NSDictionary] {
+                for breed in breeds {
+                    for (key, value) in breed {
+                        if ((key as! String) == "name") {
+                            print(key)
+                            print(value)
+                        }
+                    }
                 }
-                callback(chosens)
-                self.tableView.reloadData()
             }
         }
-        
-    }
+        task.resume()
+        //                var petArray = json["petfinder"]["pets"]["pet"]
+        //
+        //                for index in 0..<petArray.count {
+        //                let name = petArray[index]["name"]["$t"].string!
+        //
+        //                let photo = petArray[index]["media"]["photos"]["photo"][0]["$t"].string ?? ""
+        //
+        //                let shelterStreet = petArray[index]["contact"]["address1"]["$t"].string ?? ""
+        //
+        //                let shelterCity = petArray[index]["contact"]["city"]["$t"].string ?? "Suffern"
+        //
+        //                let shelterState = petArray[index]["contact"]["state"]["$t"].string ?? "NY"
+        //
+        //                let shelterPhone = petArray[index]["contact"]["phone"]["$t"].int ?? 8457686544
+        //
+        //                let shelterEmail = petArray[index]["contact"]["email"]["$t"].string ?? "noemail@mail.com"
+        //
+        //
+        //                let shelterCityState = "\(shelterCity), \(shelterState)"
+        //
+        //                let chosen = Chosen(dogName: name, photo: photo, street: shelterStreet, citystate: shelterCityState, phone: shelterPhone, email: shelterEmail, trained: self.randomBool(), hadShots: self.randomBool())
+        //
+        //                    chosens.append(chosen)
+    callback(chosens)
+    self.tableView.reloadData()
+}
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+}
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        return chosenDogs.count
-    }
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return chosenDogs.count
+}
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
-        let chosenDog = chosenDogs[indexPath.row]
-        cell.addressLabel.text = "\(chosenDog.citystate)"
-//        cell.dogImageView.image = UIImage(named: chosenDog.photo)
-        cell.tableViewController = self
-        cell.selectionStyle = .none
-        
-        cell.dogImageView.downloadedFrom(link: "\(chosenDog.photo)")
+    let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
+    let chosenDog = chosenDogs[indexPath.row]
+    cell.addressLabel.text = "\(chosenDog.citystate)"
+    cell.tableViewController = self
+    cell.selectionStyle = .none
     
-        cell.blurImageViewOne.downloadedFrom(link: "\(chosenDog.photo)")
-        cell.blurImageViewOne.addBlurEffect()
-        
-        cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
-        cell.blurImageViewTwo.addBlurEffect()
-        print(chosenDog.photo)
-        cell.dogNameLabel.text = chosenDog.dogName
-        
-        if chosenDog.hadShots {
+    cell.dogImageView.downloadedFrom(link: "\(chosenDog.photo)")
+    
+    cell.blurImageViewOne.downloadedFrom(link: "\(chosenDog.photo)")
+    cell.blurImageViewOne.addBlurEffect()
+    
+    cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
+    cell.blurImageViewTwo.addBlurEffect()
+    print(chosenDog.photo)
+    cell.dogNameLabel.text = chosenDog.dogName
+    
+    if chosenDog.hadShots {
         cell.hasShotsImageView.image = UIImage(named: "check")
-        } else {
-         cell.hasShotsImageView.image = UIImage(named: "uncheck")
-        }
-        if chosenDog.trained {
-            cell.houseTrainedImageVIew.image = UIImage(named: "check")
-        } else {
-            cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
-        }
-        let time = arc4random_uniform(12) + 1
-        
-        cell.timeInShelterLabel.text = "\(time) months"
-        
-        cell.chosenDog = chosenDogs[indexPath.row]
-        
-        cell.expanded = chosenDog.expanded
-        cell.detailView.isHidden = !cell.expanded
-        
-        return cell
+    } else {
+        cell.hasShotsImageView.image = UIImage(named: "uncheck")
     }
-    
-  
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        self.chosenDogs[indexPath.row].expanded = !self.chosenDogs[indexPath.row].expanded
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-        theChosenOne = chosenDogs[indexPath.row]
-        
-        
+    if chosenDog.trained {
+        cell.houseTrainedImageVIew.image = UIImage(named: "check")
+    } else {
+        cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if chosenDogs[indexPath.row].expanded {
-            
-            return 242
-        }
-            
-        else{return 148}
-    }
+    let time = arc4random_uniform(12) + 1
     
+    cell.timeInShelterLabel.text = "\(time) months"
     
- 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! CalendarViewController
-        destination.chosenDog = theChosenOne
-        destination.selectedBreed = selectedBreed
-        
-//        destination.dogBreed = dogBreed
-    }
+    cell.chosenDog = chosenDogs[indexPath.row]
     
+    cell.expanded = chosenDog.expanded
+    cell.detailView.isHidden = !cell.expanded
     
+    return cell
+}
 
 
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    self.chosenDogs[indexPath.row].expanded = !self.chosenDogs[indexPath.row].expanded
+    tableView.reloadRows(at: [indexPath], with: .automatic)
+    theChosenOne = chosenDogs[indexPath.row]
+    
+    
+}
+override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    if chosenDogs[indexPath.row].expanded {
+        
+        return 242
+    }
+        
+    else{return 148}
+}
 }
 
 extension UIImageView {
@@ -204,3 +197,16 @@ extension UIImageView {
     }
 }
 
+extension UIViewController {
+    func convertToDictionary(text: String) -> Any? {
+        
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: [])
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+}
