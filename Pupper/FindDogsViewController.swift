@@ -20,7 +20,7 @@ class FindDogsViewController: UITableViewController{
     var descriptCellIndex: NSIndexPath?
     var approvedDogs: [String] = []
     var dogs: [Dog] = []
-    var dogBreed: DogPreference?
+    var dogBreed: Criteria?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count

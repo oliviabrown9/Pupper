@@ -9,7 +9,7 @@ import UIKit
 import SwiftyJSON
 
 class IdealDogViewController: UIViewController {
-    var dogBreed : DogPreference?
+    var dogBreed: Criteria?
     
     @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
 
@@ -63,29 +63,29 @@ class IdealDogViewController: UIViewController {
     @IBAction func puppyPressed(_ sender: Any) {
         puppy.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         puppy.titleLabel!.textColor = .blue
-        age = .Baby
+        age = .baby
     }
     
     @IBAction func youngPressed(_ sender: Any) {
         young.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         young.titleLabel!.textColor = .blue
-        age = .Young
+        age = .young
     }
     
     @IBAction func adultPressed(_ sender: Any) {
         adult.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         adult.titleLabel!.textColor = .blue
-        age = .Adult
+        age = .adult
     }
     
     @IBAction func seniorPressed(_ sender: Any) {
         senior.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         senior.titleLabel!.textColor = .blue
-        age = .Senior
+        age = .senior
     }
 
     
-    func findDogBreeds(dogBreed: DogPreference) -> [Dog]{
+    func findDogBreeds(dogBreed: Criteria) -> [Dog]{
         var dogs: [Dog] = []
         
         if let path = Bundle.main.path(forResource: "dogs", ofType: "json") {
