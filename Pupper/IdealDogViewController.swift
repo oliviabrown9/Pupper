@@ -10,24 +10,20 @@ import SwiftyJSON
 
 class IdealDogViewController: UIViewController {
     var criteria: DogCriteria?
-    var buttons = [UIButton]()
 
-    @IBOutlet weak var dogSizeImage: UIImageView!
+    @IBOutlet private weak var dogSizeImage: UIImageView!
+    @IBOutlet private weak var baby: UIButton!
+    @IBOutlet private weak var young: UIButton!
+    @IBOutlet private weak var adult: UIButton!
+    @IBOutlet private weak var senior: UIButton!
+    @IBOutlet private weak var large: UIButton!
+    @IBOutlet private weak var medium: UIButton!
+    @IBOutlet private weak var small: UIButton!
     
-    @IBOutlet weak var baby: UIButton!
-    @IBOutlet weak var young: UIButton!
-    @IBOutlet weak var adult: UIButton!
-    @IBOutlet weak var senior: UIButton!
+    private var selectedSize: dogSize?
+    private var selectedAge: dogAge?
     
-    @IBOutlet weak var large: UIButton!
-    @IBOutlet weak var medium: UIButton!
-    @IBOutlet weak var small: UIButton!
-    
-    var matches: [String] = []
-    var selectedSize: dogSize?
-    var selectedAge: dogAge?
-    
-    @IBAction func sizeSelected(_ sender: UIButton) {
+    @IBAction private func sizeSelected(_ sender: UIButton) {
         style(selected: sender, allButtons: [small, medium, large])
         if let title = sender.titleLabel?.text?.lowercased(), let image = UIImage(named: title)  {
             selectedSize = dogSize(rawValue: title)
@@ -35,14 +31,14 @@ class IdealDogViewController: UIViewController {
         }
     }
     
-    @IBAction func ageSelected(_ sender: UIButton) {
+    @IBAction private func ageSelected(_ sender: UIButton) {
         style(selected: sender, allButtons: [baby, young, adult, senior])
         if let title = sender.titleLabel?.text?.lowercased() {
             selectedAge = dogAge(rawValue: title)
         }
     }
     
-    func style(selected: UIButton, allButtons: [UIButton?]) {
+    private func style(selected: UIButton, allButtons: [UIButton?]) {
         for button in allButtons {
             if let label = button?.titleLabel {
                 if button == selected {
@@ -55,7 +51,7 @@ class IdealDogViewController: UIViewController {
         }
     }
     
-    func findDogBreeds(dogBreed: DogCriteria) -> [Dog]{
+    private func findDogBreeds(dogBreed: DogCriteria) -> [Dog]{
         var dogs: [Dog] = []
         
         if let path = Bundle.main.path(forResource: "dogs", ofType: "json") {
@@ -79,6 +75,7 @@ class IdealDogViewController: UIViewController {
         }
         return dogs
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let navVC = segue.destination as? UINavigationController
