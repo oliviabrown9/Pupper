@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum size {
-    case small
-    case medium
-    case large
-    case all
+enum dogSize: String {
+    case small = "small"
+    case medium = "medium"
+    case large = "large"
+    case all = "all"
 }
 
-enum age: String {
+enum dogAge: String {
     case baby = "baby"
     case young = "young"
     case adult = "adult"
@@ -24,8 +24,8 @@ enum age: String {
 
 class DogCriteria {
     var zipCode: Int
-    var sizeOfDog: size = .all
-    var age: age = .all
+    var sizeOfDog: dogSize = .all
+    var age: dogAge = .all
     var breed: String?
 
     init(zipCode: Int) {

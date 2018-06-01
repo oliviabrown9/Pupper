@@ -220,6 +220,9 @@
                                 <state key="normal" title="SMALL">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sizeSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="GUN-2o-lk5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-qY-qhr">
                                 <rect key="frame" x="146" y="267" width="60" height="30"/>
@@ -228,6 +231,9 @@
                                 <state key="normal" title="MEDIUM">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sizeSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="HiC-Wy-GnC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oha-in-nxF">
                                 <rect key="frame" x="263" y="267" width="48" height="30"/>
@@ -236,6 +242,9 @@
                                 <state key="normal" title="LARGE">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sizeSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="bvN-C9-EGm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZL-SI-no2">
                                 <rect key="frame" x="55" y="344" width="49" height="30"/>
@@ -281,7 +290,7 @@
                                     <action selector="ageSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="Mzy-Ah-Uvk"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selected_small" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-XG-QRe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="small" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-XG-QRe">
                                 <rect key="frame" x="57" y="173" width="274" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -312,7 +321,11 @@
                     <connections>
                         <outlet property="adult" destination="Q5A-9R-Jgt" id="WkS-Zp-ErN"/>
                         <outlet property="baby" destination="1ZL-SI-no2" id="eZL-5Z-Yy4"/>
+                        <outlet property="dogSizeImage" destination="cNE-XG-QRe" id="AU2-ge-qv4"/>
+                        <outlet property="large" destination="Oha-in-nxF" id="PiG-c7-NaS"/>
+                        <outlet property="medium" destination="yQ0-qY-qhr" id="jcc-Yg-KXO"/>
                         <outlet property="senior" destination="CcL-Tl-hGQ" id="Fse-zL-sEm"/>
+                        <outlet property="small" destination="W0x-hs-PXq" id="EE7-tM-kOH"/>
                         <outlet property="young" destination="QD3-L2-LaD" id="8AS-sO-ydF"/>
                     </connections>
                 </viewController>
@@ -660,7 +673,7 @@
         <image name="one" width="720" height="70"/>
         <image name="pawprint" width="868" height="760"/>
         <image name="phone" width="39" height="39"/>
-        <image name="selected_small" width="1106" height="300"/>
         <image name="six" width="717" height="69"/>
+        <image name="small" width="1106" height="300"/>
     </resources>
 </document>

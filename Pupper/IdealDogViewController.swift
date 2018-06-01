@@ -24,59 +24,36 @@ class IdealDogViewController: UIViewController {
     @IBOutlet weak var small: UIButton!
     
     var matches: [String] = []
-    var sizeOfDog: size?
-    var selectedAge: age?
+    var selectedSize: dogSize?
+    var selectedAge: dogAge?
     
-    private func select(label: UILabel?) {
-        if let textLabel = label {
-            textLabel.font = UIFont (name: "Avenir-Black", size: 12)
+    @IBAction func sizeSelected(_ sender: UIButton) {
+        style(selected: sender, allButtons: [small, medium, large])
+        if let title = sender.titleLabel?.text?.lowercased(), let image = UIImage(named: title)  {
+            selectedSize = dogSize(rawValue: title)
+            dogSizeImage.image = image
         }
-    }
-    
-    private func deselect(label: UILabel?) {
-        if let textLabel = label {
-            textLabel.font = UIFont (name: "Avenir-Roman", size: 12)
-        }
-    }
-    
-    @IBAction func smallPressed(_ sender: Any) {
-        select(label: small.titleLabel)
-        deselect(label: medium.titleLabel)
-        deselect(label: large.titleLabel)
-        sizeOfDog = .small
-        dogSizeImage.image = #imageLiteral(resourceName: "selected_small")
-    }
-    
-    @IBAction func mediumPressed(_ sender: Any) {
-        select(label: medium.titleLabel)
-        deselect(label: small.titleLabel)
-        deselect(label: large.titleLabel)
-        sizeOfDog = .medium
-        dogSizeImage.image = #imageLiteral(resourceName: "selected_medium")
-    }
-    
-    @IBAction func largePressed(_ sender: Any) {
-        select(label: large.titleLabel)
-        deselect(label: small.titleLabel)
-        deselect(label: medium.titleLabel)
-        sizeOfDog = .large
-        dogSizeImage.image = #imageLiteral(resourceName: "large_selected")
     }
     
     @IBAction func ageSelected(_ sender: UIButton) {
-        let unselectedButtons = [baby, young, adult, senior].filter { $0 != sender }
+        style(selected: sender, allButtons: [baby, young, adult, senior])
         if let title = sender.titleLabel?.text?.lowercased() {
-            select(label: sender.titleLabel)
-            for button in unselectedButtons {
-                deselect(label: button?.titleLabel)
-            }
-            selectedAge = age(rawValue: title)
+            selectedAge = dogAge(rawValue: title)
         }
     }
     
-    
-    
-
+    func style(selected: UIButton, allButtons: [UIButton?]) {
+        for button in allButtons {
+            if let label = button?.titleLabel {
+                if button == selected {
+                    label.font = UIFont (name: "Avenir-Black", size: 12)
+                }
+                else {
+                    label.font = UIFont (name: "Avenir-Roman", size: 12)
+                }
+            }
+        }
+    }
     
     func findDogBreeds(dogBreed: DogCriteria) -> [Dog]{
         var dogs: [Dog] = []
