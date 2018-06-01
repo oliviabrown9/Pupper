@@ -10,23 +10,9 @@ import CoreLocation
 
 class LocationViewController: UIViewController {
     
-    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-    
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var locationLabel: UILabel!
-    var dogBreed: DogPreference?
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @IBAction func continuePressed(_ sender: UIButton) {
-        if let zipCode = validateZipCode() {
-            dogBreed = DogPreference(zipCode: zipCode)
-            self.performSegue(withIdentifier: "toIdealDog", sender: self)
-        }
-    }
-    
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var locationLabel: UILabel!
+    private var criteria: DogPreference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +23,7 @@ class LocationViewController: UIViewController {
         view.addGestureRecognizer(tap!)
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc private func textFieldDidChange(_ textField: UITextField) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(textField.text!) {
             (placemarks, error) -> Void in
@@ -61,8 +47,19 @@ class LocationViewController: UIViewController {
         return nil
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @IBAction private func continuePressed(_ sender: UIButton) {
+        if let zipCode = validateZipCode() {
+            criteria = DogPreference(zipCode: zipCode)
+            self.performSegue(withIdentifier: "toIdealDog", sender: self)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! IdealDogViewController
-        destination.dogBreed = self.dogBreed
+        destination.dogBreed = self.criteria
     }
 }
