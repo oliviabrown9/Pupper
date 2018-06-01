@@ -7,48 +7,28 @@
 
 import Foundation
 
-enum adoptionType {
-    case adopt
-    case foster
-}
-
-enum homeType {
-    case house
-    case apartment
-}
-
 enum size {
     case small
     case medium
     case large
+    case all
 }
-enum personType {
-    case couch
-    case walk
-    case adventure
-}
+
 enum age: String {
-    case Baby = "Baby"
-    case Young = "Young"
-    case Adult = "Adult"
-    case Senior = "Senior"
+    case baby = "Baby"
+    case young = "Young"
+    case adult = "Adult"
+    case senior = "Senior"
+    case all
 }
 
-class DogPreference {
+class Criteria {
+    var zipCode: Int
+    var sizeOfDog: size = .all
+    var age: age = .all
+    var breed: String?
 
-    
-    var zipCode : Int = 0
-    var hasDog: Bool = false
-    var hasChild: Bool = false
-    var sizeOfDog: size = .small
-    var homeType: homeType = .house
-    var personType: personType = .couch
-    var age: age = .Baby
-   
-    
     init(zipCode: Int) {
         self.zipCode = zipCode
     }
-    
-    
 }
