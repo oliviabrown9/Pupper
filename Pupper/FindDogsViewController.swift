@@ -19,7 +19,7 @@ class FindDogsViewController: UITableViewController{
     var cellTapped = false
     var descriptCellIndex: NSIndexPath?
     var approvedDogs: [String] = []
-    var dogs: [Dog] = []
+    var dogs: [Breed] = []
     var dogBreed: DogCriteria?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,9 +29,8 @@ class FindDogsViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
-        cell.breedPhoto.image = UIImage(named: "\(dogs[indexPath.item].name).jpg")
+        cell.breedPhoto.image = UIImage(named: dogs[indexPath.row].imageUrl)
         cell.breedLabel.text = dogs[indexPath.row].name
-        cell.breedDescript.text = dogs[indexPath.row].description
         cell.expanded = dogs[indexPath.row].expanded
         cell.detailView.isHidden = !cell.expanded
         cell.tableViewController = self
