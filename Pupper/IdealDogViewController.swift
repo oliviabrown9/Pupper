@@ -12,18 +12,13 @@ class IdealDogViewController: UIViewController {
     var dogBreed : DogPreference?
     
     @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-    
-    // MARK: IBOutlets
-    
+
     @IBOutlet weak var dogSizeImage: UIImageView!
     
     @IBOutlet weak var young: UIButton!
     @IBOutlet weak var adult: UIButton!
     @IBOutlet weak var senior: UIButton!
     @IBOutlet weak var puppy: UIButton!
-    
-    @IBOutlet weak var hair: UIButton!
-    @IBOutlet weak var hypo: UIButton!
     
     @IBOutlet weak var large: UIButton!
     @IBOutlet weak var medium: UIButton!
@@ -32,7 +27,6 @@ class IdealDogViewController: UIViewController {
     var sizeOfDog: size?
     var age: age?
     @IBAction func smallPressed(_ sender: Any) {
-        print("small button presssed")
         small.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
         medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
         medium.titleLabel?.textColor = .black
@@ -89,31 +83,9 @@ class IdealDogViewController: UIViewController {
         senior.titleLabel!.textColor = .blue
         age = .Senior
     }
-    
-    @IBAction func hypoPressed(_ sender: Any) {
-        hypo.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        hypo.titleLabel!.textColor = .blue
-    }
-    
-    @IBAction func hairPressed(_ sender: Any) {
-        hair.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        hair.titleLabel!.textColor = .blue
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    @IBAction func getMatchesButtonPressed(_ sender: Any) {
-
-    }
 
     
     func findDogBreeds(dogBreed: DogPreference) -> [Dog]{
-        // MARK: Dog Types
-     
-        
         var dogs: [Dog] = []
         
         if let path = Bundle.main.path(forResource: "dogs", ofType: "json") {

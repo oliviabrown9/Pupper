@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1847FFAB2097B05700EB7CDC /* NoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA52097B05500EB7CDC /* NoiseViewController.swift */; };
-		1847FFAC2097B05700EB7CDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA62097B05500EB7CDC /* HomeViewController.swift */; };
-		1847FFAD2097B05700EB7CDC /* TypeOfPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA72097B05600EB7CDC /* TypeOfPersonViewController.swift */; };
 		1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */; };
 		1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA92097B05700EB7CDC /* LocationViewController.swift */; };
 		2063B7C1CE82EBC4B0216E7B /* Pods_Pupper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */; };
@@ -19,7 +16,6 @@
 		45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D11E586D0E00D97A7D /* Main.storyboard */; };
 		45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D41E586D0E00D97A7D /* Assets.xcassets */; };
 		45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */; };
-		45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */; };
 		45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E11E5878DD00D97A7D /* Preferences.swift */; };
 		45A7D7E41E58CC7300D97A7D /* FindDogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */; };
 		45B7D6B31E58F98100C66867 /* DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7D6B21E58F98100C66867 /* DogBreeds.swift */; };
@@ -54,14 +50,10 @@
 		45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0BD1E5970F700931C8C /* SelectDogTableViewController.swift */; };
 		45BCF0C01E597AD000931C8C /* Chosen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0BF1E597AD000931C8C /* Chosen.swift */; };
 		45BCF0C21E598D0000931C8C /* ChosenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0C11E598D0000931C8C /* ChosenTableViewCell.swift */; };
-		E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */; };
 		E68B846B1E592A1900AE28C2 /* dogs.json in Resources */ = {isa = PBXBuildFile; fileRef = E68B846A1E592A1900AE28C2 /* dogs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1847FFA52097B05500EB7CDC /* NoiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseViewController.swift; sourceTree = "<group>"; };
-		1847FFA62097B05500EB7CDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		1847FFA72097B05600EB7CDC /* TypeOfPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfPersonViewController.swift; sourceTree = "<group>"; };
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
@@ -72,7 +64,6 @@
 		45A7D7D41E586D0E00D97A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45A7D7D71E586D0E00D97A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45A7D7D91E586D0E00D97A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdoptionTypeViewController.swift; sourceTree = "<group>"; };
 		45A7D7E11E5878DD00D97A7D /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDogsViewController.swift; sourceTree = "<group>"; };
 		45B7D6B21E58F98100C66867 /* DogBreeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogBreeds.swift; sourceTree = "<group>"; };
@@ -110,7 +101,6 @@
 		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
 		D6AF696F3C84A3047C8F5749 /* Pods-Pupper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.release.xcconfig"; sourceTree = "<group>"; };
-		E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyViewController.swift; sourceTree = "<group>"; };
 		E68B846A1E592A1900AE28C2 /* dogs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,16 +119,11 @@
 		1847FFB12097B25F00EB7CDC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E68B845A1E591B1E00AE28C2 /* FamilyViewController.swift */,
-				1847FFA62097B05500EB7CDC /* HomeViewController.swift */,
 				1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */,
 				1847FFA92097B05700EB7CDC /* LocationViewController.swift */,
-				1847FFA52097B05500EB7CDC /* NoiseViewController.swift */,
-				1847FFA72097B05600EB7CDC /* TypeOfPersonViewController.swift */,
 				45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */,
 				45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */,
 				45BCF0BD1E5970F700931C8C /* SelectDogTableViewController.swift */,
-				45A7D7DF1E58734800D97A7D /* AdoptionTypeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -398,14 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BCF0C01E597AD000931C8C /* Chosen.swift in Sources */,
-				E68B84601E591B1E00AE28C2 /* FamilyViewController.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
-				1847FFAC2097B05700EB7CDC /* HomeViewController.swift in Sources */,
-				1847FFAB2097B05700EB7CDC /* NoiseViewController.swift in Sources */,
-				45A7D7E01E58734800D97A7D /* AdoptionTypeViewController.swift in Sources */,
 				1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */,
 				45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */,
-				1847FFAD2097B05700EB7CDC /* TypeOfPersonViewController.swift in Sources */,
 				45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */,
 				1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,

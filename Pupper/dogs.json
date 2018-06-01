@@ -9,12 +9,10 @@
                   "name": "Bulldog",
                   "description": "Calm, courageous, and friendly; dignified but amusing."
                   },
-                  
                   {
                   "name": "Bichonfrise",
                   "description": "Playful, curious, and peppy."
                   },
-                  
                   {
                   "name": "Bulldog",
                   "description": "Calm, courageous, and friendly; dignified but amusing."
@@ -38,7 +36,6 @@
                   "description": "Outgoing, affectionate, playful and charming"
                   }
                   ],
-    
     "forKids": [{
                 "name": "Labrador",
                 "description": "Friendly and outgoing, Labs play with others"
