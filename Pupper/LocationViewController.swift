@@ -11,7 +11,7 @@ import CoreLocation
 class LocationViewController: UIViewController {
     
     @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var locationLabel: UILabel!
     var dogBreed: DogPreference?
@@ -19,6 +19,14 @@ class LocationViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    @IBAction func continuePressed(_ sender: UIButton) {
+        if let zipCode = validateZipCode() {
+            dogBreed = DogPreference(zipCode: zipCode)
+            self.performSegue(withIdentifier: "toIdealDog", sender: self)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +36,7 @@ class LocationViewController: UIViewController {
         tap = UITapGestureRecognizer(target: self, action: #selector(LocationViewController.dismissKeyboard))
         view.addGestureRecognizer(tap!)
     }
-
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(textField.text!) {
@@ -36,15 +44,21 @@ class LocationViewController: UIViewController {
             if let placemark = placemarks?[0] {
                 let addressDict = placemark.addressDictionary as? [String: Any]
                 if let city = addressDict?["City"], let state = addressDict?["State"] {
-                    if let locationText = textField.text, let locationInt = Int(locationText) {
-                        if locationText.count >= 5 {
-                            self.locationLabel.text = "\(city), \(state)"
-                            self.dogBreed = DogPreference(zipCode: locationInt)
-                        }
-                    }
+                    self.locationLabel.text = "\(city), \(state)"
                 }
             }
         }
+    }
+    
+    private func validateZipCode() -> Int? {
+        if let locationText = textField.text {
+            if locationText.count >= 5 {
+                if let zipCode = Int(locationText) {
+                    return zipCode
+                }
+            }
+        }
+        return nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
