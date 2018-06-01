@@ -15,14 +15,14 @@ enum size {
 }
 
 enum age: String {
-    case baby = "Baby"
-    case young = "Young"
-    case adult = "Adult"
-    case senior = "Senior"
-    case all
+    case baby = "baby"
+    case young = "young"
+    case adult = "adult"
+    case senior = "senior"
+    case all = "all"
 }
 
-class Criteria {
+class DogCriteria {
     var zipCode: Int
     var sizeOfDog: size = .all
     var age: age = .all

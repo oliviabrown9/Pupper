@@ -9,83 +9,76 @@ import UIKit
 import SwiftyJSON
 
 class IdealDogViewController: UIViewController {
-    var dogBreed: Criteria?
-    
-    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
+    var criteria: DogCriteria?
+    var buttons = [UIButton]()
 
     @IBOutlet weak var dogSizeImage: UIImageView!
     
+    @IBOutlet weak var baby: UIButton!
     @IBOutlet weak var young: UIButton!
     @IBOutlet weak var adult: UIButton!
     @IBOutlet weak var senior: UIButton!
-    @IBOutlet weak var puppy: UIButton!
     
     @IBOutlet weak var large: UIButton!
     @IBOutlet weak var medium: UIButton!
     @IBOutlet weak var small: UIButton!
-       var matches: [String] = []
+    
+    var matches: [String] = []
     var sizeOfDog: size?
-    var age: age?
+    var selectedAge: age?
+    
+    private func select(label: UILabel?) {
+        if let textLabel = label {
+            textLabel.font = UIFont (name: "Avenir-Black", size: 12)
+        }
+    }
+    
+    private func deselect(label: UILabel?) {
+        if let textLabel = label {
+            textLabel.font = UIFont (name: "Avenir-Roman", size: 12)
+        }
+    }
+    
     @IBAction func smallPressed(_ sender: Any) {
-        small.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        medium.titleLabel?.textColor = .black
-        large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        large.titleLabel?.textColor = .black
-        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel!.textColor = .blue
+        select(label: small.titleLabel)
+        deselect(label: medium.titleLabel)
+        deselect(label: large.titleLabel)
         sizeOfDog = .small
         dogSizeImage.image = #imageLiteral(resourceName: "selected_small")
     }
     
     @IBAction func mediumPressed(_ sender: Any) {
-        medium.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        medium.titleLabel!.textColor = .blue
-        small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel?.textColor = .black
-        large.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        large.titleLabel?.textColor = .black
+        select(label: medium.titleLabel)
+        deselect(label: small.titleLabel)
+        deselect(label: large.titleLabel)
         sizeOfDog = .medium
         dogSizeImage.image = #imageLiteral(resourceName: "selected_medium")
     }
     
     @IBAction func largePressed(_ sender: Any) {
-        small.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        small.titleLabel?.textColor = .black
-        medium.titleLabel!.font = UIFont (name: "Avenir-Roman", size: 12)
-        medium.titleLabel?.textColor = .black
-        large.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        large.titleLabel!.textColor = .blue
+        select(label: large.titleLabel)
+        deselect(label: small.titleLabel)
+        deselect(label: medium.titleLabel)
         sizeOfDog = .large
         dogSizeImage.image = #imageLiteral(resourceName: "large_selected")
     }
     
-    @IBAction func puppyPressed(_ sender: Any) {
-        puppy.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        puppy.titleLabel!.textColor = .blue
-        age = .baby
+    @IBAction func ageSelected(_ sender: UIButton) {
+        let unselectedButtons = [baby, young, adult, senior].filter { $0 != sender }
+        if let title = sender.titleLabel?.text?.lowercased() {
+            select(label: sender.titleLabel)
+            for button in unselectedButtons {
+                deselect(label: button?.titleLabel)
+            }
+            selectedAge = age(rawValue: title)
+        }
     }
     
-    @IBAction func youngPressed(_ sender: Any) {
-        young.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        young.titleLabel!.textColor = .blue
-        age = .young
-    }
     
-    @IBAction func adultPressed(_ sender: Any) {
-        adult.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        adult.titleLabel!.textColor = .blue
-        age = .adult
-    }
     
-    @IBAction func seniorPressed(_ sender: Any) {
-        senior.titleLabel!.font = UIFont (name: "Avenir-Black", size: 12)
-        senior.titleLabel!.textColor = .blue
-        age = .senior
-    }
 
     
-    func findDogBreeds(dogBreed: Criteria) -> [Dog]{
+    func findDogBreeds(dogBreed: DogCriteria) -> [Dog]{
         var dogs: [Dog] = []
         
         if let path = Bundle.main.path(forResource: "dogs", ofType: "json") {
@@ -114,8 +107,8 @@ class IdealDogViewController: UIViewController {
         let navVC = segue.destination as? UINavigationController
         
         let destination = navVC?.viewControllers.first as! FindDogsViewController
-        if let dogBreed = dogBreed {
-            dogBreed.age = age!
+        if let dogBreed = criteria {
+            dogBreed.age = selectedAge!
             destination.dogs = findDogBreeds(dogBreed: dogBreed)
             destination.dogBreed = dogBreed
         }

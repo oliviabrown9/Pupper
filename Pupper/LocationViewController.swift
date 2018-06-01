@@ -12,7 +12,7 @@ class LocationViewController: UIViewController {
     
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var locationLabel: UILabel!
-    private var criteria: Criteria?
+    private var criteria: DogCriteria?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +53,13 @@ class LocationViewController: UIViewController {
     
     @IBAction private func continuePressed(_ sender: UIButton) {
         if let zipCode = validateZipCode() {
-            criteria = Criteria(zipCode: zipCode)
+            criteria = DogCriteria(zipCode: zipCode)
             self.performSegue(withIdentifier: "toIdealDog", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! IdealDogViewController
-        destination.dogBreed = self.criteria
+        destination.criteria = self.criteria
     }
 }

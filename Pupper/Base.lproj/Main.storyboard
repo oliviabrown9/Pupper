@@ -208,9 +208,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GET MY MATCHES"/>
-                                <connections>
-                                    <action selector="getMatchesButtonPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="h1m-vv-ufa"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="continue icon" translatesAutoresizingMaskIntoConstraints="NO" id="cbQ-us-1iy">
                                 <rect key="frame" x="243" y="520" width="13" height="13"/>
@@ -223,9 +220,6 @@
                                 <state key="normal" title="SMALL">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="smallPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="cZj-KU-ktw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-qY-qhr">
                                 <rect key="frame" x="146" y="267" width="60" height="30"/>
@@ -234,9 +228,6 @@
                                 <state key="normal" title="MEDIUM">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="mediumPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="52W-vl-es3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oha-in-nxF">
                                 <rect key="frame" x="263" y="267" width="48" height="30"/>
@@ -245,19 +236,16 @@
                                 <state key="normal" title="LARGE">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="largePressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="iLP-Ek-Ktk"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZL-SI-no2">
                                 <rect key="frame" x="55" y="344" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
-                                <state key="normal" title="PUPPY">
+                                <state key="normal" title="BABY">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="puppyPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="FNG-Ea-tBc"/>
+                                    <action selector="ageSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="3aq-C2-OXC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-L2-LaD">
@@ -268,7 +256,7 @@
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="youngPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="3N7-ab-0MP"/>
+                                    <action selector="ageSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="G6i-Yg-P65"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5A-9R-Jgt">
@@ -279,7 +267,7 @@
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="adultPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="aVl-qg-IVv"/>
+                                    <action selector="ageSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="uFt-Uy-LZF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcL-Tl-hGQ">
@@ -290,7 +278,7 @@
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="seniorPressed:" destination="qhA-ES-ukN" eventType="touchUpInside" id="Okp-0X-yFc"/>
+                                    <action selector="ageSelected:" destination="qhA-ES-ukN" eventType="touchUpInside" id="Mzy-Ah-Uvk"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selected_small" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-XG-QRe">
@@ -322,14 +310,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adult" destination="Q5A-9R-Jgt" id="fjI-eC-fya"/>
-                        <outlet property="dogSizeImage" destination="cNE-XG-QRe" id="KHJ-fU-qZD"/>
-                        <outlet property="large" destination="Oha-in-nxF" id="T4u-0D-Bel"/>
-                        <outlet property="medium" destination="yQ0-qY-qhr" id="ooX-6x-558"/>
-                        <outlet property="puppy" destination="1ZL-SI-no2" id="yJF-6y-9yc"/>
-                        <outlet property="senior" destination="CcL-Tl-hGQ" id="d4O-AP-s7U"/>
-                        <outlet property="small" destination="W0x-hs-PXq" id="xxG-mu-fkq"/>
-                        <outlet property="young" destination="QD3-L2-LaD" id="xSf-FV-YpK"/>
+                        <outlet property="adult" destination="Q5A-9R-Jgt" id="WkS-Zp-ErN"/>
+                        <outlet property="baby" destination="1ZL-SI-no2" id="eZL-5Z-Yy4"/>
+                        <outlet property="senior" destination="CcL-Tl-hGQ" id="Fse-zL-sEm"/>
+                        <outlet property="young" destination="QD3-L2-LaD" id="8AS-sO-ydF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1v-Qt-rXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
