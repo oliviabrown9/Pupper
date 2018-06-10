@@ -28,14 +28,15 @@ class FindDogsViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DogBreeds().fetchPossibleBreeds()
-        
+        DogBreeds().possibleBreeds() { foundBreeds in
+            print(foundBreeds)
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
-        cell.breedPhoto.image = UIImage(named: dogs[indexPath.row].imageUrl)
+//        cell.breedPhoto.image = UIImage(named: dogs[indexPath.row].imageUrl)
         cell.breedLabel.text = dogs[indexPath.row].name
         cell.expanded = dogs[indexPath.row].expanded
         cell.detailView.isHidden = !cell.expanded
