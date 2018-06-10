@@ -48,7 +48,7 @@
 		45BCF0BB1E595EF800931C8C /* Spaniel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF09F1E595EF800931C8C /* Spaniel.jpg */; };
 		45BCF0BC1E595EF800931C8C /* Whippet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45BCF0A01E595EF800931C8C /* Whippet.jpg */; };
 		45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0BD1E5970F700931C8C /* SelectDogTableViewController.swift */; };
-		45BCF0C01E597AD000931C8C /* Chosen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0BF1E597AD000931C8C /* Chosen.swift */; };
+		45BCF0C01E597AD000931C8C /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0BF1E597AD000931C8C /* Dog.swift */; };
 		45BCF0C21E598D0000931C8C /* ChosenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BCF0C11E598D0000931C8C /* ChosenTableViewCell.swift */; };
 		E68B846B1E592A1900AE28C2 /* dogs.json in Resources */ = {isa = PBXBuildFile; fileRef = E68B846A1E592A1900AE28C2 /* dogs.json */; };
 /* End PBXBuildFile section */
@@ -96,7 +96,7 @@
 		45BCF09F1E595EF800931C8C /* Spaniel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spaniel.jpg; sourceTree = "<group>"; };
 		45BCF0A01E595EF800931C8C /* Whippet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Whippet.jpg; sourceTree = "<group>"; };
 		45BCF0BD1E5970F700931C8C /* SelectDogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDogTableViewController.swift; sourceTree = "<group>"; };
-		45BCF0BF1E597AD000931C8C /* Chosen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chosen.swift; sourceTree = "<group>"; };
+		45BCF0BF1E597AD000931C8C /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		45BCF0C11E598D0000931C8C /* ChosenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenTableViewCell.swift; sourceTree = "<group>"; };
 		74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pupper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1462292269707E8133B386F /* Pods-Pupper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pupper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pupper/Pods-Pupper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			children = (
 				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
 				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
-				45BCF0BF1E597AD000931C8C /* Chosen.swift */,
+				45BCF0BF1E597AD000931C8C /* Dog.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -382,7 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45BCF0C01E597AD000931C8C /* Chosen.swift in Sources */,
+				45BCF0C01E597AD000931C8C /* Dog.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
 				1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */,
 				45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */,
