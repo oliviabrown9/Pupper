@@ -19,7 +19,13 @@ class FindDogsViewController: UITableViewController{
     var cellTapped = false
     var descriptCellIndex: NSIndexPath?
     var approvedDogs: [String] = []
-    var dogs: [Breed] = []
+    var dogs: [Breed] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     var dogBreed: DogCriteria?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,14 +35,20 @@ class FindDogsViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         DogBreeds().possibleBreeds() { foundBreeds in
-            print(foundBreeds)
+            self.dogs = foundBreeds
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
         
-//        cell.breedPhoto.image = UIImage(named: dogs[indexPath.row].imageUrl)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: self.dogs[indexPath.row].imageUrl) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            DispatchQueue.main.async {
+                cell.breedPhoto.contentMode = .scaleToFill
+                cell.breedPhoto.image = UIImage(data: data!)
+            }
+        }
         cell.breedLabel.text = dogs[indexPath.row].name
         cell.expanded = dogs[indexPath.row].expanded
         cell.detailView.isHidden = !cell.expanded
