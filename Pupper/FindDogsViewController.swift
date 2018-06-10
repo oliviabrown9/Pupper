@@ -37,6 +37,7 @@ class FindDogsViewController: UITableViewController{
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
             self.dogs[indexPath.row].expanded = !self.dogs[indexPath.row].expanded

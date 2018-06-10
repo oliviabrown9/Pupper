@@ -20,8 +20,8 @@ class IdealDogViewController: UIViewController {
     @IBOutlet private weak var medium: UIButton!
     @IBOutlet private weak var small: UIButton!
     
-    private var selectedSize: dogSize?
-    private var selectedAge: dogAge?
+    private var selectedSize: dogSize? = .small
+    private var selectedAge: dogAge? = .baby
     
     @IBAction private func sizeSelected(_ sender: UIButton) {
         style(selected: sender, allButtons: [small, medium, large])
@@ -52,12 +52,9 @@ class IdealDogViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let navVC = segue.destination as? UINavigationController
-        
-        let destination = navVC?.viewControllers.first as! FindDogsViewController
-        if let dogBreed = criteria {
+        if let destination = segue.destination as? FindDogsViewController, let dogBreed = criteria {
             dogBreed.age = selectedAge!
+            print(DogBreeds().breeds)
             destination.dogs = DogBreeds().breeds
             destination.dogBreed = dogBreed
         }

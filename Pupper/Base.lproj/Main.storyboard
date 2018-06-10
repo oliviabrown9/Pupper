@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -208,6 +208,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="GET MY MATCHES"/>
+                                <connections>
+                                    <segue destination="eHQ-FY-Ivr" kind="show" id="kb3-V3-ieb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="continue icon" translatesAutoresizingMaskIntoConstraints="NO" id="cbQ-us-1iy">
                                 <rect key="frame" x="243" y="520" width="13" height="13"/>
@@ -216,7 +219,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0x-hs-PXq">
                                 <rect key="frame" x="55" y="266" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                 <state key="normal" title="SMALL">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -249,7 +252,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZL-SI-no2">
                                 <rect key="frame" x="55" y="344" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                 <state key="normal" title="BABY">
                                     <color key="titleColor" red="0.41685834389999998" green="0.41685834389999998" blue="0.41685834389999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
