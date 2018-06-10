@@ -67,7 +67,8 @@ class DogMatches {
                         completion(foundDogs)
                     }
                 } catch let err {
-                    print("Err", err)
+                    print(err)
+                    completion([Dog]())
                 }
                 }.resume()
         }

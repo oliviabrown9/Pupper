@@ -43,6 +43,13 @@ class SelectDogTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
+            if dogMatches.isEmpty {
+                let alertController = UIAlertController(title: "Unable to find matching dogs.", message: "Oh no! We couldn't find any dogs that match your criteria. Maybe try another search?", preferredStyle: .alert)
+                let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in _ = self.navigationController?.popViewController(animated: true) })
+                alertController.addAction(okayAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
