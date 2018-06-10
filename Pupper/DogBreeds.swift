@@ -18,21 +18,11 @@ class Breed {
         self.name = name
         self.imageUrl = imageUrl
     }
-    
-    func getBreedImage(for name: String) -> String {
-        return "https://google.com"
-    }
 }
 
 class DogBreeds {
-    private func findDogBreeds(dogBreed: DogCriteria) -> [Breed] {
-        var dogs = [Breed]()
-        // make a call to Dog API to get matching photo
-        
-        return dogs
-    }
     
-    func getImageFor(breed: String, completion: @escaping (String)->() ) {
+    private func getImageFor(breed: String, completion: @escaping (String)->() ) {
         var imageUrl = String()
         if let apiUrl = URL(string: "https://dog.ceo/api/breed/" + breed.lowercased() + "/images/random")  {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
@@ -56,13 +46,13 @@ class DogBreeds {
                 guard let data = data else { return }
                 do {
                     let decoder = JSONDecoder()
-                    let decodedBreeds = try decoder.decode(RawServerResponse.self, from: data)
+                    let decodedBreeds = try decoder.decode(RawApiResponse.self, from: data)
                     for breed in decodedBreeds.rawData.breedContainer.breeds {
                         self.getImageFor(breed: breed.name) { imageUrlString in
                             if let imageUrl = URL(string: imageUrlString) {
                                 foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
+                                completion(foundBreeds)
                             }
-                            
                         }
                     }
                 } catch let err {
@@ -79,7 +69,7 @@ class DogBreeds {
         }
     }
     
-    private struct RawServerResponse: Decodable {
+    private struct RawApiResponse: Decodable {
         struct RawData: Decodable {
             var breedContainer: BreedContainer
             enum CodingKeys : String, CodingKey {
@@ -106,18 +96,5 @@ class DogBreeds {
             case rawData = "petfinder"
         }
         
-    }
-    
-    struct ServerResponse: Decodable {
-        var allBreeds: [String]
-        
-        init(from decoder: Decoder) throws {
-            let rawResponse = try RawServerResponse(from: decoder)
-            
-            allBreeds = [String]()
-            for breed in rawResponse.rawData.breedContainer.breeds {
-                allBreeds.append(breed.name)
-            }
-        }
     }
 }
