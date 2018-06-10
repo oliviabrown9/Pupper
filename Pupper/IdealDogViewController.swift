@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class IdealDogViewController: UIViewController {
     var criteria: DogCriteria?

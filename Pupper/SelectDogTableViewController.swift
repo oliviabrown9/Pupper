@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 import MessageUI
 
 class SelectDogTableViewController: UITableViewController {
