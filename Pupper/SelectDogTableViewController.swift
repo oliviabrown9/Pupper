@@ -32,69 +32,72 @@ class SelectDogTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     func setChosenClass(callback: @escaping (([Chosen])->())) {
-        
-        let location = "\(zipCode!)"
-        let breed = selectedBreed!
-        let dogAge = "Young"
-        
-        var chosens: [Chosen] = []
-        
-        
-        let urlString =
-        "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&" + location + " &format=json"
-        
-        var request = URLRequest(url:URL(string: urlString)!);
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) {
-            data, response, error in
+        if let locationInt = zipCode, let breed = selectedBreed {
+            let location = "\(locationInt)"
+            let dogAge = "Young"
+            let dogSize = "S"
             
-            // Check for error
-            if (error != nil) {
-                print("error=\(String(describing: error))")
-                return
-            }
-            // Print out response string
-            let responseString = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
-            //            print(responseString)
+            var chosens: [Chosen] = []
             
-            if let breeds = responseString?.convertToDictionary() as? [NSDictionary] {
-                for breed in breeds {
-                    for (key, value) in breed {
-                        if ((key as! String) == "name") {
-                            print(key)
-                            print(value)
+            
+            let urlString =
+                "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
+            + location + "&breed=" + breed + "&size=" + dogSize + "&age=" + dogAge + "&format=json"
+            
+            var request = URLRequest(url:URL(string: urlString)!);
+            request.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: request) {
+                data, response, error in
+                
+                // Check for error
+                if (error != nil) {
+                    print("error=\(String(describing: error))")
+                    return
+                }
+                // Print out response string
+                let responseString = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+                            print(responseString)
+                
+                if let breeds = responseString?.convertToDictionary() as? [NSDictionary] {
+                    for breed in breeds {
+                        for (key, value) in breed {
+                            if ((key as! String) == "name") {
+                                print(key)
+                                print(value)
+                            }
                         }
                     }
                 }
             }
+            task.resume()
+            //                var petArray = json["petfinder"]["pets"]["pet"]
+            //
+            //                for index in 0..<petArray.count {
+            //                let name = petArray[index]["name"]["$t"].string!
+            //
+            //                let photo = petArray[index]["media"]["photos"]["photo"][0]["$t"].string ?? ""
+            //
+            //                let shelterStreet = petArray[index]["contact"]["address1"]["$t"].string ?? ""
+            //
+            //                let shelterCity = petArray[index]["contact"]["city"]["$t"].string ?? "Suffern"
+            //
+            //                let shelterState = petArray[index]["contact"]["state"]["$t"].string ?? "NY"
+            //
+            //                let shelterPhone = petArray[index]["contact"]["phone"]["$t"].int ?? 8457686544
+            //
+            //                let shelterEmail = petArray[index]["contact"]["email"]["$t"].string ?? "noemail@mail.com"
+            //
+            //
+            //                let shelterCityState = "\(shelterCity), \(shelterState)"
+            //
+            //                let chosen = Chosen(dogName: name, photo: photo, street: shelterStreet, citystate: shelterCityState, phone: shelterPhone, email: shelterEmail, trained: self.randomBool(), hadShots: self.randomBool())
+            //
+            //                    chosens.append(chosen)
+            callback(chosens)
+            self.tableView.reloadData()
         }
-        task.resume()
-        //                var petArray = json["petfinder"]["pets"]["pet"]
-        //
-        //                for index in 0..<petArray.count {
-        //                let name = petArray[index]["name"]["$t"].string!
-        //
-        //                let photo = petArray[index]["media"]["photos"]["photo"][0]["$t"].string ?? ""
-        //
-        //                let shelterStreet = petArray[index]["contact"]["address1"]["$t"].string ?? ""
-        //
-        //                let shelterCity = petArray[index]["contact"]["city"]["$t"].string ?? "Suffern"
-        //
-        //                let shelterState = petArray[index]["contact"]["state"]["$t"].string ?? "NY"
-        //
-        //                let shelterPhone = petArray[index]["contact"]["phone"]["$t"].int ?? 8457686544
-        //
-        //                let shelterEmail = petArray[index]["contact"]["email"]["$t"].string ?? "noemail@mail.com"
-        //
-        //
-        //                let shelterCityState = "\(shelterCity), \(shelterState)"
-        //
-        //                let chosen = Chosen(dogName: name, photo: photo, street: shelterStreet, citystate: shelterCityState, phone: shelterPhone, email: shelterEmail, trained: self.randomBool(), hadShots: self.randomBool())
-        //
-        //                    chosens.append(chosen)
-    callback(chosens)
-    self.tableView.reloadData()
+        
 }
 
 override func numberOfSections(in tableView: UITableView) -> Int {

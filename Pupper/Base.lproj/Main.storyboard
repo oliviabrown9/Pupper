@@ -369,12 +369,6 @@
                                         <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-h6-beE">
                                             <rect key="frame" x="0.0" y="140" width="375" height="81"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3P-uK-GCI">
-                                                    <rect key="frame" x="28" y="6" width="39" height="69"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zst-xF-e6S">
                                                     <rect key="frame" x="241" y="22" width="134" height="37"/>
                                                     <constraints>
@@ -390,12 +384,8 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="Zst-xF-e6S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D3P-uK-GCI" secondAttribute="trailing" constant="10" id="9Bl-Je-sp0"/>
                                                 <constraint firstAttribute="height" constant="81" id="I5g-Uw-tCm"/>
-                                                <constraint firstItem="D3P-uK-GCI" firstAttribute="leading" secondItem="zb5-h6-beE" secondAttribute="leading" constant="28" id="Mf9-RF-mgG"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zst-xF-e6S" secondAttribute="trailing" id="Z5i-LP-kga"/>
-                                                <constraint firstItem="D3P-uK-GCI" firstAttribute="top" secondItem="zb5-h6-beE" secondAttribute="top" constant="6" id="Zgy-Zp-gmZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="D3P-uK-GCI" secondAttribute="bottom" constant="6" id="fsr-vy-hHJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zst-xF-e6S" secondAttribute="bottom" constant="22" id="q3l-x4-RJW"/>
                                                 <constraint firstItem="Zst-xF-e6S" firstAttribute="top" secondItem="zb5-h6-beE" secondAttribute="top" constant="22" id="sve-kM-dW3"/>
                                             </constraints>
@@ -416,7 +406,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="breedDescript" destination="D3P-uK-GCI" id="pgp-qJ-N8L"/>
                                     <outlet property="breedLabel" destination="CmE-bC-Xzy" id="COF-o0-zgP"/>
                                     <outlet property="breedPhoto" destination="lEL-8q-SzZ" id="gJA-kj-kqf"/>
                                     <outlet property="detailView" destination="zb5-h6-beE" id="Pyn-Wb-HvF"/>
