@@ -12,7 +12,9 @@ class LocationViewController: UIViewController {
     
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var locationLabel: UILabel!
+    private let locationManager = CLLocationManager()
     private var criteria: DogCriteria?
+    private var mostRecentUserLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,8 @@ class LocationViewController: UIViewController {
         let tap: UITapGestureRecognizer?
         tap = UITapGestureRecognizer(target: self, action: #selector(LocationViewController.dismissKeyboard))
         view.addGestureRecognizer(tap!)
+        
+        setUpLocationManager()
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -61,5 +65,36 @@ class LocationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! IdealDogViewController
         destination.criteria = self.criteria
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension LocationViewController: CLLocationManagerDelegate {
+    
+    func setUpLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(locations[0] as CLLocation, completionHandler: {(placemarks, error) -> Void in
+            
+            if error != nil {
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
+                return
+            }
+            if placemarks!.count > 0 {
+                let pm = placemarks![0]
+                self.textField.text = pm.postalCode
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        })
     }
 }
