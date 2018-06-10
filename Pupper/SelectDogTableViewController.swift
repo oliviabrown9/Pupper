@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 import MessageUI
 
@@ -42,7 +41,7 @@ class SelectDogTableViewController: UITableViewController {
         
         
         let urlString =
-        "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&location=90071&animal=dog&format=json"
+        "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&" + location + " &format=json"
         
         var request = URLRequest(url:URL(string: urlString)!);
         request.httpMethod = "GET"
@@ -56,10 +55,10 @@ class SelectDogTableViewController: UITableViewController {
                 return
             }
             // Print out response string
-            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            let responseString = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
             //            print(responseString)
             
-            if let breeds = self.convertToDictionary(text: responseString! as String) as? [NSDictionary] {
+            if let breeds = responseString?.convertToDictionary() as? [NSDictionary] {
                 for breed in breeds {
                     for (key, value) in breed {
                         if ((key as! String) == "name") {
@@ -197,10 +196,10 @@ extension UIImageView {
     }
 }
 
-extension UIViewController {
-    func convertToDictionary(text: String) -> Any? {
+extension String {
+    func convertToDictionary() -> Any? {
         
-        if let data = text.data(using: .utf8) {
+        if let data = self.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: [])
             } catch {
