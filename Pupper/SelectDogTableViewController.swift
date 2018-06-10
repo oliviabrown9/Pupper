@@ -9,24 +9,33 @@ import UIKit
 import MessageUI
 
 class SelectDogTableViewController: UITableViewController {
-    
-    var zipCode: Int?
-    var selectedBreed: String?
     var theChosenOne: Dog?
-    var size: String?
-    var age: String?
+    
+    var criteria: DogCriteria?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        size = "S"
-        age = "Young"
-        selectedBreed = "Dalmatian"
-        zipCode = 90071
-        if let zipCode = zipCode, let selectedBreed = selectedBreed, let size = size, let age = age {
-            DogMatches().allMatches(in: "\(zipCode)", size: size, age: age, breed: selectedBreed){ foundDogs in
+        if let zipCode = criteria?.zipCode, let selectedBreed = criteria?.breed, let size = getSizeString(), let age = criteria?.age {
+            DogMatches().allMatches(in: "\(zipCode)", size: size, age: age.rawValue, breed: selectedBreed){ foundDogs in
                 self.dogMatches = foundDogs
             }
         }
+    }
+    
+    private func getSizeString() -> String? {
+        if let sizeEnum = criteria?.sizeOfDog {
+            switch sizeEnum {
+            case .small:
+                return "S"
+            case .medium:
+                return "M"
+            case .large:
+                return "L"
+            case .all:
+                return "S"
+            }
+        }
+        return nil
     }
     
     var dogMatches: [Dog] = [] {

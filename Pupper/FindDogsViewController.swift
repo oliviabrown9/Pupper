@@ -12,12 +12,8 @@ class FindDogsViewController: UITableViewController{
     @IBAction func unwindToSelect(segue: UIStoryboardSegue) {}
 
     var selectedBreed: String?
-    var assignedHeight: CGFloat = 50
     var index = 0
     
-    var cellTapped = false
-    var descriptCellIndex: NSIndexPath?
-    var approvedDogs: [String] = []
     var dogs: [Breed] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -25,7 +21,7 @@ class FindDogsViewController: UITableViewController{
             }
         }
     }
-    var dogBreed: DogCriteria?
+    var criteria: DogCriteria?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count
@@ -47,17 +43,14 @@ class FindDogsViewController: UITableViewController{
         cell.expanded = dogs[indexPath.row].expanded
         cell.detailView.isHidden = !cell.expanded
         cell.tableViewController = self
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
             self.dogs[indexPath.row].expanded = !self.dogs[indexPath.row].expanded
             tableView.reloadRows(at: [indexPath], with: .automatic)
             selectedBreed = self.dogs[indexPath.row].name
             index = indexPath.row
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,12 +61,14 @@ class FindDogsViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! SelectDogTableViewController
         if segue.identifier == "breedSegue" {
-            destination.selectedBreed = dogs[index].name
-            destination.zipCode = dogBreed!.zipCode
+            if let criteria = criteria, let selectedBreed = selectedBreed {
+                criteria.breed = selectedBreed
+                destination.criteria = criteria
+            }
         }
             let backItem = UIBarButtonItem()
             backItem.title = ""
-            navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+            navigationItem.backBarButtonItem = backItem
         }
     }
 

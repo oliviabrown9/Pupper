@@ -53,8 +53,7 @@ class IdealDogViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FindDogsViewController, let dogBreed = criteria {
             dogBreed.age = selectedAge!
-//            destination.dogs = DogBreeds().possibleBreeds()
-            destination.dogBreed = dogBreed
+            destination.criteria = dogBreed
         }
     }
 

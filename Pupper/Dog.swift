@@ -42,40 +42,29 @@ class DogMatches {
     
     func allMatches(in location: String, size: String, age: String, breed: String, completion: @escaping ([Dog])->() ) {
         var foundDogs = [Dog]()
-        
-//        URL(string: "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
-//            + location + "&breed=" + breed + "&size=" + size + "&age=" + age + "&format=json")
         if let apiUrl = URL(string: "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
-            + location + "&format=json") {
+            + location + "&breed=" + breed + "&size=" + size + "&age=" + age + "&format=json") {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
                 guard let data = data else { return }
                 do {
-//                    let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments)
-//                    print(jsonArray)
+                    let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments)
+                    print(jsonArray)
                     let decoder = JSONDecoder()
                     let decodedDogs = try decoder.decode(RawApiResponse.self, from: data)
                     for dog in decodedDogs.rawData.petContainer.dogs {
                         let contactInfo = dog.contact
                         var selectedPhoto: RawApiResponse.SinglePhoto?
-                        for photo in dog.photo.photoContainer.photos {
-                            if photo.size == "x" {
-                                selectedPhoto = photo
-                                break;
+                        if let photoArray = dog.photo.photoContainer?.photos {
+                            for photo in photoArray {
+                                if photo.size == "x" {
+                                    selectedPhoto = photo
+                                    break;
+                                }
                             }
                         }
+                        
                         foundDogs.append(Dog(dogName: dog.name.value, photo: selectedPhoto?.url, street: contactInfo.address1?.value, city: contactInfo.city?.value, state: contactInfo.state?.value, phone: contactInfo.phone?.value, email: contactInfo.email?.value, description: dog.description.value, zip: contactInfo.zip?.value ))
                         completion(foundDogs)
-//                        print(dog.name.value as Any)
-//                        print(dog.options)
-//                        print(dog.contact)
-//                        break
-                        
-//                        self.getImageFor(breed: breed.name) { imageUrlString in
-//                            if let imageUrl = URL(string: imageUrlString) {
-//                                foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
-//                                completion(foundBreeds)
-//                            }
-//                        }
                     }
                 } catch let err {
                     print("Err", err)
@@ -118,7 +107,7 @@ class DogMatches {
         }
         
         struct PhotoContainer: Decodable {
-            var photos: [SinglePhoto]
+            var photos: [SinglePhoto]?
             
             enum CodingKeys: String, CodingKey {
                 case photos = "photo"
@@ -126,15 +115,15 @@ class DogMatches {
         }
         
         struct MediaContainer: Decodable {
-            var photoContainer: PhotoContainer
+            var photoContainer: PhotoContainer?
             enum CodingKeys: String, CodingKey {
                 case photoContainer = "photos"
             }
         }
         
         struct SinglePhoto: Decodable {
-            var url: String
-            var size: String
+            var url: String?
+            var size: String?
             enum CodingKeys : String, CodingKey {
                 case url = "$t"
                 case size = "@size"

@@ -15,10 +15,10 @@ enum dogSize: String {
 }
 
 enum dogAge: String {
-    case baby = "baby"
-    case young = "young"
-    case adult = "adult"
-    case senior = "senior"
+    case baby = "Baby"
+    case young = "Young"
+    case adult = "Adult"
+    case senior = "Senior"
     case all = "all"
 }
 
