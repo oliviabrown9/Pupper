@@ -40,13 +40,8 @@ class FindDogsViewController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BreedTableViewCell
-        
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: self.dogs[indexPath.row].imageUrl) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.breedPhoto.contentMode = .scaleToFill
-                cell.breedPhoto.image = UIImage(data: data!)
-            }
+        DispatchQueue.main.async {
+            cell.breedPhoto.downloadedFrom(url: self.dogs[indexPath.row].imageUrl, contentMode: .scaleToFill)
         }
         cell.breedLabel.text = dogs[indexPath.row].name
         cell.expanded = dogs[indexPath.row].expanded
@@ -81,4 +76,35 @@ class FindDogsViewController: UITableViewController{
             navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
         }
     }
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
+    
+    func addBlurEffect()
+    {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+}
 
