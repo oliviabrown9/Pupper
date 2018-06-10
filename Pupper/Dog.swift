@@ -10,53 +10,65 @@ import Foundation
 class Dog {
     
     var dogName: String
-    var photo: String = ""
+    var photo: String
     var street: String
-    var citystate: String
-    var phone: Int = 0
-    var email: String = ""
-    var trained: Bool
-    var hadShots: Bool
+    var city: String
+    var state: String
+    var phone: String
+    var email: String
+    var zip: String
+    var description: String
+//    var trained: Bool
+//    var hadShots: Bool
     var expanded: Bool = false
     
-    init(dogName: String, photo: String, street: String, citystate: String, phone: Int, email: String, trained: Bool, hadShots:Bool) {
-        self.dogName = dogName
-        self.phone = phone
-        self.photo = photo
-        self.street = street
-        self.citystate = citystate
-        self.email = email
-        self.trained = trained
-        self.hadShots = hadShots
+    init(dogName: String?, photo: String?, street: String?, city: String?, state: String?, phone: String?, email: String?, description: String?, zip: String?) {
+        self.dogName = dogName ?? ""
+        self.phone = phone ?? ""
+        self.photo = photo ?? ""
+        self.street = street ?? ""
+        self.city = city ?? ""
+        self.state = state ?? ""
+        self.email = email ?? ""
+        self.description = description ?? ""
+        self.zip = zip ?? ""
+//        self.trained = trained
+//        self.hadShots = hadShots
     }
 
 }
 
 class DogMatches {
     
-    func allMatches(completion: @escaping ([Dog])->() ) {
+    func allMatches(in location: String, size: String, age: String, breed: String, completion: @escaping ([Dog])->() ) {
         var foundDogs = [Dog]()
-        let breed = "dachshund"
-        let location = "90071"
-        let dogSize = "S"
-        let dogAge = "Young"
         
 //        URL(string: "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
-//            + location + "&breed=" + breed + "&size=" + dogSize + "&age=" + dogAge + "&format=json")
+//            + location + "&breed=" + breed + "&size=" + size + "&age=" + age + "&format=json")
         if let apiUrl = URL(string: "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
             + location + "&format=json") {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
                 guard let data = data else { return }
                 do {
-                    let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments)
-                    print(jsonArray)
+//                    let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments)
+//                    print(jsonArray)
                     let decoder = JSONDecoder()
                     let decodedDogs = try decoder.decode(RawApiResponse.self, from: data)
                     for dog in decodedDogs.rawData.petContainer.dogs {
-                        print(dog.name.value)
-                        print(dog.options)
-                        print(dog.contact)
-                        break
+                        let contactInfo = dog.contact
+                        var selectedPhoto: RawApiResponse.SinglePhoto?
+                        for photo in dog.photo.photoContainer.photos {
+                            if photo.size == "x" {
+                                selectedPhoto = photo
+                                break;
+                            }
+                        }
+                        foundDogs.append(Dog(dogName: dog.name.value, photo: selectedPhoto?.url, street: contactInfo.address1?.value, city: contactInfo.city?.value, state: contactInfo.state?.value, phone: contactInfo.phone?.value, email: contactInfo.email?.value, description: dog.description.value, zip: contactInfo.zip?.value ))
+                        completion(foundDogs)
+//                        print(dog.name.value as Any)
+//                        print(dog.options)
+//                        print(dog.contact)
+//                        break
                         
 //                        self.getImageFor(breed: breed.name) { imageUrlString in
 //                            if let imageUrl = URL(string: imageUrlString) {
@@ -93,7 +105,7 @@ class DogMatches {
             var description: Characteristic
             var photo: MediaContainer
             var contact: ContactContainer
-            var options: OptionContainer
+//            var options: OptionContainer
             var name: Characteristic
             enum CodingKeys : String, CodingKey {
                 case age
@@ -101,7 +113,7 @@ class DogMatches {
                 case photo = "media"
                 case name
                 case contact
-                case options
+//                case options
             }
         }
         

@@ -13,11 +13,19 @@ class SelectDogTableViewController: UITableViewController {
     var zipCode: Int?
     var selectedBreed: String?
     var theChosenOne: Dog?
+    var size: String?
+    var age: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DogMatches().allMatches(){ foundDogs in
-            self.dogMatches = foundDogs
+        size = "S"
+        age = "Young"
+        selectedBreed = "Dalmatian"
+        zipCode = 90071
+        if let zipCode = zipCode, let selectedBreed = selectedBreed, let size = size, let age = age {
+            DogMatches().allMatches(in: "\(zipCode)", size: size, age: age, breed: selectedBreed){ foundDogs in
+                self.dogMatches = foundDogs
+            }
         }
     }
     
@@ -43,7 +51,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
     let chosenDog = dogMatches[indexPath.row]
-    cell.addressLabel.text = "\(chosenDog.citystate)"
+    cell.addressLabel.text = "\(chosenDog.city)" + ", " + "\(chosenDog.state)"
     cell.tableViewController = self
     cell.selectionStyle = .none
     
@@ -54,22 +62,21 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     
     cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
     cell.blurImageViewTwo.addBlurEffect()
-    print(chosenDog.photo)
     cell.dogNameLabel.text = chosenDog.dogName
     
-    if chosenDog.hadShots {
-        cell.hasShotsImageView.image = UIImage(named: "check")
-    } else {
-        cell.hasShotsImageView.image = UIImage(named: "uncheck")
-    }
-    if chosenDog.trained {
-        cell.houseTrainedImageVIew.image = UIImage(named: "check")
-    } else {
-        cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
-    }
-    let time = arc4random_uniform(12) + 1
-    
-    cell.timeInShelterLabel.text = "\(time) months"
+//    if chosenDog.hadShots {
+//        cell.hasShotsImageView.image = UIImage(named: "check")
+//    } else {
+//        cell.hasShotsImageView.image = UIImage(named: "uncheck")
+//    }
+//    if chosenDog.trained {
+//        cell.houseTrainedImageVIew.image = UIImage(named: "check")
+//    } else {
+//        cell.houseTrainedImageVIew.image = UIImage(named: "uncheck")
+//    }
+//    let time = arc4random_uniform(12) + 1
+//
+//    cell.timeInShelterLabel.text = "\(time) months"
     
     cell.chosenDog = dogMatches[indexPath.row]
     
