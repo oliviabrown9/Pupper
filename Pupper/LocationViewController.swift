@@ -32,8 +32,7 @@ class LocationViewController: UIViewController {
         geocoder.geocodeAddressString(textField.text!) {
             (placemarks, error) -> Void in
             if let placemark = placemarks?[0] {
-                let addressDict = placemark.addressDictionary as? [String: Any]
-                if let city = addressDict?["City"], let state = addressDict?["State"] {
+                if let city = placemark.locality, let state = placemark.administrativeArea {
                     self.locationLabel.text = "\(city), \(state)"
                 }
             }
