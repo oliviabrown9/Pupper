@@ -574,7 +574,6 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="adoptMeButtonPressed:" destination="b6M-NV-CTT" eventType="touchUpInside" id="131-b2-hDU"/>
                                                         <segue destination="y1Y-sP-p7z" kind="show" id="zhG-fH-Sya"/>
                                                     </connections>
                                                 </button>
@@ -586,7 +585,6 @@
                                                     </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
-                                                        <action selector="mapButtonPressed:" destination="FQl-jv-uhV" eventType="touchUpInside" id="TJi-sc-IeO"/>
                                                         <segue destination="azC-96-eNe" kind="show" identifier="MapVC" id="rxr-10-z9U"/>
                                                     </connections>
                                                 </button>

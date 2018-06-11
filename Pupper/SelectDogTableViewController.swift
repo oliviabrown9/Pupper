@@ -8,7 +8,11 @@
 import UIKit
 import MessageUI
 
-class SelectDogTableViewController: UITableViewController {
+class SelectDogTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     var theChosenOne: Dog?
     
     var criteria: DogCriteria?
@@ -38,10 +42,20 @@ class SelectDogTableViewController: UITableViewController {
         return nil
     }
     
-    @IBAction func mapButtonPressed(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "MapVC")
-//        self.present(controller, animated: true, completion: nil)
+    func phoneAlertAction(withNumber number: URL) {
+        let actionSheetController = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel)
+        actionSheetController.addAction(cancelActionButton)
+        let callActionButton = UIAlertAction(title: "Call", style: .default) { _ in
+            UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        }
+        actionSheetController.addAction(callActionButton)
+        let textActionButton = UIAlertAction(title: "Text", style: .default) { _ in
+            let messageComposeVC = self.configuredMessageComposeViewController()
+            self.present(messageComposeVC, animated: true, completion: nil)
+            }
+        actionSheetController.addAction(textActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     var dogMatches: [Dog] = [] {
@@ -49,7 +63,6 @@ class SelectDogTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
             if dogMatches.isEmpty {
                 let alertController = UIAlertController(title: "Unable to find matching dogs.", message: "Oh no! We couldn't find any dogs that match your criteria. Maybe try another search?", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in _ = self.navigationController?.popViewController(animated: true) })
@@ -60,52 +73,44 @@ class SelectDogTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-
-override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-}
-
-override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dogMatches.count
-}
-
-override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
-    let chosenDog = dogMatches[indexPath.row]
-    cell.addressLabel.text = "\(chosenDog.city)" + ", " + "\(chosenDog.state)"
-    cell.tableViewController = self
-    cell.selectionStyle = .none
-    cell.dogImageView.downloadedFrom(link: "\(chosenDog.photo)")
-    cell.blurImageViewOne.downloadedFrom(link: "\(chosenDog.photo)")
-    cell.blurImageViewOne.addBlurEffect()
-    cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
-    cell.blurImageViewTwo.addBlurEffect()
-    cell.dogNameLabel.text = chosenDog.dogName
-    cell.chosenDog = dogMatches[indexPath.row]
-    cell.expanded = chosenDog.expanded
-    cell.detailView.isHidden = !cell.expanded
-    
-    return cell
-}
-
-
-override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    self.dogMatches[indexPath.row].expanded = !self.dogMatches[indexPath.row].expanded
-    tableView.reloadRows(at: [indexPath], with: .automatic)
-    theChosenOne = dogMatches[indexPath.row]
-    
-}
-override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
-    if dogMatches[indexPath.row].expanded {
-        
-        return 242
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-        
-    else{return 148}
-}
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dogMatches.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
+        let chosenDog = dogMatches[indexPath.row]
+        cell.addressLabel.text = "\(chosenDog.city)" + ", " + "\(chosenDog.state)"
+        cell.tableViewController = self
+        cell.selectionStyle = .none
+        cell.dogImageView.downloadedFrom(link: "\(chosenDog.photo)")
+        cell.blurImageViewOne.downloadedFrom(link: "\(chosenDog.photo)")
+        cell.blurImageViewOne.addBlurEffect()
+        cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
+        cell.blurImageViewTwo.addBlurEffect()
+        cell.dogNameLabel.text = chosenDog.dogName
+        cell.chosenDog = dogMatches[indexPath.row]
+        cell.expanded = chosenDog.expanded
+        cell.detailView.isHidden = !cell.expanded
+        return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dogMatches[indexPath.row].expanded = !self.dogMatches[indexPath.row].expanded
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        theChosenOne = dogMatches[indexPath.row]
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if dogMatches[indexPath.row].expanded { return 242 }
+        else { return 148 }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapVC" {
@@ -113,19 +118,26 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
                 destination.dogName = chosenDog.dogName
                 destination.address = "\(chosenDog.street)" + ", " + "\(chosenDog.city)" + ", " + "\(chosenDog.state)" + ", " + "\(chosenDog.zip)"
             }
-
+            
         }
         else {
             let destination = segue.destination as? CalendarViewController
             destination?.chosenDog = theChosenOne
         }
-        
     }
 
+    func configuredMessageComposeViewController() -> MFMessageComposeViewController {
+        let messageComposeVC = MFMessageComposeViewController()
+        messageComposeVC.messageComposeDelegate = self
+        if let recipient = theChosenOne?.phone {
+            messageComposeVC.recipients = [recipient]
+        }
+        messageComposeVC.body = ""
+        return messageComposeVC
+    }
+    
     func shareDog() {
         let message = "Check out this dog!"
-        
-        // Set the link to share.
         if let photoUrl = theChosenOne?.photo, let link = NSURL(string: photoUrl) {
             let objectsToShare = [message, link] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)

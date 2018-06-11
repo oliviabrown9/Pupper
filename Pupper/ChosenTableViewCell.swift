@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MessageUI
 
 class ChosenTableViewCell: UITableViewCell {
     
@@ -21,8 +20,8 @@ class ChosenTableViewCell: UITableViewCell {
     @IBOutlet weak var dogNameLabel: UILabel!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBAction func phoneButtonPressed(_ sender: Any) {
-        if let phoneNumber = chosenDog?.phone, let number = URL(string: "telprompt://" + phoneNumber) {
-            UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        if let phoneNumber = chosenDog?.phone, phoneNumber != "", let number = URL(string: "telprompt://" + phoneNumber) {
+            tableViewController?.phoneAlertAction(withNumber: number)
         }
         else {
             let alertController = UIAlertController(title: "Phone number unavailable.", message: "Unforuntately, we do not have the phone number. Please try another contact method.", preferredStyle: .alert)
@@ -30,25 +29,17 @@ class ChosenTableViewCell: UITableViewCell {
             alertController.addAction(okayAction)
             self.tableViewController?.present(alertController, animated: true, completion: nil)
         }
-        
-        
     }
     
     @IBAction func shareButtonPressed(_ sender: UIButton) {
         tableViewController?.shareDog()
     }
 
-    
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var timeInShelterLabel: UILabel!
     
     var expanded: Bool = false
-    @IBOutlet weak var houseTrainedImageVIew: UIImageView!
-    @IBOutlet weak var hasShotsImageView: UIImageView!
     
     @IBOutlet weak var adoptMeButton: UIButton!
-    @IBAction func adoptMeButtonPressed(_ sender: Any) {
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

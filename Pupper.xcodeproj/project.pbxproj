@@ -30,6 +30,7 @@
 		1842504320CE189D00B7C710 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pupper.entitlements; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
+				18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				1847FFB12097B25F00EB7CDC /* Controllers */,
 				1847FFB22097B27400EB7CDC /* Views */,
@@ -166,6 +168,11 @@
 						DevelopmentTeam = 8GEKYYW3CQ;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -354,11 +361,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pupper/Pupper.entitlements;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.olivia21.pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -369,11 +377,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pupper/Pupper.entitlements;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.okitsolivia.pupper.Pupper;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.olivia21.pupper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
