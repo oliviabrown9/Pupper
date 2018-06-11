@@ -17,12 +17,9 @@ class Dog {
     var phone: String
     var email: String
     var zip: String
-    var description: String
-//    var trained: Bool
-//    var hadShots: Bool
     var expanded: Bool = false
     
-    init(dogName: String?, photo: String?, street: String?, city: String?, state: String?, phone: String?, email: String?, description: String?, zip: String?) {
+    init(dogName: String?, photo: String?, street: String?, city: String?, state: String?, phone: String?, email: String?, zip: String?) {
         self.dogName = dogName ?? ""
         self.phone = phone ?? ""
         self.photo = photo ?? ""
@@ -30,92 +27,87 @@ class Dog {
         self.city = city ?? ""
         self.state = state ?? ""
         self.email = email ?? ""
-        self.description = description ?? ""
         self.zip = zip ?? ""
-//        self.trained = trained
-//        self.hadShots = hadShots
     }
-
 }
 
 class DogMatches {
     
     func allMatches(in location: String, size: String, age: String, breed: String, completion: @escaping ([Dog])->() ) {
-        var foundDogs = [Dog]()
         if let apiUrl = URL(string: "https://api.petfinder.com/pet.find?key=f534d78deac933250456312a9ee37d22&animal=dog&location="
             + location + "&breed=" + breed + "&size=" + size + "&age=" + age + "&format=json") {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
                 guard let data = data else { return }
-                do {
-                    let decoder = JSONDecoder()
-                    let decodedDogs = try decoder.decode(RawApiResponse.self, from: data)
-                    for dog in decodedDogs.rawData.petContainer.dogs {
-                        let contactInfo = dog.contact
-                        var selectedPhoto: RawApiResponse.SinglePhoto?
-                        if let photoArray = dog.photo.photoContainer?.photos {
-                            for photo in photoArray {
-                                if photo.size == "x" {
-                                    selectedPhoto = photo
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        foundDogs.append(Dog(dogName: dog.name.value, photo: selectedPhoto?.url, street: contactInfo.address1?.value, city: contactInfo.city?.value, state: contactInfo.state?.value, phone: contactInfo.phone?.value, email: contactInfo.email?.value, description: dog.description.value, zip: contactInfo.zip?.value ))
-                        completion(foundDogs)
-                    }
-                } catch let err {
-                    print(err)
-                    completion([Dog]())
-                }
+                let foundDogs = self.addDogs(fromData: data)
+                completion(foundDogs)
                 }.resume()
         }
     }
-}
+    
+    private func addDogs(fromData data: Data) -> [Dog] {
+        var foundDogs = [Dog]()
+        do {
+            let decoder = JSONDecoder()
+            let decodedDogs = try decoder.decode(RawApiResponse.self, from: data)
+            for dog in decodedDogs.rawData.petContainer.dogs {
+                let contactInfo = dog.contact
+                if let photoArray = dog.photo.photoContainer?.photos, let selectedPhoto = getLargePhoto(from: photoArray) {
+                    foundDogs.append(Dog(dogName: dog.name.value, photo: selectedPhoto.url, street: contactInfo.address1?.value, city: contactInfo.city?.value, state: contactInfo.state?.value, phone: contactInfo.phone?.value, email: contactInfo.email?.value, zip: contactInfo.zip?.value ))
+                }
+            }
+        } catch let err {
+            print(err)
+        }
+        return foundDogs
+    }
+    
+    private func getLargePhoto(from photoArray: [RawApiResponse.SinglePhoto]) -> RawApiResponse.SinglePhoto? {
+        for photo in photoArray {
+            if photo.size == "x" {
+                return photo
+            }
+        }
+        return nil
+    }
     
     private struct RawApiResponse: Decodable {
         struct RawData: Decodable {
             var petContainer: PetContainer
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case petContainer = "pets"
             }
         }
         
         struct PetContainer: Decodable {
             var dogs: [SingleDog]
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case dogs = "pet"
             }
         }
         
         struct SingleDog: Decodable {
             var age: Characteristic
-            var description: Characteristic
             var photo: MediaContainer
             var contact: ContactContainer
-//            var options: OptionContainer
             var name: Characteristic
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case age
-                case description
                 case photo = "media"
                 case name
                 case contact
-//                case options
             }
         }
         
         struct PhotoContainer: Decodable {
             var photos: [SinglePhoto]?
-            
-            enum CodingKeys: String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case photos = "photo"
             }
         }
         
         struct MediaContainer: Decodable {
             var photoContainer: PhotoContainer?
-            enum CodingKeys: String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case photoContainer = "photos"
             }
         }
@@ -123,7 +115,7 @@ class DogMatches {
         struct SinglePhoto: Decodable {
             var url: String?
             var size: String?
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case url = "$t"
                 case size = "@size"
             }
@@ -131,7 +123,7 @@ class DogMatches {
         
         struct Characteristic: Decodable {
             var value: String?
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case value = "$t"
             }
         }
@@ -146,12 +138,11 @@ class DogMatches {
             var phone: Characteristic?
         }
         
-        struct OptionContainer: Decodable {
-            var option: [Characteristic]?
-        }
-        
         var rawData: RawData
-        enum CodingKeys : String, CodingKey {
+        private enum CodingKeys : String, CodingKey {
             case rawData = "petfinder"
         }
+    }
 }
+
+
