@@ -11,6 +11,7 @@
 		1842504420CE189D00B7C710 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842504320CE189D00B7C710 /* MapViewController.swift */; };
 		1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */; };
 		1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA92097B05700EB7CDC /* LocationViewController.swift */; };
+		18B3411220CE494A00E42796 /* bark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B3411120CE494A00E42796 /* bark.mp3 */; };
 		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
 		45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CF1E586D0E00D97A7D /* StartViewController.swift */; };
@@ -30,6 +31,7 @@
 		1842504320CE189D00B7C710 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		18B3411120CE494A00E42796 /* bark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bark.mp3; sourceTree = "<group>"; };
 		18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pupper.entitlements; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				45A7D7D41E586D0E00D97A7D /* Assets.xcassets */,
 				45A7D7D61E586D0E00D97A7D /* LaunchScreen.storyboard */,
 				45A7D7D91E586D0E00D97A7D /* Info.plist */,
+				18B3411120CE494A00E42796 /* bark.mp3 */,
 				1847FFB32097B28000EB7CDC /* Models */,
 			);
 			path = Pupper;
@@ -201,6 +204,7 @@
 			files = (
 				45A7D7D81E586D0E00D97A7D /* LaunchScreen.storyboard in Resources */,
 				45A7D7D51E586D0E00D97A7D /* Assets.xcassets in Resources */,
+				18B3411220CE494A00E42796 /* bark.mp3 in Resources */,
 				45A7D7D31E586D0E00D97A7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
