@@ -82,17 +82,15 @@ extension LocationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(locations[0] as CLLocation, completionHandler: {(placemarks, error) -> Void in
-            
-            if error != nil {
-                print("Reverse geocoder failed with error" + error!.localizedDescription)
-                return
-            }
+            guard error != nil else { return }
             if placemarks!.count > 0 {
                 let pm = placemarks![0]
                 self.textField.text = pm.postalCode
             }
             else {
-                print("Problem with the data received from geocoder")
+                let title = "Oops"
+                let message = "Please enter your zipcode manually. Sorry about that!"
+                self.presentOkAlertWith(title: title, message: message, from: self)
             }
         })
     }

@@ -38,7 +38,7 @@ class DogBreeds {
                         }
                     }
                 } catch let err {
-                    print("Err", err)
+                    print(err)
                 }
                 }.resume()
         }
@@ -54,7 +54,7 @@ class DogBreeds {
                     let decodedUrl = try decoder.decode(ImageUrl.self, from: data)
                     imageUrl = decodedUrl.url
                 } catch let err {
-                    print("Err", err)
+                    print(err)
                 }
                 completion(imageUrl)
                 }.resume()

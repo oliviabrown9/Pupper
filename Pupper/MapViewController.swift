@@ -27,7 +27,9 @@ class MapViewController: UIViewController {
             setMap()
         }
         else {
-            //display error
+            let title = "Oops!"
+            let message = "We don't have enough info to navigate to your dog!"
+            self.popOkAlertWith(title: title, message: message, from: self)
         }
     }
 
@@ -37,7 +39,9 @@ class MapViewController: UIViewController {
         geoCoder.geocodeAddressString(address) { (placemarks, error) in
             guard let placemarks = placemarks, let location = placemarks.first?.location
                 else {
-                    // handle no location found
+                    let title = "Oh no!"
+                    let message = "We couldn't find a valid location for the provided address :("
+                    self.popOkAlertWith(title: , message: message, from: self)
                     return
             }
             let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))

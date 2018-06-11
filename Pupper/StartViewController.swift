@@ -116,12 +116,10 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
     }
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-        // Let the Operating System know that the payment was accepted successfully
         completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
     }
     
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-        // Dismiss the Apple Pay UI
         dismiss(animated: true, completion: nil)
     }
 
