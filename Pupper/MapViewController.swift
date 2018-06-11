@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
                 else {
                     let title = "Oh no!"
                     let message = "We couldn't find a valid location for the provided address :("
-                    self.popOkAlertWith(title: , message: message, from: self)
+                    self.popOkAlertWith(title: title, message: message, from: self)
                     return
             }
             let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
