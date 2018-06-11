@@ -9,8 +9,42 @@ import UIKit
 import UserNotifications
 import AVFoundation
 import PassKit
+import StoreKit
 
-class StartViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate {
+class StartViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    var list = [SKProduct]()
+    var p = SKProduct()
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        let myProduct = response.products
+        for product in myProduct {
+            list.append(product)
+        }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction: AnyObject in transactions {
+            let trans = transaction as! SKPaymentTransaction
+            switch trans.transactionState {
+            case .purchased:
+                let prodID = p.productIdentifier
+                switch prodID {
+                case "noAudio":
+                    SharingManager.sharedInstance.didRemoveAudio = true
+                    backgroundMusicPlayer.stop()
+                default:
+                    print("iap not found")
+                }
+                queue.finishTransaction(trans)
+            case .failed:
+                queue.finishTransaction(trans)
+                break
+            default:
+                break
+            }
+        }
+    }
+    
     
     var backgroundMusicPlayer = AVAudioPlayer()
     
@@ -20,8 +54,17 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
         super.viewDidLoad()
         getStartedButton.layer.cornerRadius = 28
         pushNotifications()
-        playBackgroundAudio()
+        if !SharingManager.sharedInstance.didRemoveAudio {
+            playBackgroundAudio()
+        }
         addApplePayPaymentButtonToView()
+        
+        if(SKPaymentQueue.canMakePayments()) {
+            let productID: NSSet = NSSet(object: "noAudio")
+            let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>)
+            request.delegate = self
+            request.start()
+        }
     }
     
     private func pushNotifications() {
@@ -83,6 +126,22 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func removeMusic(_ sender: UIButton) {
+        for product in list {
+            let prodID = product.productIdentifier
+            if prodID == "noAudio" {
+                p = product
+                buyProduct()
+            }
+        }
+    }
+    
+    func buyProduct() {
+        let pay = SKPayment(product: p)
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().add(pay as SKPayment)
+        
+    }
     
     @IBAction func getStartedPressed(_ sender: UIButton) {
         backgroundMusicPlayer.stop()

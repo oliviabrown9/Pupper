@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -51,6 +50,16 @@
                                     <segue destination="ORb-qa-BKo" kind="show" id="sVB-QS-g9Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVA-sT-Mla">
+                                <rect key="frame" x="131" y="761" width="113" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Remove Music">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeMusic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0pr-Z5-Hx4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,8 +69,10 @@
                             <constraint firstItem="WxE-MS-lDs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gcu-fQ-GFu"/>
                             <constraint firstItem="dL3-8E-LR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GsS-7M-Uph"/>
                             <constraint firstItem="WxE-MS-lDs" firstAttribute="top" secondItem="T7B-cD-Ewy" secondAttribute="bottom" constant="20" id="Ifa-E5-da4"/>
+                            <constraint firstAttribute="bottom" secondItem="gVA-sT-Mla" secondAttribute="bottom" constant="15" id="Nd8-4G-6Pp"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="dL3-8E-LR6" secondAttribute="trailing" constant="15" id="QWA-2I-bRH"/>
                             <constraint firstItem="dL3-8E-LR6" firstAttribute="top" secondItem="WxE-MS-lDs" secondAttribute="bottom" constant="176" id="gGy-wM-joz"/>
+                            <constraint firstItem="gVA-sT-Mla" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jBu-FM-1Yo"/>
                         </constraints>
                     </view>
                     <connections>

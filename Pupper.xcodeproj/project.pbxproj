@@ -12,6 +12,8 @@
 		1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */; };
 		1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA92097B05700EB7CDC /* LocationViewController.swift */; };
 		18B3411220CE494A00E42796 /* bark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B3411120CE494A00E42796 /* bark.mp3 */; };
+		18B3411420CE5AEE00E42796 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B3411320CE5AEE00E42796 /* StoreKit.framework */; };
+		18B3411620CE5E9F00E42796 /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3411520CE5E9F00E42796 /* SharingManager.swift */; };
 		3633652437E3C1BF4FB06067 /* Pods_Pupper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */; };
 		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
@@ -33,6 +35,8 @@
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		18B3411120CE494A00E42796 /* bark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bark.mp3; sourceTree = "<group>"; };
+		18B3411320CE5AEE00E42796 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		18B3411520CE5E9F00E42796 /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pupper.entitlements; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3633652437E3C1BF4FB06067 /* Pods_Pupper.framework in Frameworks */,
+				18B3411420CE5AEE00E42796 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,7 @@
 				45A7D7E11E5878DD00D97A7D /* Preferences.swift */,
 				45B7D6B21E58F98100C66867 /* DogBreeds.swift */,
 				45BCF0BF1E597AD000931C8C /* Dog.swift */,
+				18B3411520CE5E9F00E42796 /* SharingManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -145,6 +151,7 @@
 		9D365142442FA9CC5BFC2AB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18B3411320CE5AEE00E42796 /* StoreKit.framework */,
 				74BE8F47CC6BCE9BD2FD45F8 /* Pods_Pupper.framework */,
 			);
 			name = Frameworks;
@@ -189,6 +196,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -276,6 +286,7 @@
 			files = (
 				1842504220CE12EC00B7C710 /* CalendarViewController.swift in Sources */,
 				45BCF0C01E597AD000931C8C /* Dog.swift in Sources */,
+				18B3411620CE5E9F00E42796 /* SharingManager.swift in Sources */,
 				45A7D7D01E586D0E00D97A7D /* StartViewController.swift in Sources */,
 				1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */,
 				45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */,
