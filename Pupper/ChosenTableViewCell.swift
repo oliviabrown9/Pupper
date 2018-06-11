@@ -33,9 +33,9 @@ class ChosenTableViewCell: UITableViewCell {
         
         
     }
-    @IBAction func mailButtonPressed(_ sender: Any) {
     
-//        tableViewController!.sendEmail()
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        tableViewController?.shareDog()
     }
 
     

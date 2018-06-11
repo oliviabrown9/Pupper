@@ -121,4 +121,16 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         }
         
     }
+
+    func shareDog() {
+        let message = "Check out this dog!"
+        
+        // Set the link to share.
+        if let photoUrl = theChosenOne?.photo, let link = NSURL(string: photoUrl) {
+            let objectsToShare = [message, link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList, UIActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension"), UIActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")]
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
 }
