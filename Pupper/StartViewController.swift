@@ -13,10 +13,9 @@ import StoreKit
 
 class StartViewController: UIViewController {
     
-    var list = [SKProduct]()
-    var p = SKProduct()
-    
-    var backgroundMusicPlayer = AVAudioPlayer()
+    private var list = [SKProduct]()
+    private var p = SKProduct()
+    private var backgroundMusicPlayer = AVAudioPlayer()
     
     @IBOutlet weak var getStartedButton: UIButton!
     
@@ -81,7 +80,7 @@ class StartViewController: UIViewController {
         return request
     }
 
-    @IBAction func removeMusic(_ sender: UIButton) {
+    @IBAction private func removeMusic(_ sender: UIButton) {
         for product in list {
             let prodID = product.productIdentifier
             if prodID == "noAudio" {
@@ -91,7 +90,7 @@ class StartViewController: UIViewController {
         }
     }
     
-    func buyProduct() {
+    private func buyProduct() {
         let pay = SKPayment(product: p)
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(pay as SKPayment)

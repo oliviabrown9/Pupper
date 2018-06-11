@@ -23,7 +23,7 @@ class ChosenTableViewCell: UITableViewCell {
     
     @IBAction private func phoneButtonPressed(_ sender: Any) {
         if let phoneNumber = chosenDog?.phone, phoneNumber != "", let number = URL(string: "telprompt://" + phoneNumber) {
-            tableViewController?.phoneAlertAction(withNumber: number)
+            phoneAlertAction(withNumber: number)
         }
         else {
             let title = "Phone number unavailable."
@@ -48,5 +48,22 @@ class ChosenTableViewCell: UITableViewCell {
         adoptMeButton.layer.cornerRadius = 15
         adoptMeButton.layer.borderWidth = 1
         adoptMeButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    private func phoneAlertAction(withNumber number: URL) {
+        let actionSheetController = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel)
+        actionSheetController.addAction(cancelActionButton)
+        let callActionButton = UIAlertAction(title: "Call", style: .default) { _ in
+            UIApplication.shared.open(number, options: [:], completionHandler: nil)
+        }
+        let textActionButton = UIAlertAction(title: "Text", style: .default) { _ in
+            if let messageComposeVC = self.tableViewController?.configuredMessageComposeViewController() {
+                self.tableViewController?.present(messageComposeVC, animated: true, completion: nil)
+            }
+        }
+        actionSheetController.addAction(callActionButton)
+        actionSheetController.addAction(textActionButton)
+        self.tableViewController?.present(actionSheetController, animated: true, completion: nil)
     }
 }

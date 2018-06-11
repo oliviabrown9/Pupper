@@ -7,21 +7,19 @@
 
 import UIKit
 
-class FindDogsViewController: UITableViewController{
+class FindDogsViewController: UITableViewController {
     
-    @IBAction func unwindToSelect(segue: UIStoryboardSegue) {}
-
     var selectedBreed: String?
-    var index = 0
+    var criteria: DogCriteria?
+    private var index = 0
     
-    var dogs: [Breed] = [] {
+    private var dogs: [Breed] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-    var criteria: DogCriteria?
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count
@@ -87,18 +85,12 @@ extension UIImageView {
             }
             }.resume()
     }
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
-    }
     
-    func addBlurEffect()
-    {
+    func addBlurEffect() {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
-        
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(blurEffectView)
     }
 }

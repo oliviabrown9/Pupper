@@ -8,13 +8,9 @@
 import UIKit
 import MessageUI
 
-class SelectDogTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        controller.dismiss(animated: true, completion: nil)
-    }
+class SelectDogTableViewController: UITableViewController {
     
-    var theChosenOne: Dog?
-    
+    private var selectedDog: Dog?
     var criteria: DogCriteria?
     
     override func viewDidLoad() {
@@ -24,6 +20,54 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
                 self.dogMatches = foundDogs
             }
         }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dogMatches.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as? ChosenTableViewCell {
+            cell.chosenDog = dogMatches[indexPath.row]
+            return filledTableView(cell: cell)
+        }
+        let title = "Error"
+        let message = "Unexepected error, sorry about that!"
+        self.popOkAlertWith(title: title, message: message, from: self)
+        return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dogMatches[indexPath.row].expanded = !self.dogMatches[indexPath.row].expanded
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        selectedDog = dogMatches[indexPath.row]
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if dogMatches[indexPath.row].expanded { return 242 }
+        else { return 148 }
+    }
+    
+    private func filledTableView(cell: ChosenTableViewCell) -> ChosenTableViewCell {
+        if let chosenDog = cell.chosenDog {
+            cell.addressLabel.text = "\(chosenDog.city)" + ", " + "\(chosenDog.state)"
+            cell.tableViewController = self
+            cell.selectionStyle = .none
+            guard let photoLink = URL(string: chosenDog.photo) else { return cell }
+            cell.dogImageView.downloadedFrom(url: photoLink)
+            downloadImageView(from: photoLink, for: cell.dogImageView) { imageView in
+                cell.dogImageView = imageView
+                self.blurViews(in: cell)
+            }
+            cell.dogNameLabel.text = chosenDog.dogName
+            cell.expanded = chosenDog.expanded
+            cell.detailView.isHidden = !cell.expanded
+        }
+        return cell
     }
     
     private func getSizeString() -> String? {
@@ -40,23 +84,17 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
         return nil
     }
     
-    func phoneAlertAction(withNumber number: URL) {
-        let actionSheetController = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
-        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel)
-        actionSheetController.addAction(cancelActionButton)
-        let callActionButton = UIAlertAction(title: "Call", style: .default) { _ in
-            UIApplication.shared.open(number, options: [:], completionHandler: nil)
+    func shareDog() {
+        let message = "Check out this dog!"
+        if let photoUrl = selectedDog?.photo, let link = NSURL(string: photoUrl) {
+            let objectsToShare = [message, link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList, UIActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension"), UIActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")]
+            self.present(activityVC, animated: true, completion: nil)
         }
-        actionSheetController.addAction(callActionButton)
-        let textActionButton = UIAlertAction(title: "Text", style: .default) { _ in
-            let messageComposeVC = self.configuredMessageComposeViewController()
-            self.present(messageComposeVC, animated: true, completion: nil)
-            }
-        actionSheetController.addAction(textActionButton)
-        self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    var dogMatches: [Dog] = [] {
+    private var dogMatches: [Dog] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -67,7 +105,6 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
                     generator.prepare()
                     generator.notificationOccurred(.error)
                 }
-                
                 let title = "Unable to find matching dogs."
                 let message = "Oh no! We couldn't find any dogs that match your criteria. Maybe try another search?"
                 self.popOkAlertWith(title: title, message: message, from: self)
@@ -75,77 +112,62 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
         }
     }
     
-    @IBAction func unwindToSelectDog(segue: UIStoryboardSegue) {}
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    private func blurViews(in cell: ChosenTableViewCell) {
+        if let image = cell.dogImageView.image {
+            cell.blurImageViewOne = self.blur(image: image, in: cell.blurImageViewOne)
+            cell.blurImageViewTwo = self.blur(image: image, in: cell.blurImageViewTwo)
+        }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dogMatches.count
+    private func blur(image: UIImage, in view: UIImageView) -> UIImageView {
+        view.image = image
+        view.addBlurEffect()
+        return view
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chosenCell", for: indexPath) as! ChosenTableViewCell
-        let chosenDog = dogMatches[indexPath.row]
-        cell.addressLabel.text = "\(chosenDog.city)" + ", " + "\(chosenDog.state)"
-        cell.tableViewController = self
-        cell.selectionStyle = .none
-        cell.dogImageView.downloadedFrom(link: "\(chosenDog.photo)")
-        cell.blurImageViewOne.downloadedFrom(link: "\(chosenDog.photo)")
-        cell.blurImageViewOne.addBlurEffect()
-        cell.blurImageViewTwo.downloadedFrom(link: "\(chosenDog.photo)")
-        cell.blurImageViewTwo.addBlurEffect()
-        cell.dogNameLabel.text = chosenDog.dogName
-        cell.chosenDog = dogMatches[indexPath.row]
-        cell.expanded = chosenDog.expanded
-        cell.detailView.isHidden = !cell.expanded
-        return cell
+    private func downloadImageView(from url: URL, for imageView: UIImageView, completion: @escaping (UIImageView)->() ) {
+        imageView.contentMode = .scaleAspectFit
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                imageView.image = image
+                completion(imageView)
+            }
+            }.resume()
     }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.dogMatches[indexPath.row].expanded = !self.dogMatches[indexPath.row].expanded
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-        theChosenOne = dogMatches[indexPath.row]
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if dogMatches[indexPath.row].expanded { return 242 }
-        else { return 148 }
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapVC" {
-            if let destination = segue.destination as? MapViewController, let chosenDog = theChosenOne {
+            if let destination = segue.destination as? MapViewController, let chosenDog = selectedDog {
                 destination.dogName = chosenDog.dogName
                 destination.address = "\(chosenDog.street)" + ", " + "\(chosenDog.city)" + ", " + "\(chosenDog.state)" + ", " + "\(chosenDog.zip)"
             }
-            
         }
         else {
             let destination = segue.destination as? CalendarViewController
-            destination?.chosenDog = theChosenOne
+            destination?.chosenDog = selectedDog
         }
     }
+}
 
+extension SelectDogTableViewController: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     func configuredMessageComposeViewController() -> MFMessageComposeViewController {
         let messageComposeVC = MFMessageComposeViewController()
         messageComposeVC.messageComposeDelegate = self
-        if let recipient = theChosenOne?.phone {
+        if let recipient = selectedDog?.phone {
             messageComposeVC.recipients = [recipient]
         }
         messageComposeVC.body = ""
         return messageComposeVC
     }
     
-    func shareDog() {
-        let message = "Check out this dog!"
-        if let photoUrl = theChosenOne?.photo, let link = NSURL(string: photoUrl) {
-            let objectsToShare = [message, link] as [Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList, UIActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension"), UIActivityType(rawValue: "com.apple.mobilenotes.SharingExtension")]
-            self.present(activityVC, animated: true, completion: nil)
-        }
-    }
 }
