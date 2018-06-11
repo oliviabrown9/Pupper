@@ -19,12 +19,14 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
+        addTapToDismiss()
+        setUpLocationManager()
+    }
+    
+    private func addTapToDismiss() {
         let tap: UITapGestureRecognizer?
         tap = UITapGestureRecognizer(target: self, action: #selector(LocationViewController.dismissKeyboard))
         view.addGestureRecognizer(tap!)
-        
-        setUpLocationManager()
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
@@ -62,6 +64,7 @@ class LocationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        locationManager.stopUpdatingLocation()
         let destination = segue.destination as! IdealDogViewController
         destination.criteria = self.criteria
     }
@@ -70,7 +73,7 @@ class LocationViewController: UIViewController {
 // MARK: - CLLocationManagerDelegate
 extension LocationViewController: CLLocationManagerDelegate {
     
-    func setUpLocationManager() {
+    private func setUpLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -82,9 +85,9 @@ extension LocationViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         CLGeocoder().reverseGeocodeLocation(locations[0] as CLLocation, completionHandler: {(placemarks, error) -> Void in
-            guard error != nil else { return }
-            if placemarks!.count > 0 {
-                let pm = placemarks![0]
+            guard error == nil else { return }
+            if let placemarks = placemarks, placemarks.count > 0 {
+                let pm = placemarks[0]
                 self.textField.text = pm.postalCode
             }
             else {
