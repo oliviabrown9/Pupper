@@ -22,11 +22,24 @@ class Breed {
 class DogBreeds {
     
     func possibleBreeds(completion: @escaping ([Breed])->() )  {
+        var foundBreeds = [Breed]()
         if let apiUrl = URL(string: "https://api.petfinder.com/breed.list?key=f534d78deac933250456312a9ee37d22&animal=dog&format=json") {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
                 guard let data = data else { return }
-                let foundBreeds = self.addBreeds(fromData: data)
-                completion(foundBreeds)
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedBreeds = try decoder.decode(RawApiResponse.self, from: data)
+                    for breed in decodedBreeds.rawData.breedContainer.breeds {
+                        self.getImageFor(breed: breed.name) { imageUrlString in
+                            if let imageUrl = URL(string: imageUrlString) {
+                                foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
+                                completion(foundBreeds)
+                            }
+                        }
+                    }
+                } catch let err {
+                    print("Err", err)
+                }
                 }.resume()
         }
     }
@@ -46,24 +59,6 @@ class DogBreeds {
                 completion(imageUrl)
                 }.resume()
         }
-    }
-    
-    private func addBreeds(fromData data: Data) -> [Breed] {
-        var foundBreeds = [Breed]()
-        do {
-            let decoder = JSONDecoder()
-            let decodedBreeds = try decoder.decode(RawApiResponse.self, from: data)
-            for breed in decodedBreeds.rawData.breedContainer.breeds {
-                self.getImageFor(breed: breed.name) { imageUrlString in
-                    if let imageUrl = URL(string: imageUrlString) {
-                        foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
-                    }
-                }
-            }
-        } catch let err {
-            print(err)
-        }
-        return foundBreeds
     }
     
     private struct ImageUrl: Decodable {

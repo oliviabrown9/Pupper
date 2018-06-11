@@ -45,7 +45,6 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
         }
     }
     
-    
     var backgroundMusicPlayer = AVAudioPlayer()
     
     @IBOutlet weak var getStartedButton: UIButton!
@@ -140,12 +139,8 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
         let pay = SKPayment(product: p)
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(pay as SKPayment)
-        
     }
     
-    @IBAction func getStartedPressed(_ sender: UIButton) {
-        backgroundMusicPlayer.stop()
-    }
     private func playBackgroundAudio() {
         let backgroundMusic = NSURL(fileURLWithPath: Bundle.main.path(forResource: "bark", ofType: "mp3")!)
         do {
@@ -158,6 +153,22 @@ class StartViewController: UIViewController, PKPaymentAuthorizationViewControlle
         }
         let audioSession = AVAudioSession.sharedInstance()
         try!audioSession.setCategory(AVAudioSessionCategoryAmbient, with: AVAudioSessionCategoryOptions.mixWithOthers)
+    }
+}
+
+extension UIViewController {
+    func presentOkAlertWith(title: String, message: String, from controller: UIViewController) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(okayAction)
+        controller.present(alertController, animated: true, completion: nil)
+    }
+    
+    func popOkAlertWith(title: String, message: String, from controller: UIViewController) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in _ = self.navigationController?.popViewController(animated: true) })
+        alertController.addAction(okayAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

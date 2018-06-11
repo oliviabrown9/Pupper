@@ -32,7 +32,7 @@ class IdealDogViewController: UIViewController {
     
     @IBAction private func ageSelected(_ sender: UIButton) {
         style(selected: sender, allButtons: [baby, young, adult, senior])
-        if let title = sender.titleLabel?.text?.lowercased() {
+        if let title = sender.titleLabel?.text?.lowercased().uppercaseFirstLetter {
             selectedAge = dogAge(rawValue: title)
         }
     }
@@ -52,9 +52,17 @@ class IdealDogViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FindDogsViewController, let dogBreed = criteria {
-            dogBreed.age = selectedAge!
+            if let selectedAge = selectedAge {
+                dogBreed.age = selectedAge
+            }
             destination.criteria = dogBreed
         }
     }
+}
 
+extension String {
+    var uppercaseFirstLetter: String {
+        guard let firstLetter = first else { return self }
+        return String(firstLetter).uppercased() + dropFirst()
+    }
 }

@@ -46,7 +46,6 @@
                                     <color key="titleColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="getStartedPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFh-Eu-aDy"/>
                                     <segue destination="ORb-qa-BKo" kind="show" id="sVB-QS-g9Y"/>
                                 </connections>
                             </button>
