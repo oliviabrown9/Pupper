@@ -21,12 +21,17 @@ class ChosenTableViewCell: UITableViewCell {
     @IBOutlet weak var dogNameLabel: UILabel!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBAction func phoneButtonPressed(_ sender: Any) {
-        guard let number = URL(string: "telprompt://" + "\(chosenDog!.phone)") else { return }
-        if #available(iOS 10.0, *) {
+        if let phoneNumber = chosenDog?.phone, let number = URL(string: "telprompt://" + phoneNumber) {
             UIApplication.shared.open(number, options: [:], completionHandler: nil)
-        } else {
-            // Fallback on earlier versions
         }
+        else {
+            let alertController = UIAlertController(title: "Phone number unavailable.", message: "Unforuntately, we do not have the phone number. Please try another contact method.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okayAction)
+            self.tableViewController?.present(alertController, animated: true, completion: nil)
+        }
+        
+        
     }
     @IBAction func mailButtonPressed(_ sender: Any) {
     
@@ -44,18 +49,12 @@ class ChosenTableViewCell: UITableViewCell {
     @IBOutlet weak var adoptMeButton: UIButton!
     @IBAction func adoptMeButtonPressed(_ sender: Any) {
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         adoptMeButton.layer.cornerRadius = 15
         adoptMeButton.layer.borderWidth = 1
         adoptMeButton.layer.borderColor = UIColor.white.cgColor
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

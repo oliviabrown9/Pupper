@@ -540,6 +540,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="adoptMeButtonPressed:" destination="gyo-b4-gJL" eventType="touchUpInside" id="jjA-gR-bMg"/>
+                                                        <segue destination="7sI-kE-HeJ" kind="show" id="uFO-4y-yr7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -654,6 +655,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0x-PB-AJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3982" y="37"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="PMx-oz-AAD">
+            <objects>
+                <viewController id="7sI-kE-HeJ" customClass="CalendarViewController" customModule="Pupper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HAE-zr-7QE"/>
+                        <viewControllerLayoutGuide type="bottom" id="KCZ-nu-nXV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3sZ-xf-Z0B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eal-Gj-Ymq">
+                                <rect key="frame" x="0.0" y="88" width="375" height="142"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a meeting date with the shelter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvc-fp-c9i">
+                                        <rect key="frame" x="37" y="60.33333333333335" width="300" height="23.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uvc-fp-c9i" secondAttribute="bottom" constant="58.5" id="Wk0-ql-0ef"/>
+                                    <constraint firstItem="uvc-fp-c9i" firstAttribute="centerX" secondItem="eal-Gj-Ymq" secondAttribute="centerX" id="Xhz-yy-GbY"/>
+                                    <constraint firstAttribute="height" constant="142" id="ZNC-P2-XM0"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="continue icon" translatesAutoresizingMaskIntoConstraints="NO" id="5Gt-Bd-4tv">
+                                <rect key="frame" x="267" y="676.66666666666663" width="18" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="LQH-Jp-PgF"/>
+                                    <constraint firstAttribute="height" constant="16" id="LX5-mX-qXF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-sz-5iV">
+                                <rect key="frame" x="85" y="670" width="189" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="RMM-Y0-w3U"/>
+                                    <constraint firstAttribute="height" constant="30" id="Rx8-bd-uZ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="CONTACT SHELTER"/>
+                                <connections>
+                                    <action selector="submitApplicationButtonPressed:" destination="7sI-kE-HeJ" eventType="touchUpInside" id="AUG-fM-oIm"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Vy-Bt-pzV">
+                                <rect key="frame" x="27" y="270" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="nGW-Qa-65U"/>
+                                    <constraint firstAttribute="width" constant="320" id="oBo-ZM-l9K"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="549958596.86981297">
+                                    <!--2018-06-06 06:16:36 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="550015200">
+                                    <!--2018-06-06 22:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Vy-Bt-pzV" firstAttribute="top" secondItem="eal-Gj-Ymq" secondAttribute="bottom" constant="40" id="1mH-Ei-jRJ"/>
+                            <constraint firstItem="hIe-sz-5iV" firstAttribute="centerX" secondItem="3sZ-xf-Z0B" secondAttribute="centerX" constant="-8" id="1mw-or-2Or"/>
+                            <constraint firstAttribute="trailing" secondItem="eal-Gj-Ymq" secondAttribute="trailing" id="ASj-rJ-3vM"/>
+                            <constraint firstItem="eal-Gj-Ymq" firstAttribute="leading" secondItem="3sZ-xf-Z0B" secondAttribute="leading" id="DWa-cy-2wN"/>
+                            <constraint firstItem="eal-Gj-Ymq" firstAttribute="top" secondItem="HAE-zr-7QE" secondAttribute="bottom" id="dZX-I2-eC8"/>
+                            <constraint firstItem="5Gt-Bd-4tv" firstAttribute="centerY" secondItem="hIe-sz-5iV" secondAttribute="centerY" id="jCt-Kb-a0a"/>
+                            <constraint firstItem="5Vy-Bt-pzV" firstAttribute="centerX" secondItem="3sZ-xf-Z0B" secondAttribute="centerX" id="jEc-KP-7U3"/>
+                            <constraint firstItem="KCZ-nu-nXV" firstAttribute="top" secondItem="hIe-sz-5iV" secondAttribute="bottom" constant="78" id="oLS-zq-tfX"/>
+                            <constraint firstItem="5Gt-Bd-4tv" firstAttribute="leading" secondItem="hIe-sz-5iV" secondAttribute="trailing" constant="-7" id="vO5-Hd-BJd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="5Vy-Bt-pzV" id="H1S-AT-ALN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riu-YY-HN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7790" y="37"/>
         </scene>
     </scenes>
     <resources>

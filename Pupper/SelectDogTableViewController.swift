@@ -101,4 +101,9 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         
     else{return 148}
 }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! CalendarViewController
+        destination.chosenDog = theChosenOne
+    }
 }
