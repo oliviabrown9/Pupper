@@ -9,9 +9,10 @@
 import Foundation
 
 class SharingManager {
+    
     static let sharedInstance = SharingManager()
     
-    var userDefaults: UserDefaults = UserDefaults.standard
+    private var userDefaults: UserDefaults = UserDefaults.standard
     
     var didRemoveAudio: Bool = false {
         didSet {

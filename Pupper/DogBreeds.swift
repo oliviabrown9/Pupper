@@ -9,7 +9,6 @@ import Foundation
 
 
 class Breed {
-    
     var name: String
     var imageUrl: URL
     var expanded: Bool = false
@@ -20,15 +19,17 @@ class Breed {
     }
 }
 
-class Chosen {
-    var dog: Dog
-    
-    init(dog: Dog) {
-        self.dog = dog
-    }
-}
-
 class DogBreeds {
+    
+    func possibleBreeds(completion: @escaping ([Breed])->() )  {
+        if let apiUrl = URL(string: "https://api.petfinder.com/breed.list?key=f534d78deac933250456312a9ee37d22&animal=dog&format=json") {
+            URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
+                guard let data = data else { return }
+                let foundBreeds = self.addBreeds(fromData: data)
+                completion(foundBreeds)
+                }.resume()
+        }
+    }
     
     private func getImageFor(breed: String, completion: @escaping (String)->() ) {
         var imageUrl = String()
@@ -47,32 +48,27 @@ class DogBreeds {
         }
     }
     
-    func possibleBreeds(completion: @escaping ([Breed])->() )  {
+    private func addBreeds(fromData data: Data) -> [Breed] {
         var foundBreeds = [Breed]()
-        if let apiUrl = URL(string: "https://api.petfinder.com/breed.list?key=f534d78deac933250456312a9ee37d22&animal=dog&format=json") {
-            URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
-                guard let data = data else { return }
-                do {
-                    let decoder = JSONDecoder()
-                    let decodedBreeds = try decoder.decode(RawApiResponse.self, from: data)
-                    for breed in decodedBreeds.rawData.breedContainer.breeds {
-                        self.getImageFor(breed: breed.name) { imageUrlString in
-                            if let imageUrl = URL(string: imageUrlString) {
-                                foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
-                                completion(foundBreeds)
-                            }
-                        }
+        do {
+            let decoder = JSONDecoder()
+            let decodedBreeds = try decoder.decode(RawApiResponse.self, from: data)
+            for breed in decodedBreeds.rawData.breedContainer.breeds {
+                self.getImageFor(breed: breed.name) { imageUrlString in
+                    if let imageUrl = URL(string: imageUrlString) {
+                        foundBreeds.append(Breed(name: breed.name, withImage: imageUrl))
                     }
-                } catch let err {
-                    print("Err", err)
                 }
-                }.resume()
+            }
+        } catch let err {
+            print(err)
         }
+        return foundBreeds
     }
     
     private struct ImageUrl: Decodable {
         var url: String
-        enum CodingKeys : String, CodingKey {
+        private enum CodingKeys : String, CodingKey {
             case url = "message"
         }
     }
@@ -80,29 +76,28 @@ class DogBreeds {
     private struct RawApiResponse: Decodable {
         struct RawData: Decodable {
             var breedContainer: BreedContainer
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case breedContainer = "breeds"
             }
         }
         
         struct BreedContainer: Decodable {
             var breeds: [SingleBreed]
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case breeds = "breed"
             }
         }
         
         struct SingleBreed: Decodable {
             var name: String
-            enum CodingKeys : String, CodingKey {
+            private enum CodingKeys : String, CodingKey {
                 case name = "$t"
             }
         }
         
         var rawData: RawData
-        enum CodingKeys : String, CodingKey {
+        private enum CodingKeys : String, CodingKey {
             case rawData = "petfinder"
         }
-        
     }
 }

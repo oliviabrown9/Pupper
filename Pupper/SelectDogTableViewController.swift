@@ -35,8 +35,6 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
                 return "M"
             case .large:
                 return "L"
-            case .all:
-                return "S"
             }
         }
         return nil

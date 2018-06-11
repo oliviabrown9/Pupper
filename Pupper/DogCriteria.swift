@@ -11,7 +11,6 @@ enum dogSize: String {
     case small = "small"
     case medium = "medium"
     case large = "large"
-    case all = "all"
 }
 
 enum dogAge: String {
@@ -19,13 +18,12 @@ enum dogAge: String {
     case young = "Young"
     case adult = "Adult"
     case senior = "Senior"
-    case all = "all"
 }
 
 class DogCriteria {
     var zipCode: Int
-    var sizeOfDog: dogSize = .all
-    var age: dogAge = .all
+    var sizeOfDog: dogSize = .small
+    var age: dogAge = .baby
     var breed: String?
 
     init(zipCode: Int) {
