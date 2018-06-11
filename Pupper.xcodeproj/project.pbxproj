@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1842504220CE12EC00B7C710 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842504120CE12EC00B7C710 /* CalendarViewController.swift */; };
+		1842504420CE189D00B7C710 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842504320CE189D00B7C710 /* MapViewController.swift */; };
 		1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */; };
 		1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA92097B05700EB7CDC /* LocationViewController.swift */; };
 		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1842504120CE12EC00B7C710 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		1842504320CE189D00B7C710 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				45A7D7E31E58CC7300D97A7D /* FindDogsViewController.swift */,
 				45BCF0BD1E5970F700931C8C /* SelectDogTableViewController.swift */,
 				1842504120CE12EC00B7C710 /* CalendarViewController.swift */,
+				1842504320CE189D00B7C710 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */,
 				45BCF0BE1E5970F700931C8C /* SelectDogTableViewController.swift in Sources */,
 				45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */,
+				1842504420CE189D00B7C710 /* MapViewController.swift in Sources */,
 				1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */,
 				45A7D7E21E5878DD00D97A7D /* Preferences.swift in Sources */,
 				45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */,

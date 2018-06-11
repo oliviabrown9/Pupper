@@ -38,6 +38,12 @@ class SelectDogTableViewController: UITableViewController {
         return nil
     }
     
+    @IBAction func mapButtonPressed(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "MapVC")
+//        self.present(controller, animated: true, completion: nil)
+    }
+    
     var dogMatches: [Dog] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -90,7 +96,6 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
     tableView.reloadRows(at: [indexPath], with: .automatic)
     theChosenOne = dogMatches[indexPath.row]
     
-    
 }
 override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
@@ -103,7 +108,17 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
 }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! CalendarViewController
-        destination.chosenDog = theChosenOne
+        if segue.identifier == "MapVC" {
+            if let destination = segue.destination as? MapViewController, let chosenDog = theChosenOne {
+                destination.dogName = chosenDog.dogName
+                destination.address = "\(chosenDog.street)" + ", " + "\(chosenDog.city)" + ", " + "\(chosenDog.state)" + ", " + "\(chosenDog.zip)"
+            }
+
+        }
+        else {
+            let destination = segue.destination as? CalendarViewController
+            destination?.chosenDog = theChosenOne
+        }
+        
     }
 }

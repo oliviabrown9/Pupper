@@ -47,8 +47,6 @@ class DogMatches {
             URLSession.shared.dataTask(with: apiUrl) { (data, response, error) in
                 guard let data = data else { return }
                 do {
-                    let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments)
-                    print(jsonArray)
                     let decoder = JSONDecoder()
                     let decodedDogs = try decoder.decode(RawApiResponse.self, from: data)
                     for dog in decodedDogs.rawData.petContainer.dogs {

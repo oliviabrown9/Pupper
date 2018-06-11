@@ -20,6 +20,14 @@ class Breed {
     }
 }
 
+class Chosen {
+    var dog: Dog
+    
+    init(dog: Dog) {
+        self.dog = dog
+    }
+}
+
 class DogBreeds {
     
     private func getImageFor(breed: String, completion: @escaping (String)->() ) {
