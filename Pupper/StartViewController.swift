@@ -8,8 +8,10 @@
 import UIKit
 import UserNotifications
 import AVFoundation
+import PassKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate {
+    
     var backgroundMusicPlayer = AVAudioPlayer()
     
     @IBOutlet weak var getStartedButton: UIButton!
@@ -19,6 +21,7 @@ class StartViewController: UIViewController {
         getStartedButton.layer.cornerRadius = 28
         pushNotifications()
         playBackgroundAudio()
+        addApplePayPaymentButtonToView()
     }
     
     private func pushNotifications() {
@@ -35,6 +38,51 @@ class StartViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "ComeBackToApp", content: requestContent, trigger: requestTrigger)
         UNUserNotificationCenter.current().add(request)
     }
+    
+    private func addApplePayPaymentButtonToView() {
+        let paymentButton = PKPaymentButton(paymentButtonType: .donate, paymentButtonStyle: .white)
+        paymentButton.translatesAutoresizingMaskIntoConstraints = false
+        paymentButton.addTarget(self, action: #selector(applePayButtonTapped(sender:)), for: .touchUpInside)
+        view.addSubview(paymentButton)
+        
+        view.addConstraint(NSLayoutConstraint(item: paymentButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0))
+        view.addConstraint(NSLayoutConstraint(item: paymentButton, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0))
+    }
+    
+    @objc private func applePayButtonTapped(sender: UIButton) {
+        let paymentNetworks:[PKPaymentNetwork] = [.amex,.masterCard,.visa]
+        
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: paymentNetworks) {
+            let request = PKPaymentRequest()
+            
+            request.merchantIdentifier = "merchant.pupper"
+            request.countryCode = "US"
+            request.currencyCode = "USD"
+            request.supportedNetworks = paymentNetworks
+            request.merchantCapabilities = .capability3DS
+            
+            let donation = PKPaymentSummaryItem(label: "$10 donation", amount: NSDecimalNumber(decimal:10.00), type: .final)
+            request.paymentSummaryItems = [donation]
+            
+            let authorizationViewController = PKPaymentAuthorizationViewController(paymentRequest: request)
+            
+            if let viewController = authorizationViewController {
+                viewController.delegate = self
+                present(viewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        // Let the Operating System know that the payment was accepted successfully
+        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+    }
+    
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        // Dismiss the Apple Pay UI
+        dismiss(animated: true, completion: nil)
+    }
+
     
     @IBAction func getStartedPressed(_ sender: UIButton) {
         backgroundMusicPlayer.stop()

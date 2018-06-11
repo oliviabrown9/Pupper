@@ -1,0 +1,18 @@
+PODS:
+  - Stripe/ApplePay (7.0.1):
+    - Stripe/Core
+  - Stripe/Core (7.0.1)
+
+DEPENDENCIES:
+  - Stripe/ApplePay
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Stripe
+
+SPEC CHECKSUMS:
+  Stripe: b92298b31cf156fb23a029361b57e2fcb6583d57
+
+PODFILE CHECKSUM: 4efe00ee04a22df98784a0f444657f8557fe178e
+
+COCOAPODS: 1.5.0

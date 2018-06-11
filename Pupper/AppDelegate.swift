@@ -7,6 +7,7 @@
 
 import UIKit
 import UserNotifications
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0)
         UINavigationBar.appearance().barTintColor = UIColor(red:0.29, green:0.56, blue:0.89, alpha:1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
+        
+        Stripe.setDefaultPublishableKey("")
         return true
     }
 
