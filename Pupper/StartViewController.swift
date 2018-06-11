@@ -14,7 +14,6 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.applicationIconBadgeNumber = 0
         getStartedButton.layer.cornerRadius = 28
         
         // For testing purposes, I set the time interval to 30 seconds. In reality, I would set it to 3 days.

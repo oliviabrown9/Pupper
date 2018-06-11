@@ -37,6 +37,8 @@ class CalendarViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     private func emailErrorAlert() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
         let alertController = UIAlertController(title: "Unable to send email.", message: "Oh no! We couldn't send your email. Maybe try another contact method?", preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in _ = self.navigationController?.popViewController(animated: true) })
         alertController.addAction(okayAction)

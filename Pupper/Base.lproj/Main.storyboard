@@ -574,6 +574,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="adoptPressed:" destination="b6M-NV-CTT" eventType="touchUpInside" id="EPu-nF-5F7"/>
                                                         <segue destination="y1Y-sP-p7z" kind="show" id="zhG-fH-Sya"/>
                                                     </connections>
                                                 </button>

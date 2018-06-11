@@ -14,6 +14,7 @@ class ChosenTableViewCell: UITableViewCell {
     var chosenDog: Dog?
     var tableViewController: SelectDogTableViewController? = nil
     
+    
     @IBOutlet weak var blurImageViewTwo: UIImageView!
     @IBOutlet weak var blurImageViewOne: UIImageView!
     @IBOutlet weak var detailView: UIView!
@@ -29,6 +30,10 @@ class ChosenTableViewCell: UITableViewCell {
             alertController.addAction(okayAction)
             self.tableViewController?.present(alertController, animated: true, completion: nil)
         }
+    }
+    @IBAction func adoptPressed(_ sender: UIButton) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
     }
     
     @IBAction func shareButtonPressed(_ sender: UIButton) {

@@ -64,6 +64,12 @@ class SelectDogTableViewController: UITableViewController, MFMessageComposeViewC
                 self.tableView.reloadData()
             }
             if dogMatches.isEmpty {
+                DispatchQueue.main.async {
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.prepare()
+                    generator.notificationOccurred(.error)
+                }
+                
                 let alertController = UIAlertController(title: "Unable to find matching dogs.", message: "Oh no! We couldn't find any dogs that match your criteria. Maybe try another search?", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { action in _ = self.navigationController?.popViewController(animated: true) })
                 alertController.addAction(okayAction)
