@@ -30,8 +30,15 @@ class LocationViewController: UIViewController {
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            fillLocationLabel(from: text)
+        }
+        
+    }
+    
+    private func fillLocationLabel(from zipcode: String) {
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(textField.text!) {
+        geocoder.geocodeAddressString(zipcode) {
             (placemarks, error) -> Void in
             if let placemark = placemarks?[0] {
                 if let city = placemark.locality, let state = placemark.administrativeArea {
@@ -88,7 +95,9 @@ extension LocationViewController: CLLocationManagerDelegate {
             guard error == nil else { return }
             if let placemarks = placemarks, placemarks.count > 0 {
                 let pm = placemarks[0]
-                self.textField.text = pm.postalCode
+                guard let zip = pm.postalCode else { return }
+                self.textField.text = zip
+                self.fillLocationLabel(from: zip)
             }
             else {
                 let title = "Oops"

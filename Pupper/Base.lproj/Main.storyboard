@@ -376,10 +376,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-h6-beE">
-                                            <rect key="frame" x="0.0" y="141" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="161" width="375" height="60"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zst-xF-e6S">
-                                                    <rect key="frame" x="122.33333333333333" y="22" width="130.33333333333337" height="36"/>
+                                                    <rect key="frame" x="122.33333333333333" y="12" width="130.33333333333337" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Zst-xF-e6S" secondAttribute="height" multiplier="134:37" id="pJh-Qj-PaE"/>
                                                     </constraints>
@@ -394,7 +394,7 @@
                                             <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Zst-xF-e6S" firstAttribute="centerX" secondItem="zb5-h6-beE" secondAttribute="centerX" id="1HN-bw-g2U"/>
-                                                <constraint firstAttribute="height" constant="80" id="I5g-Uw-tCm"/>
+                                                <constraint firstAttribute="height" constant="60" id="I5g-Uw-tCm"/>
                                                 <constraint firstItem="Zst-xF-e6S" firstAttribute="centerY" secondItem="zb5-h6-beE" secondAttribute="centerY" id="tMy-md-mKn"/>
                                             </constraints>
                                         </view>
