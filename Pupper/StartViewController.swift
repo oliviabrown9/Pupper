@@ -21,7 +21,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getStartedButton.layer.cornerRadius = 28
+        getStartedButton.layer.cornerRadius = getStartedButton.bounds.size.height / 2
         pushNotifications()
         if !SharingManager.sharedInstance.didRemoveAudio {
             playBackgroundAudio()
