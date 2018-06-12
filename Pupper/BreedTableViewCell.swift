@@ -9,7 +9,6 @@ import UIKit
 
 class BreedTableViewCell: UITableViewCell {
     
-    // MARK: IBOutlets
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var breedPhoto: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!

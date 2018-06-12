@@ -13,12 +13,10 @@ import MapKit
 class MapViewController: UIViewController {
     
     var address: String?
-    
     var dogName: String?
     
-    @IBOutlet weak var titleLabel: UILabel!
-
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,21 +44,18 @@ class MapViewController: UIViewController {
             }
             let center = CLLocationCoordinate2D(latitude: (location.coordinate.latitude), longitude: (location.coordinate.longitude))
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            
             self.mapView.setRegion(region, animated: true)
-            
-            let annotation = MKPointAnnotation()
-            let centerCoordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            annotation.coordinate = centerCoordinate
-            if let dogName = self.dogName {
-                annotation.title = dogName
-            }
-            
-            self.mapView.addAnnotation(annotation)
+            self.addAnchor(to: location)
         }
     }
-
     
-    
-    
+    private func addAnchor(to location: CLLocation) {
+        let annotation = MKPointAnnotation()
+        let centerCoordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        annotation.coordinate = centerCoordinate
+        if let dogName = self.dogName {
+            annotation.title = dogName
+        }
+        self.mapView.addAnnotation(annotation)
+    }
 }

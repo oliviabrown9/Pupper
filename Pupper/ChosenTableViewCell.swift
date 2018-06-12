@@ -27,7 +27,7 @@ class ChosenTableViewCell: UITableViewCell {
         }
         else {
             let title = "Phone number unavailable."
-            let message = "Unforuntately, we do not have the phone number. Please try another contact method."
+            let message = "Unfortunately, we do not have the phone number. Please try another contact method."
             if let controller = self.tableViewController {
                 controller.presentOkAlertWith(title: title, message: message, from: controller)
             }

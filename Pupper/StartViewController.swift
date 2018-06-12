@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
     private var p = SKProduct()
     private var backgroundMusicPlayer = AVAudioPlayer()
     
-    @IBOutlet weak var getStartedButton: UIButton!
+    @IBOutlet private weak var getStartedButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
