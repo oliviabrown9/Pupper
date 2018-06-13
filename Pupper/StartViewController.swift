@@ -7,7 +7,6 @@
 
 import UIKit
 import UserNotifications
-import AVFoundation
 import PassKit
 import StoreKit
 
@@ -15,7 +14,6 @@ class StartViewController: UIViewController {
     
     private var list = [SKProduct]()
     private var p = SKProduct()
-    private var backgroundMusicPlayer = AVAudioPlayer()
     
     @IBOutlet private weak var getStartedButton: UIButton!
     
@@ -23,9 +21,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         getStartedButton.layer.cornerRadius = getStartedButton.bounds.size.height / 2
         pushNotifications()
-        if !SharingManager.sharedInstance.didRemoveAudio {
-            playBackgroundAudio()
-        }
         addApplePayPaymentButtonToView()
         
         if(SKPaymentQueue.canMakePayments()) {
@@ -95,20 +90,6 @@ class StartViewController: UIViewController {
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(pay as SKPayment)
     }
-    
-    private func playBackgroundAudio() {
-        let backgroundMusic = NSURL(fileURLWithPath: Bundle.main.path(forResource: "bark", ofType: "mp3")!)
-        do {
-            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: backgroundMusic as URL)
-            backgroundMusicPlayer.numberOfLoops = 1
-            backgroundMusicPlayer.prepareToPlay()
-            backgroundMusicPlayer.play()
-        } catch {
-            print("Cannot play the file")
-        }
-        let audioSession = AVAudioSession.sharedInstance()
-        try!audioSession.setCategory(AVAudioSessionCategoryAmbient, with: AVAudioSessionCategoryOptions.mixWithOthers)
-    }
 }
 
 extension StartViewController: PKPaymentAuthorizationViewControllerDelegate {
@@ -149,8 +130,7 @@ extension StartViewController: SKPaymentTransactionObserver {
                 let prodID = p.productIdentifier
                 switch prodID {
                 case "noAudio":
-                    SharingManager.sharedInstance.didRemoveAudio = true
-                    backgroundMusicPlayer.stop()
+                    print("iap not found")
                 default:
                     print("iap not found")
                 }
