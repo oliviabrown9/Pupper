@@ -16,8 +16,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         getStartedButton.layer.cornerRadius = getStartedButton.bounds.size.height / 2
         pushNotifications()
-        
-        
     }
     
     private func pushNotifications() {
