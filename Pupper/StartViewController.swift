@@ -28,7 +28,6 @@ class StartViewController: UIViewController {
         requestContent.title = "🐶"
         requestContent.subtitle = "We miss you!"
         requestContent.body = "Come check out all the cute dogs!"
-        requestContent.badge = 1
         requestContent.sound = UNNotificationSound.default()
         
         let request = UNNotificationRequest(identifier: "ComeBackToApp", content: requestContent, trigger: requestTrigger)
