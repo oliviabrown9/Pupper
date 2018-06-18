@@ -14,9 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UIApplication.shared.applicationIconBadgeNumber = 0
         let notifCenter = UNUserNotificationCenter.current()
-        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        let options: UNAuthorizationOptions = [.alert, .sound]
         notifCenter.requestAuthorization(options: options) { (granted, error) in
             guard granted else { return }
             DispatchQueue.main.async {
