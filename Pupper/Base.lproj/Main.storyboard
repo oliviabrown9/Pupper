@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-8E-LR6">
-                                <rect key="frame" x="31" y="554" width="313" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-8E-LR6">
+                                <rect key="frame" x="31" y="488" width="313" height="47"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dL3-8E-LR6" secondAttribute="height" multiplier="312:47" id="ncp-z6-7vK"/>
@@ -47,6 +47,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dL3-8E-LR6" firstAttribute="top" secondItem="T7B-cD-Ewy" secondAttribute="bottom" constant="200" id="0yc-6m-lrx"/>
                             <constraint firstItem="T7B-cD-Ewy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ub-JQ-aMw"/>
                             <constraint firstItem="dL3-8E-LR6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="3EN-NF-hpq"/>
                             <constraint firstItem="T7B-cD-Ewy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5vN-xE-kXa"/>
@@ -156,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4R-TT-bv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4824.8000000000002" y="36.945812807881772"/>
+            <point key="canvasLocation" x="4761" y="41"/>
         </scene>
         <!--Ideal Dog View Controller-->
         <scene sceneID="pr5-pA-L8n">
