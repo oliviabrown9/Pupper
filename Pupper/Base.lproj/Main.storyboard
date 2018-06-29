@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint" translatesAutoresizingMaskIntoConstraints="NO" id="T7B-cD-Ewy">
-                                <rect key="frame" x="80" y="94" width="215" height="194"/>
+                                <rect key="frame" x="80" y="134" width="215" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="194" id="AmX-xA-O2z"/>
                                     <constraint firstAttribute="width" secondItem="T7B-cD-Ewy" secondAttribute="height" multiplier="215:194" id="Xcj-iW-flN"/>
@@ -47,10 +47,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dL3-8E-LR6" firstAttribute="top" secondItem="T7B-cD-Ewy" secondAttribute="bottom" constant="200" id="0yc-6m-lrx"/>
+                            <constraint firstItem="dL3-8E-LR6" firstAttribute="top" secondItem="T7B-cD-Ewy" secondAttribute="bottom" constant="160" id="0yc-6m-lrx"/>
                             <constraint firstItem="T7B-cD-Ewy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ub-JQ-aMw"/>
                             <constraint firstItem="dL3-8E-LR6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="3EN-NF-hpq"/>
-                            <constraint firstItem="T7B-cD-Ewy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5vN-xE-kXa"/>
+                            <constraint firstItem="T7B-cD-Ewy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="90" id="5vN-xE-kXa"/>
                             <constraint firstItem="dL3-8E-LR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GsS-7M-Uph"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="dL3-8E-LR6" secondAttribute="trailing" constant="15" id="QWA-2I-bRH"/>
                             <constraint firstItem="T7B-cD-Ewy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="215:812" id="jeR-JM-TcM"/>
