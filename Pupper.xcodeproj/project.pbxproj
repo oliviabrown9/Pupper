@@ -11,7 +11,6 @@
 		1842504420CE189D00B7C710 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842504320CE189D00B7C710 /* MapViewController.swift */; };
 		1847FFAE2097B05700EB7CDC /* IdealDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */; };
 		1847FFAF2097B05700EB7CDC /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847FFA92097B05700EB7CDC /* LocationViewController.swift */; };
-		18B3411420CE5AEE00E42796 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B3411320CE5AEE00E42796 /* StoreKit.framework */; };
 		18B3411820CEF31400E42796 /* DogMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3411720CEF31400E42796 /* DogMatches.swift */; };
 		45889BBE1E593A22008D1F26 /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */; };
 		45A7D7CE1E586D0E00D97A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */; };
@@ -32,9 +31,7 @@
 		1842504320CE189D00B7C710 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1847FFA82097B05600EB7CDC /* IdealDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdealDogViewController.swift; sourceTree = "<group>"; };
 		1847FFA92097B05700EB7CDC /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		18B3411320CE5AEE00E42796 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		18B3411720CEF31400E42796 /* DogMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMatches.swift; sourceTree = "<group>"; };
-		18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pupper.entitlements; sourceTree = "<group>"; };
 		45889BBD1E593A22008D1F26 /* BreedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		45A7D7CA1E586D0E00D97A7D /* Pupper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B3411420CE5AEE00E42796 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +113,6 @@
 		45A7D7CC1E586D0E00D97A7D /* Pupper */ = {
 			isa = PBXGroup;
 			children = (
-				18ED1EE320CE3ECC00EFC6AD /* Pupper.entitlements */,
 				45A7D7CD1E586D0E00D97A7D /* AppDelegate.swift */,
 				1847FFB12097B25F00EB7CDC /* Controllers */,
 				1847FFB22097B27400EB7CDC /* Views */,
@@ -133,7 +128,6 @@
 		9D365142442FA9CC5BFC2AB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18B3411320CE5AEE00E42796 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,13 +169,13 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -373,7 +367,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pupper/Pupper.entitlements;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -390,7 +383,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pupper/Pupper.entitlements;
 				DEVELOPMENT_TEAM = 8GEKYYW3CQ;
 				INFOPLIST_FILE = Pupper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

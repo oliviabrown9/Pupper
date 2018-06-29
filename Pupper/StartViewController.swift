@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 class StartViewController: UIViewController {
     
@@ -15,25 +14,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getStartedButton.layer.cornerRadius = getStartedButton.bounds.size.height / 2
-        pushNotifications()
     }
-    
-    private func pushNotifications() {
-        
-        let threeDaysInSeconds = 259200.0
-        
-        let requestTrigger = UNTimeIntervalNotificationTrigger(timeInterval: (threeDaysInSeconds), repeats: false)
-        
-        let requestContent = UNMutableNotificationContent()
-        requestContent.title = "🐶"
-        requestContent.subtitle = "We miss you!"
-        requestContent.body = "Come check out all the cute dogs!"
-        requestContent.sound = UNNotificationSound.default()
-        
-        let request = UNNotificationRequest(identifier: "ComeBackToApp", content: requestContent, trigger: requestTrigger)
-        UNUserNotificationCenter.current().add(request)
-    }
-
 }
 
 
