@@ -19,7 +19,8 @@ class ChosenTableViewCell: UITableViewCell {
     @IBOutlet weak var dogNameLabel: UILabel!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var adoptMeButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var phoneButton: UIButton!
     
     @IBAction private func phoneButtonPressed(_ sender: Any) {
         if let phoneNumber = chosenDog?.phone, phoneNumber != "", let number = URL(string: "telprompt://" + phoneNumber) {
@@ -34,7 +35,7 @@ class ChosenTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction private func adoptPressed(_ sender: UIButton) {
+    @IBAction private func emailButtonPressed(_ sender: UIButton) {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
     }
@@ -45,9 +46,14 @@ class ChosenTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        adoptMeButton.layer.cornerRadius = 15
-        adoptMeButton.layer.borderWidth = 1
-        adoptMeButton.layer.borderColor = UIColor.white.cgColor
+        styleContactButton(button: emailButton)
+        styleContactButton(button: phoneButton)
+    }
+    
+    private func styleContactButton(button: UIButton) {
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
     }
     
     private func phoneAlertAction(withNumber number: URL) {

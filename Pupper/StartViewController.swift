@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StartViewController.swift
 //  Pupper
 //
 //  Copyright © 2018 Olivia Brown. All rights reserved.
