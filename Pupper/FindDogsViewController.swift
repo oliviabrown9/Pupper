@@ -41,6 +41,7 @@ class FindDogsViewController: UITableViewController {
         cell.expanded = dogs[indexPath.row].expanded
         cell.detailView.isHidden = !cell.expanded
         cell.tableViewController = self
+        cell.layer.cornerRadius = 70
         return cell
     }
     
