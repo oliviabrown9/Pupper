@@ -72,7 +72,7 @@ class FindDogsViewController: UITableViewController {
     }
 
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
@@ -88,7 +88,7 @@ extension UIImageView {
     }
     
     func addBlurEffect() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
